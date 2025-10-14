@@ -1,0 +1,7 @@
+Bundle-Name: mhdsys-construction-tracker-web
+Bundle-SymbolicName: mhdsys.construction.tracker.web
+Bundle-Version: 1.0.0
+Export-Package: mhdsys.construction.tracker.web.constants
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"

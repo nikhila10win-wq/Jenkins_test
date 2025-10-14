@@ -1,0 +1,8 @@
+Bundle-Name: mhdsys-login-fragment
+Bundle-SymbolicName: mhdsys.login.fragment
+Bundle-Version: 1.0.0
+Export-Package: mhdsys.login.fragment.constants
+Fragment-Host: com.liferay.login.web
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"

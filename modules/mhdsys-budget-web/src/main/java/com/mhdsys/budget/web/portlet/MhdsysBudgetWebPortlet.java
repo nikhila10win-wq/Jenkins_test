@@ -1,0 +1,71 @@
+package com.mhdsys.budget.web.portlet;
+
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+import com.liferay.portal.kernel.model.User;
+import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
+import com.liferay.portal.kernel.service.UserLocalServiceUtil;
+import com.liferay.portal.kernel.theme.ThemeDisplay;
+import com.liferay.portal.kernel.util.WebKeys;
+import com.mhdsys.budget.web.constants.MhdsysBudgetWebPortletKeys;
+import com.mhdsys.common.utility.constants.RoleConstant;
+
+import java.io.IOException;
+
+import javax.portlet.Portlet;
+import javax.portlet.PortletException;
+import javax.portlet.RenderRequest;
+import javax.portlet.RenderResponse;
+
+import org.osgi.service.component.annotations.Component;
+
+/**
+ * @author Epiphany
+ */
+@Component(property = { "com.liferay.portlet.display-category=MHDSYS.Budget",
+		"com.liferay.portlet.header-portlet-css=/css/main.css", "com.liferay.portlet.instanceable=true",
+		"javax.portlet.display-name=MhdsysBudgetWeb", "javax.portlet.init-param.template-path=/",
+		
+		"com.liferay.portlet.header-portal-javascript=/o/mhdsys-dashboard-theme/js/plugins/jquery.min.js",
+		"com.liferay.portlet.header-portal-javascript=/o/mhdsys-dashboard-theme/js/plugins/bootstrap.bundle.min.js",
+		"com.liferay.portlet.header-portal-javascript=/o/mhdsys-dashboard-theme/js/plugins/jquery.validate.js",
+		"com.liferay.portlet.header-portal-javascript=/o/mhdsys-dashboard-theme/js/plugins/additional-methods.js",
+		
+		"javax.portlet.init-param.view-template=/view.jsp",
+		"javax.portlet.name=" + MhdsysBudgetWebPortletKeys.MHDSYSBUDGETWEB,
+		"javax.portlet.resource-bundle=content.Language",
+		"com.liferay.portlet.requires-namespaced-parameters=false",
+		"javax.portlet.security-role-ref=power-user,user" }, service = Portlet.class)
+public class MhdsysBudgetWebPortlet extends MVCPortlet {
+
+	private Log LOGGER = LogFactoryUtil.getLog(MhdsysBudgetWebPortlet.class);
+
+	@Override
+	public void render(RenderRequest renderRequest, RenderResponse renderResponse)
+			throws IOException, PortletException {
+		try {
+			LOGGER.info("Budget Web Portlet");
+			ThemeDisplay themeDisplay = (ThemeDisplay) renderRequest.getAttribute(WebKeys.THEME_DISPLAY);
+
+			User user = UserLocalServiceUtil.getUser(themeDisplay.getUserId());
+
+			boolean isDeskOfficer = RoleConstant.isDeskOfficer(user, themeDisplay.getCompanyId());
+			boolean isAssociation = RoleConstant.isAssociation(user, themeDisplay.getCompanyId());
+			boolean isHoAdmin = RoleConstant.isHOAdmin(user, themeDisplay.getCompanyId());
+			boolean isDDD = RoleConstant.isDDD(user, themeDisplay.getCompanyId());
+			boolean isDeputyDirector = RoleConstant.isDeputyDirector(user, themeDisplay.getCompanyId());
+
+			renderRequest.setAttribute("isDeskOfficer", isDeskOfficer);
+			renderRequest.setAttribute("isHoAdmin", isHoAdmin);
+			renderRequest.setAttribute("isAssociation", isAssociation);
+			renderRequest.setAttribute("isDeputyDirector", isDeputyDirector);
+			renderRequest.setAttribute("isDDD", isDDD);
+			
+			super.render(renderRequest, renderResponse);
+
+		} catch (Exception e) {
+			LOGGER.error(e);
+		}
+	}
+
+}

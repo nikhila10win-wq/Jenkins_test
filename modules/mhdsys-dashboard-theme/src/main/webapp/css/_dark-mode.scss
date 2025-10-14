@@ -1,0 +1,267 @@
+body.dark-mode {
+   width: 100%;
+   padding: 0;
+   background-color: #000 !important;
+   transition: all 0.5s;
+}
+
+body.dark-mode .deshbordSidebar {
+   background-color: #000 !important;
+   border-right: 1px solid #969696;
+}
+
+body.dark-mode .dashboardPage .card {
+   background: #141824;
+   color: #fff;
+   box-shadow: none;
+   border-left: 5px solid #fff;
+   border: 1px solid #ddd;
+}
+
+body.dark-mode .dashboardPage .card img {
+   filter: invert(1);
+}
+
+body.dark-mode .dashboardPage a .card p {
+   color: #fff;
+}
+
+body.dark-mode .maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li.submenuDropdown #submenuClick {
+   background: #141824;
+   border: 1px solid #ddd;
+}
+
+body.dark-mode img.layout-logo {
+   filter: invert(1);
+}
+
+body.dark-mode .url-link {
+   color: #fff;
+}
+
+body.dark-mode .card-background .card-body {
+	border-radius: 0px 0px 20px 20px !important;
+}
+
+body.dark-mode .common-forms-div .card .card-body {
+    background: #141824;
+    color: #fff;
+	border-radius: 0px;
+}
+
+body.dark-mode .common-forms-div .table-bordered th,
+body.dark-mode .common-forms-div .table-bordered td {
+   border: 0.0625rem solid #686868;
+}
+
+body.dark-mode .common-forms-div .card .card-body .form-group label {
+   color: #ffffff;
+}
+
+body.dark-mode .common-forms-div .card .card-body .form-group .form-control {
+   border: 1px solid #ddd;
+   color: #fff !important;
+   background: #141824;
+}
+
+body.dark-mode .subCard .card-header {
+   background-color: #141824 !important;
+   color: #ffffff !important;
+   border-bottom: 1px solid #ddd !important;
+}
+
+body.dark-mode .subCard .card-body {
+   border-radius: 0px 0px 15px 15px;
+}
+
+body.dark-mode .custom-file-label {
+   background: #141824;
+   border: 1px solid #ddd;
+}
+
+body.dark-mode .card-footer {
+   background: #141824 !important;
+   border-top: 1px solid #ddd;
+    border-radius: 0 0 13px 13px;
+}
+
+body.dark-mode div.dt-container.dt-empty-footer tbody>tr:last-child>* {
+   border-bottom: 0.0625rem solid #686868;
+}
+
+body.dark-mode .dt-input {
+   background: #141824 !important;
+}
+
+body.dark-mode .profile .dropdown-menu {
+   background: #141824;
+}
+
+body.dark-mode .profile .dropdown-menu a {
+   color: #fff;
+}
+
+body.dark-mode .lr-notifications {
+   background: #141824;
+}
+
+body.dark-mode .lr-notifications .list-group-item {
+   background-color: #141824 !important;
+   color: #fff !important;
+}
+
+body.dark-mode .lfr-search-container-wrapper a:not(.btn):not(.component-action):not(.page-link) {
+   color: #fff !important;
+}
+
+body.dark-mode .common-forms-div select.form-control {
+   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23ffffff' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") !important;
+   background-position: right 0.75rem center !important;
+   background-repeat: no-repeat !important;
+   background-size: 8px 10px !important;
+}
+
+body.dark-mode input[type="date"]::-webkit-calendar-picker-indicator {
+   filter: invert(1);
+}
+
+.dark-mode td button.btn {
+   padding: 0.25rem !important;
+   border-radius: 0px !important;
+   width: 100% !important;
+}
+
+.dark-mode .form-group a {
+   color: #fff !important;
+   text-decoration: none;
+}
+
+.dark-mode .common-forms-div .form-group div {
+   color: #fff;
+}
+
+@keyframes fadeinall {
+   0% {
+      opacity: 1;
+   }
+
+   97% {
+      opacity: 0;
+   }
+
+   98% {
+      opacity: 0;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+   }
+
+   100% {
+      opacity: 0;
+      -webkit-transform: translateY(-100%);
+      transform: translateY(-100%);
+      z-index: -1;
+   }
+}
+
+#fadein {
+   opacity: 1;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   -webkit-transform: translateY(0);
+   -ms-transform: translateY(0);
+   transform: translateY(0);
+   background-color: #FFFFFF;
+   z-index: 999;
+   -webkit-animation-fill-mode: forwards;
+   animation-fill-mode: forwards;
+   -webkit-animation: fadeinall 1s normal both;
+   animation: fadeinall 1s normal both;
+   -webkit-animation-delay: 0.3s;
+   animation-delay: 0.3s;
+}
+
+@keyframes rotation {
+   0% {
+      transform: rotate(0deg);
+   }
+
+   100% {
+      transform: rotate(360deg);
+   }
+}
+
+#loader-wrapper {
+   background-color: #FFFFFF;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 999;
+   width: 100%;
+   height: 100%;
+   text-align: center;
+}
+
+.loader {
+   width: 40px;
+   height: 40px;
+   border: 5px solid #000000;
+   border-bottom-color: transparent;
+   border-radius: 50%;
+   margin-top: calc(50vh - 20px);
+   display: inline-block;
+   box-sizing: border-box;
+   -webkit-animation: rotation 1s linear infinite;
+   animation: rotation 1s linear infinite;
+}
+
+.dark-mode .table {
+   color: #fff;
+}
+
+.dark-mode .list-group .list-group-item {
+   background: #141824;
+   border: 1px solid #ddd;
+   color: #fff;
+}
+
+.dark-mode .maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main {
+   margin-bottom: 0px;
+   background: #000;
+}
+
+body.dark-mode .common-forms-div select.form-control {
+   background: #141824;
+   color: #fff;
+}
+
+body.dark-mode input[type="date"]::-webkit-calendar-picker-indicator {
+   filter: invert(1);
+}
+
+button.btn-danger {
+   background: #26268e !important;
+}
+
+.dark-mode .modal-content {
+   background-color: #141824;
+   border: 0.0625rem solid #ddd;
+   width: 100%;
+   color: #fff;
+}
+
+.dark-mode .modal-title+.close {
+   margin-right: 0.3125rem;
+   color: #fff;
+}
+
+.dark-mode .modal-body textarea {
+   background: #141824;
+   color: #fff;
+}
+
+.dark-mode .modal-body {
+   color: #fff;
+}

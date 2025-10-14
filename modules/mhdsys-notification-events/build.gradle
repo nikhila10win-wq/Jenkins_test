@@ -1,0 +1,5 @@
+dependencies {
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+	compileOnly group: 'javax.mail', name: 'mail', version: '1.4'
+	compileOnly group: 'commons-io', name: 'commons-io', version: '2.6'
+}

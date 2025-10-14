@@ -1,0 +1,19 @@
+.custom-file-label {
+	height: 45px !important;
+	padding-top: 11px !important;
+}
+
+.custom-file-input:lang(en)~.custom-file-label::after {
+    content: "Browse";
+    height: 45px;
+    padding: 13px;
+    background: #26268e;
+    color: #fff;
+}
+
+.addBtn {
+	background-color: #26268e !important;
+    color: #fff !important;
+    height: 45px;
+    width: 45px;
+}

@@ -1,0 +1,2266 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.4.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_4_0.dtd">
+
+<service-builder dependency-injector="ds"
+	package-path="com.mhdsys.schema">
+	<namespace>mhdsys</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" 
+		remote-service="false" session-factory="sampleSessionFactory" table="foo" 
+		tx-manager="sampleTransactionManager uuid="true""> -->
+	<entity local-service="true" name="RegistrationFormType"
+		remote-service="true" uuid="true">
+		<column name="typeId" primary="true" type="long" />
+		<column name="formType" type="String" />
+		<column name="formName" type="String" />
+
+		<finder name="FormTypeName" return-type="RegistrationFormType">
+			<finder-column name="formName" />
+		</finder>
+	</entity>
+	<entity local-service="true" name="DivisionMaster"
+		remote-service="true" uuid="false">
+		<column name="divisionId" primary="true" type="long" />
+		<column name="divisionName_en" type="String" />
+		<column name="divisionName_hi" type="String" />
+		<column name="divisionName_mr" type="String" />
+		<column name="isActive" type="boolean" />
+
+		<finder name="ActiveState" return-type="Collection">
+			<finder-column name="isActive" />
+		</finder>
+	</entity>
+
+	<entity local-service="true" name="DistrictMaster"
+		remote-service="false" uuid="false">
+		<column name="districtId" primary="true" type="long" />
+		<column name="districtName_en" type="String" />
+		<column name="districtName_hi" type="String" />
+		<column name="districtName_mr" type="String" />
+		<column name="isActive" type="boolean" />
+		<column name="divisionId" type="long" />
+
+		<finder name="ActiveState" return-type="Collection">
+			<finder-column name="isActive" />
+		</finder>
+		<finder name="DivisionId" return-type="Collection">
+			<finder-column name="divisionId" />
+		</finder>
+		<finder name="name" return-type="District">
+			<finder-column name="districtName_en" />
+		</finder>
+	</entity>
+
+	<entity local-service="true" name="TalukaMaster"
+		remote-service="false" uuid="false">
+		<column name="talukaId" primary="true" type="long" />
+		<column name="talukaName_en" type="String" />
+		<column name="talukaName_hi" type="String" />
+		<column name="talukaName_mr" type="String" />
+		<column name="isActive" type="boolean" />
+		<column name="districtId" type="long" />
+		<column name="divisionId" type="long" />
+
+		<finder name="ActiveState" return-type="Collection">
+			<finder-column name="isActive" />
+		</finder>
+
+		<finder name="DistrictId" return-type="Collection">
+			<finder-column name="districtId" />
+		</finder>
+	</entity>
+
+	<entity local-service="true" name="SportsMaster"
+		remote-service="false" uuid="false">
+		<column name="sportMasterId" primary="true" type="long" />
+		<column name="categoryId" type="long" />
+		<column name="name_en" type="String" />
+		<column name="name_hi" type="String" />
+		<column name="name_mr" type="String" />
+		<column name="isActive" type="boolean" />
+
+		<finder name="ActiveState" return-type="Collection">
+			<finder-column name="isActive" />
+		</finder>
+	</entity>
+
+	<entity local-service="true" name="CompetitionMaster"
+		remote-service="false" uuid="false">
+		<column name="competitionMasterId" primary="true" type="long" />
+		<column name="sportTypeId" type="int" />
+		<column name="sportId" type="long" />
+		<column name="categoryId" type="long" />
+		<column name="underForteen" type="boolean" />
+		<column name="underSeventeen" type="boolean" />
+		<column name="underNineteen" type="boolean" />
+		<column name="underForteenCutOffDate" type="Date" />
+		<column name="underSeventeenCutOffDate" type="Date" />
+		<column name="underNineteenCutOffDate" type="Date" />
+		<column name="fees" type="double" />
+		<column name="currentYear" type="boolean" />
+		<column name="userId" type="long" />
+
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		
+        <finder name="UserId" return-type="CompetitionMaster">
+			<finder-column name="userId" />
+		</finder>
+
+	</entity>
+	<entity local-service="true" name="CategoryMaster"
+		remote-service="false" uuid="false">
+		<column name="categoryMasterId" primary="true" type="long" />
+		<column name="name" type="String" />
+		<column name="isActive" type="boolean" />
+
+		<finder name="ActiveState" return-type="Collection">
+			<finder-column name="isActive" />
+		</finder>
+
+	</entity>
+
+
+	<entity local-service="true" name="SubCategoryMaster"
+		remote-service="false" uuid="false">
+		<column name="subCategoryId" primary="true" type="long" />
+		<column name="subCategoryName_en" type="String" />
+		<column name="subCategoryName_hi" type="String" />
+		<column name="subCategoryName_mr" type="String" />
+		<column name="isActive" type="boolean" />
+		<column name="categoryMasterId" type="long" />
+
+		<finder name="ActiveState" return-type="Collection">
+			<finder-column name="isActive" />
+		</finder>
+		<finder name="CategoryMasterId" return-type="Collection">
+			<finder-column name="categoryMasterId" />
+		</finder>
+		<finder name="name" return-type="SubCategoryMaster">
+			<finder-column name="subCategoryName_en" />
+		</finder>
+	</entity>
+
+
+
+	<entity local-service="true" name="SchoolChange"
+		remote-service="false" uuid="false">
+		<column name="schoolChangeId" primary="true" type="long" />
+		<column name="participantName" type="String" />
+		<column name="standard" type="String" />
+		<column name="fromSchool" type="String" />
+		<column name="toSchool" type="String" />
+		<column name="year" type="Date" />
+		<column name="attachment" type="long" />
+
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<finder name="SchoolChangeId" return-type="SchoolChange">
+			<finder-column name="schoolChangeId" />
+		</finder>
+	</entity>
+
+
+
+
+	<entity local-service="true" name="AwardPoints"
+		remote-service="false" uuid="false">
+
+		<column name="awardPointsId" primary="true" type="long" />
+		<column name="competitionLevelId" type="long" />
+		<column name="awardYear" type="String" />
+		<column name="awardNameId" type="long" />
+		<column name="sportsCompetitionLevelId" type="long" />
+		<column name="sportsNameId" type="long" />
+		<column name="sportsTypeId" type="long" />
+		<column name="category" type="long" />
+		<column name="winner" type="String" />
+		<column name="firstRunnerUp" type="String" />
+		<column name="secondRunnerUp" type="String" />
+		<column name="participant" type="String" />
+
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<finder name="AwardPointsId" return-type="AwardPoints">
+			<finder-column name="awardPointsId" />
+		</finder>
+
+	</entity>
+
+
+	<entity local-service="true" name="CompetitionLevelMaster"
+		remote-service="false" uuid="false">
+		<column name="competitionLevelMasterId" primary="true"
+			type="long" />
+		<column name="name_en" type="String" />
+		<column name="name_hi" type="String" />
+		<column name="name_mr" type="String" />
+		<column name="isActive" type="boolean" />
+
+		<finder name="ActiveState" return-type="Collection">
+			<finder-column name="isActive" />
+		</finder>
+
+	</entity>
+
+	<entity local-service="true" name="SportsCompLvlMaster"
+		remote-service="false" uuid="false">
+		<column name="id" primary="true" type="long" />
+		<column name="competitionLevelId" type="long" />
+		<column name="name_en" type="String" />
+		<column name="name_hi" type="String" />
+		<column name="name_mr" type="String" />
+		<column name="isActive" type="boolean" />
+
+		<finder name="ActiveState" return-type="Collection">
+			<finder-column name="isActive" />
+		</finder>
+
+	</entity>
+
+	<entity local-service="true" name="AwardNameMaster"
+		remote-service="false" uuid="false">
+		<column name="awardNameMasterId" primary="true" type="long" />
+		<column name="name_en" type="String" />
+		<column name="name_hi" type="String" />
+		<column name="name_mr" type="String" />
+		<column name="isActive" type="boolean" />
+
+		<finder name="ActiveState" return-type="Collection">
+			<finder-column name="isActive" />
+		</finder>
+
+	</entity>
+
+	<entity local-service="true" name="SportsTypeMaster"
+		remote-service="false" uuid="false">
+		<column name="sportsTypeMasterId" primary="true" type="long" />
+		<column name="name_en" type="String" />
+		<column name="name_hi" type="String" />
+		<column name="name_mr" type="String" />
+		<column name="isActive" type="boolean" />
+
+		<finder name="ActiveState" return-type="Collection">
+			<finder-column name="isActive" />
+		</finder>
+
+	</entity>
+
+	<entity local-service="true" name="CompetitionInitiation"
+		remote-service="false" uuid="false">
+		<column name="competitionInitiationId" primary="true"
+			type="long" />
+		<column name="competitionMasterId" type="long" />
+		<column name="sportId" type="long" />
+		<column name="categoryId" type="long" />
+		<column name="underForteen" type="boolean" />
+		<column name="underSeventeen" type="boolean" />
+		<column name="underNineteen" type="boolean" />
+		<column name="competitionStartDate" type="Date" />
+		<column name="competitionEndDate" type="Date" />
+		<column name="fees" type="double" />
+		<column name="affiliationFeesByTotalCount" type="double" />
+		<column name="affiliationFeesByCategory" type="double" />
+		<column name="venueDetails" type="String" />
+		<column name="selfDeclaration" type="boolean" />
+		<column name="taluka" type="long" />
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="districtOrTaluka" type="int" />
+
+		<finder name="UserId" return-type="Collection">
+			<finder-column name="userId" />
+		</finder>
+
+	</entity>
+	<entity local-service="true" name="PTTeacherApplication"
+		remote-service="false" uuid="false">
+		<column name="ptTeacherApplicationId" primary="true"
+			type="long" />
+		<column name="competitionInitiationId" type="long" />
+		<column name="applicationNumber" type="String" />
+		<column name="fees" type="double" />
+		<column name="affiliationFees" type="double" />
+		<column name="totalFees" type="double" />
+		<column name="userId" type="long" />
+		<column name="scheduled" type="boolean" />
+		<column name="feesRecieptFileEntryId" type="long" />
+		<column name="countOfTeamOrIndividual" type="int" />
+		<column name="participantName" type="String" />
+		<column name="participantUserId" type="long" />
+		<column name="status" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<order by="desc">
+            <order-column name="ptTeacherApplicationId" />
+        </order>
+		<finder name="UserId" return-type="Collection">
+			<finder-column name="userId" />
+		</finder>
+		<finder name="status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+		
+	</entity>
+	<entity local-service="true" name="CompetitionWorkflowStatus"
+		remote-service="false" uuid="false">
+		<column name="competitionWorkflowStatusId" primary="true"
+			type="long" />
+		<column name="description" type="String" />
+	</entity>
+
+
+	<entity local-service="true" name="Registration"
+		remote-service="false" uuid="false">
+
+		<column name="registrationId" primary="true" type="long" />
+		<column name="state" type="long" />
+		<column name="division" type="long" />
+		<column name="district" type="long" />
+		<column name="taluka" type="long" />
+		<column name="udiseCode" type="String" />
+		<column name="firstName" type="String" />
+		<column name="PrincipalName" type="String" />
+		<column name="sportsTeacher" type="String" />
+		<column name="schoolRegNo" type="String" />
+		<column name="aadharNo" type="String" />
+		<column name="mobileNo" type="String" />
+		<column name="landlineNo" type="String" />
+		<column name="email" type="String" />
+		<column name="website" type="String" />
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<column name="associationName" type="String" />
+		<column name="associationRegNo" type="String" />
+		<column name="secretaryName" type="String" />
+
+		<column name="departmentName" type="String" />
+		<column name="subDepartment" type="String" />
+		<column name="officialName" type="String" />
+		<column name="designation" type="String" />
+		<column name="secretaryOrgName" type="String" />
+
+		<column name="organizationName" type="String" />
+		<column name="foundingDate" type="Date" />
+		<column name="employeeId" type="long" />
+
+
+		<finder name="UserId" return-type="Registration">
+			<finder-column name="userId" />
+		</finder>
+
+		<finder name="RegistrationId" return-type="Registration">
+			<finder-column name="registrationId" />
+		</finder>
+	</entity>
+
+	<entity local-service="true" name="CompetitionSchedule"
+		remote-service="false" uuid="false">
+
+		<column name="competitionScheduleId" primary="true" type="long" />
+		<column name="competitionInitiationId" type="long" />
+		<column name="ptTeacherApplicationId" type="long" />
+		<column name="competitionName" type="String" />
+		<column name="gender" type="boolean" />
+		<column name="districtOrTaluka" type="int" />
+		<column name="registrationStartDate" type="Date" />
+		<column name="registrationEndDate" type="Date" />
+		<column name="lastSubmissionDate" type="Date" />
+		<column name="competitionOrganizerName" type="String" />
+		<column name="competitionOrganizerContact" type="String" />
+		<column name="srNumber" type="int" />
+		<column name="startTime" type="Date" />
+		<column name="reportingTime" type="Date" />
+		<column name="resultUpload" type="boolean" />
+
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+
+
+		<finder name="UserId" return-type="CompetitionSchedule">
+			<finder-column name="userId" />
+		</finder>
+		<finder name="PtTeacherApplicationId"
+			return-type="CompetitionSchedule">
+			<finder-column name="ptTeacherApplicationId" />
+		</finder>
+
+	</entity>
+	<entity local-service="true" name="CompetitionResultUpload"
+		remote-service="false" uuid="false">
+
+		<column name="competitionResultUploadId" primary="true"
+			type="long" />
+		<column name="competitionScheduledId" type="long" />
+		<column name="competitionInitiationId" type="long" />
+		<column name="reachedGround" type="boolean" />
+		<column name="winnerName" type="String" />
+		<column name="firstRunnerUpName" type="String" />
+		<column name="secondRunnerUpName" type="String" />
+		<column name="thirdRunnerUpName" type="String" />
+		<column name="firstScoreSheetFileEntryId" type="long" />
+		<column name="secondAndThirdScoreSheetFileEntryId" type="long" />
+		<column name="selfDeclaration" type="boolean" />
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<finder name="UserId" return-type="CompetitionSchedule">
+			<finder-column name="userId" />
+		</finder>
+		<finder name="CompetitionScheduledId"
+			return-type="CompetitionResultUpload">
+			<finder-column name="competitionScheduledId" />
+		</finder>
+
+	</entity>
+
+	<entity local-service="true" name="AwardApplication" remote-service="false" uuid="false">
+
+		<column name="awardApplicationId" primary="true" type="long" />
+		<column name="competitionLevelId" type="long" />
+		<column name="competitionName" type="String" />
+		<column name="competitionPlace" type="String" />
+		<column name="participationYear" type="String" />
+		<column name="sportId" type="long" />
+		<column name="medalRecieved" type="String" />
+		<column name="category" type="long" />
+		<column name="countryOfCompetition" type="String" />
+		<column name="cityOfCompetition" type="String" />
+		<column name="competitionStartDate" type="Date" />
+		<column name="competitionEndDate" type="Date" />
+		<column name="highestPerformance" type="String" />
+		<column name="certificateId" type="long" />
+		<column name="coachName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="userId" type="long" />
+		<column name="userType" type="String" />
+		<column name="noOfParticipation" type="long" />
+		<column name="noOfMedalRecieved" type="long" />
+		<column name="undertakingId" type="long" />
+		
+		<column name="gender" type="int" />
+		<column name="status" type="String" />
+		
+		<column name="awardPointByDeskOff" type="String" />
+		<column name="deskOffRemarks" type="String" />
+		<column name="overallDeskOffRemarks" type="String" />
+		
+		<column name="sportsDeskOffUserId" type="long" />
+		<column name="sportsDeskOffName" type="String" />
+		
+		<column name="awardPointByAsso" type="String" />
+		<column name="overallAssoRemarks" type="String" />
+		<column name="associationName" type="String" />
+		<column name="name" type="String" />
+		<column name="appointmentLetter" type="long" />
+		
+		<column name="awardPointByHo" type="String" />
+		<column name="overallHoRemarks" type="String" />
+		
+		<column name="isVerified" type="boolean" />
+		
+		<column name="assignToDeskOff" type="boolean" />
+		<column name="deskOffSport" type="String" />
+		<column name="directoryApproval" type="boolean" />
+		
+		<column name="coachFromDate" type="Date" />
+		<column name="coachToDate" type="Date" />
+		<column name="sportpersonName" type="String" />
+		
+		<column name="otherSportName" type="String" />
+		<column name="campaignDescription" type="String" />
+		
+		<column name="deskofficerUserId" type="long" />
+		<column name="associationUserId" type="long" />
+		<column name="hoUserId" type="long" />
+		
+		<column name="directorRemarks" type="String" />
+		<column name="directorComments" type="String" />
+		
+		<column name="mainDeskOffRemarks" type="String" />
+		<column name="mainDeskOffVerification" type="String" />
+		
+		<column name="awardYear" type="String" />
+		<column name="awardNameId" type="long" />
+		<column name="sportsCompetitionLevelId" type="long" />
+		<column name="sportsTypeId" type="long" />
+		<column name="points" type="String" />
+		
+		
+		<order by="desc">
+            <order-column name="awardApplicationId" />
+        </order>
+        
+		<finder name="UserId" return-type="Collection">
+		   <finder-column name="userId"/>
+		</finder>
+		<finder name="Status" return-type="Collection">
+		   <finder-column name="status"/>
+		</finder>
+		<finder name="StatusAndUserId" return-type="Collection">
+		   <finder-column name="userId" />
+		   <finder-column name="status" />
+		</finder>
+		<finder name="AwardApplicationId" return-type="AwardApplication">
+		   <finder-column name="awardApplicationId"/>
+		</finder>
+		<finder name="CompetitionName" return-type="AwardApplication">
+		   <finder-column name="competitionName"/>
+		</finder>
+		<finder name="AssociationUserId" return-type="Collection">
+		   <finder-column name="associationUserId" />
+		</finder>
+
+	</entity>
+	<entity local-service="true" name="OfficerDesignation"
+		remote-service="false" uuid="false">
+		<column name="officerDesignationId" primary="true" type="long" />
+		<column name="name" type="String" />
+	</entity>
+
+
+	<entity local-service="true" name="Objection"
+		remote-service="false" uuid="false">
+
+		<column name="objectionId" primary="true" type="long" />
+		<column name="playerName" type="String" />
+		<column name="objectorName" type="String" />
+		<column name="email" type="String" />
+		<column name="mobileNo" type="String" />
+		<column name="category" type="String" />
+		<column name="sportNo" type="long" />
+		<column name="awardYear" type="String" />
+		<column name="sportName" type="long" />
+		<column name="awardType" type="long" />
+		<column name="district" type="long" />
+		<column name="place" type="String" />
+		<column name="objectionSummary" type="String" />
+		<column name="userId" type="long" />
+
+		<column name="finalPointsByHo" type="String" />
+		<column name="finalRemarksByHO" type="String" />
+
+		<column name="objectionFileEntryId" type="long" />
+		<column name="finalRemarksByFed" type="String" />
+		
+		<column name="doVerification" type="String" />
+		<column name="doRemarks" type="String" />
+		<column name="ddVerification" type="String" />
+		<column name="ddRemarks" type="String" />
+		
+		<order by="desc">
+            <order-column name="objectionId" />
+        </order>
+		
+		<finder name="UserId" return-type="Collection">
+			<finder-column name="userId" />
+		</finder>
+		<finder name="ObjectionId" return-type="Objection">
+			<finder-column name="objectionId" />
+		</finder>
+
+	</entity>
+
+	<entity local-service="true" name="Profile"
+		remote-service="false" uuid="false">
+		<column name="profileId" primary="true" type="long" />
+		<!-- School / Collage -->
+		<column name="photoEntryId" type="String" />
+		<column name="pinCode" type="String" />
+		<column name="postalAddress" type="String" />
+		<column name="totalStudentCountBoys" type="long" />
+		<column name="totalStudentCountGirls" type="long" />
+		<column name="registrationWith" type="String" />
+		<column name="schoolCollegeRegNumberEntryId" type="long" />
+		<!-- School / Collage - Participant Student -->
+		<column name="dateofAdmissionInSchoolCollege" type="Date" />
+		<column name="nameofCoach" type="String" />
+		<column name="nameofTrainingCenter" type="String" />
+		<column name="heightInCm" type="String" />
+		<column name="weightInKg" type="String" />
+		<column name="bloodGroup" type="String" />
+		<column name="identificationMarkOnBody" type="String" />
+		<column name="castCategory" type="String" />
+		<column name="birthCertificateEntryId" type="long" />
+		<column name="formNoTwoEntryId" type="long" />
+		<column name="aadharCardEntryId" type="long" />
+		<!-- Coach / Sport Person -->
+		<column name="dateOfBirth" type="Date" />
+		<column name="coachingDates" type="String" /> <!-- json string -->
+		<column name="nationalityCertificateEntryId" type="long" />
+		<column name="disabilityApplicable" type="boolean" />
+		<column name="disabilityCertificateEntryId" type="long" />
+		<column name="qualification" type="String" />
+		<column name="typeofJobBusiness" type="String" />
+		<column name="designation" type="String" />
+		<column name="officeAddress" type="String" />
+		<column name="anyCrimeRegistered" type="boolean" />
+		<column name="policeStationName" type="String" />
+		<column name="policeStationAddress" type="String" />
+		<column name="dateOfRegistration" type="Date" />
+		<column name="characterCertificateEntryId" type="long" />
+		<column name="bankName" type="String" />
+		<column name="branchName" type="String" />
+		<column name="accountNumber" type="String" />
+		<column name="IFSCcode" type="String" />
+		<column name="acknowledgement" type="boolean" />
+		<column name="roleName" type="String" />
+		<column name="videoLink" type="String" />
+		<column name="cancelledChequeEntryId" type="long" />
+		<!-- Association -->
+		<column name="website" type="String" />
+		<column name="foundingDate" type="Date" />
+		<column name="affiliatedWith" type="String" />
+		<column name="tanNo" type="String" />
+		<column name="userId" type="long" />
+
+		<finder name="UserId" return-type="Profile">
+			<finder-column name="userId" />
+		</finder>
+	</entity>
+
+
+	<entity local-service="true" name="SportPersonCoachRegistration"
+		remote-service="false" uuid="false">
+
+		<column name="sportPersonRegistrationId" primary="true"
+			type="long" />
+		<column name="competitionLevelId" type="long" />
+		<column name="competitionName" type="String" />
+		<column name="competitionPlace" type="String" />
+		<column name="participationYear" type="String" />
+		<column name="sportId" type="long" />
+		<column name="medalRecieved" type="String" />
+		<column name="category" type="long" />
+		<column name="countryOfCompetition" type="String" />
+		<column name="cityOfCompetition" type="String" />
+		<column name="competitionStartDate" type="Date" />
+		<column name="competitionEndDate" type="Date" />
+		<column name="highestPerformance" type="String" />
+		<column name="certificateId" type="long" />
+		<column name="coachName" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="userId" type="long" />
+		<column name="userType" type="String" />
+		<column name="noOfParticipation" type="long" />
+		<column name="noOfMedalRecieved" type="long" />
+		<column name="undertakingId" type="long" />
+
+		<finder name="UserId" return-type="Collection">
+			<finder-column name="userId" />
+		</finder>
+
+	</entity>
+	<entity local-service="true"
+		name="SchoolCollegeOfficerRegistration" remote-service="false"
+		uuid="false">
+
+		<column name="schoolCollegeOfficerRegistrationId"
+			primary="true" type="long" />
+		<column name="firstName" type="String" />
+		<column name="lastName" type="String" />
+		<column name="mothersName" type="String" />
+		<column name="fathersName" type="String" />
+		<column name="gender" type="int" />
+		<column name="type" type="String" />
+		<column name="currentDesignation" type="long" />
+		<column name="schoolOrCollegeName" type="String" />
+		<column name="aadharNumber" type="String" />
+		<column name="email" type="String" />
+		<column name="mobileNumber" type="String" />
+		<column name="aadharCardRecieptFileEntryId" type="long" />
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<finder name="UserId"
+			return-type="SchoolCollegeOfficerRegistration">
+			<finder-column name="userId" />
+		</finder>
+		
+		<finder name="UserIdAndCurrentDesignation" return-type="SchoolCollegeOfficerRegistration">
+			<finder-column name="userId" />
+			<finder-column name="currentDesignation" />
+		</finder>
+
+	</entity>
+
+	<entity name="GPFDetails" local-service="true"
+		remote-service="false">
+
+		<column name="gPFDetailsId" primary="true" type="long" />
+		<column name="establishmentDetailId" type="long" />
+		<column name="gpfNumber" type="String" />
+		<column name="refundableAmount" type="String" />
+		<column name="refundableAmountDate" type="Date" />
+		<column name="nonRefundableAmount" type="String" />
+		<column name="nonRefundableAmountDate" type="Date" />
+		<column name="monthlyDeductionAmount" type="String" />
+		<column name="monthlyInstallmentAmount" type="String" />
+		<column name="numberOfMonthlyInstallment" type="String" />
+		<column name="balanceAmount" type="String" />
+
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="typeOfRecord" type="String" />
+
+		<finder name="EstablishmentDetailId" return-type="GPFDetails">
+			<finder-column name="establishmentDetailId" />
+		</finder>
+
+		<finder name="UserId" return-type="GPFDetails">
+			<finder-column name="userId" />
+		</finder>
+
+	</entity>
+
+
+	<entity name="NPSDetails" local-service="true"
+		remote-service="false">
+
+		<column name="nPSDetailsId" primary="true" type="long" />
+		<column name="establishmentDetailId" type="long" />
+		<column name="npsId" type="String" />
+		<column name="npsRefundableAmount" type="String" />
+		<column name="npsRefundableAmountDate" type="Date" />
+		<column name="npsNonRefundableAmount" type="String" />
+		<column name="npsNonRefundableAmountDate" type="Date" />
+		<column name="npsMonthlyDeductionAmount" type="String" />
+		<column name="npsMonthlyInstallmentAmount" type="String" />
+		<column name="npsNumberOfMonthlyInstallment" type="String" />
+		<column name="npsBalanceAmount" type="String" />
+
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="typeOfRecord" type="String" />
+
+		<finder name="EstablishmentDetailId" return-type="NPSDetails">
+			<finder-column name="establishmentDetailId" />
+		</finder>
+
+		<finder name="UserId" return-type="NPSDetails">
+			<finder-column name="userId" />
+		</finder>
+
+	</entity>
+
+	<entity name="TrainingDetails" local-service="true"
+		remote-service="false">
+
+		<column name="trainingDetailsId" primary="true" type="long" />
+		<column name="establishmentDetailId" type="long" />
+		<column name="numberOfTrainings" type="String" />
+		<column name="trainingName" type="String" />
+		<column name="trainingStartDate" type="Date" />
+		<column name="trainingEndDate" type="Date" />
+		<column name="trainingCertificate" type="long" />
+
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="typeOfRecord" type="String" />
+
+		<finder name="EstablishmentDetailId"
+			return-type="TrainingDetails">
+			<finder-column name="establishmentDetailId" />
+		</finder>
+
+		<finder name="UserId" return-type="TrainingDetails">
+			<finder-column name="userId" />
+		</finder>
+
+	</entity>
+
+
+
+	<entity local-service="true" name="PersonalDetails"
+		remote-service="false" uuid="false">
+
+		<column name="personalDetailsId" primary="true" type="long" />
+		<column name="establishmentDetailId" type="long" />
+		<column name="typeOfRecord" type="String" />
+		<column name="employeeName" type="String" />
+		<column name="category" type="String" />
+		<column name="sevarthID" type="String" />
+		<column name="dob" type="Date" />
+		<column name="height" type="int" />
+		<column name="bodyMark" type="String" />
+		<column name="education" type="String" />
+		<column name="contactDetails" type="long" />
+		<column name="mscIT" type="String" />
+		<column name="postalAddress" type="String" />
+		<column name="hometown" type="String" />
+		<column name="permanentAddress" type="String" />
+		<column name="castCertificate" type="long" />
+		<column name="castValidity" type="long" />
+		<column name="specialAchievements" type="long" />
+		<column name="sportsAchievements" type="long" />
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+
+		<finder name="UserId" return-type="PersonalDetails">
+			<finder-column name="userId" />
+		</finder>
+
+		<finder name="EstablishmentDetailId"
+			return-type="PersonalDetails">
+			<finder-column name="establishmentDetailId" />
+		</finder>
+
+		<finder name="personalDetailsId" return-type="PersonalDetails">
+			<finder-column name="personalDetailsId" />
+		</finder>
+
+	</entity>
+
+
+
+	<entity local-service="true" name="ServiceDetails"
+		remote-service="false" uuid="false">
+
+		<column name="serviceDetailsId" primary="true" type="long" />
+		<column name="establishmentDetailId" type="long" />
+		<column name="nominations" type="String" />
+		<column name="promotionExam" type="String" />
+		<column name="dateOfAppointment" type="Date" />
+		<column name="dateOfRetirement" type="Date" />
+		<column name="probationPeriod" type="String" />
+		<column name="entryLevelDepartmentExam" type="String" />
+		<column name="regularPromotionDetails" type="String" />
+		<column name="promotionTimeScale" type="String" />
+		<column name="regularPayFixation" type="String" />
+		<column name="retirementType" type="String" />
+
+		<column name="medicalCertificateDate" type="Date" />
+		<column name="medicalCertificate" type="long" />
+
+		<column name="policeVerificationDate" type="Date" />
+		<column name="policeVerification" type="long" />
+
+		<column name="permanencyCertificate" type="String" />
+		<column name="treasuryVerification" type="String" />
+		<column name="languageExamCertificate" type="String" />
+		<column name="awardCertificationOfHonor" type="String" />
+		<column name="confidentialReports" type="String" />
+		<column name="mattaAndDayitwaReceived" type="String" />
+		<column name="complaintDetails" type="String" />
+		<column name="noDuesCertificate" type="String" />
+		<column name="noEnquiryCertificate" type="String" />
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="typeOfRecord" type="String" />
+
+		<!-- Suspension Details -->
+		<column name="dateOfSuspension" type="Date" />
+		<column name="reasonOfSuspension" type="String" />
+		<column name="dateOfReinstate" type="Date" />
+		<column name="departmentalEnquiryReport" type="long" />
+		<column name="punishment" type="String" />
+
+		<!-- Seniority -->
+		<column name="seniorityList" type="long" />
+
+		<!-- Leave Details -->
+		<column name="leaveType" type="String" />
+		<column name="leaveFromDate" type="Date" />
+		<column name="leaveToDate" type="Date" />
+		<column name="leaveDocument" type="long" />
+
+		<finder name="UserId" return-type="ServiceDetails">
+			<finder-column name="userId" />
+		</finder>
+
+		<finder name="EstablishmentDetailId"
+			return-type="ServiceDetails">
+			<finder-column name="establishmentDetailId" />
+		</finder>
+
+
+		<finder name="serviceDetailsId" return-type="ServiceDetails">
+			<finder-column name="serviceDetailsId" />
+		</finder>
+
+	</entity>
+
+
+	<entity local-service="true" name="PostingStatus"
+		remote-service="false" uuid="false">
+
+		<column name="postingStatusId" primary="true" type="long" />
+		<column name="establishmentDetailId" type="long" />
+		<column name="postingStatus" type="String" />
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="typeOfRecord" type="String" />
+
+		<finder name="UserId" return-type="PostingStatus">
+			<finder-column name="userId" />
+		</finder>
+		<finder name="EstablishmentDetailId"
+			return-type="PostingStatus">
+			<finder-column name="establishmentDetailId" />
+		</finder>
+
+		<finder name="postingStatusId" return-type="PostingStatus">
+			<finder-column name="postingStatusId" />
+		</finder>
+
+	</entity>
+
+	<entity local-service="true" name="RoasterStatus"
+		remote-service="false" uuid="false">
+
+		<column name="roasterStatusId" primary="true" type="long" />
+		<column name="establishmentDetailId" type="long" />
+		<column name="nominationCodreWisePostWise" type="String" />
+		<column name="promotionCodreWisePostWise" type="String" />
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="typeOfRecord" type="String" />
+
+		<finder name="UserId" return-type="RoasterStatus">
+			<finder-column name="userId" />
+		</finder>
+
+		<finder name="EstablishmentDetailId"
+			return-type="RoasterStatus">
+			<finder-column name="establishmentDetailId" />
+		</finder>
+
+		<finder name="roasterStatusId" return-type="RoasterStatus">
+			<finder-column name="roasterStatusId" />
+		</finder>
+
+	</entity>
+	<entity local-service="true" name="EstablishmentDetails"
+		remote-service="false" uuid="false">
+
+		<column name="establishmentDetailId" primary="true" type="long" />
+		<column name="personalDetails" type="Boolean" />
+		<column name="serviceDetails" type="Boolean" />
+		<column name="trainingDetails" type="Boolean" />
+		<column name="npsDetails" type="Boolean" />
+		<column name="gpfDetails" type="Boolean" />
+		<column name="postingStatus" type="Boolean" />
+		<column name="roasterStatus" type="Boolean" />
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<finder name="UserId" return-type="EstablishmentDetails">
+			<finder-column name="userId" />
+		</finder>
+
+	</entity>
+
+	<entity local-service="true" name="ConstructionTracker"
+		remote-service="false" uuid="false">
+
+		<column name="constructionTrackerId" primary="true" type="long" />
+
+		<column name="division" type="String" />
+		<column name="district" type="String" />
+		<column name="taluka" type="String" />
+		<column name="statusOfComplex" type="String" />
+
+		<column name="address" type="String" />
+		<!-- <column name="GISLocation" type="String" /> -->
+		<column name="GeoTagPhoto" type="String" />
+
+		<column name="officerName" type="String" />
+		<column name="contactNumber" type="String" />
+
+		<column name="landAvailable" type="String" />
+		<column name="typeOfLand" type="String" />
+		<column name="area" type="long" />
+		<column name="ownership" type="String" />
+
+		<column name="administrationJSON" type="String" />
+		<column name="fundsJSON" type="String" />
+		<column name="govtGrantsJSON" type="String" />
+		<column name="otherSourcesJSON" type="String" />
+
+		<column name="otherTotalReceivedAmount" type="String" />
+		<column name="otherTotalExpenditureAmount" type="String" />
+		<column name="otherTotalBalanceAmount" type="String" />
+
+		<column name="architectAppointed" type="String" />
+		<column name="executingAgency" type="String" />
+		<column name="nameOfTheFirm" type="String" />
+
+		<column name="progressDetailsJSON" type="String" />
+
+		<column name="UCCCStatus" type="String" />
+		<column name="UCCCAmount" type="String" />
+		<column name="UCCCExtension" type="String" />
+		<column name="UCCCRevisedCompletionDate" type="Date" />
+		<column name="workCompletedInTimeline" type="String" />
+		<column name="UCCCReason" type="String" />
+		<column name="panalAction" type="String" />
+		<column name="panalActionDoc" type="long" />
+
+		<column name="hoReview" type="String" />
+		<column name="hoReviewDoc" type="long" />
+
+		<column name="applicationStatus" type="long" />
+		<column name="holdWithUserId" type="long" />
+
+		<column name="isSaveAsDraft" type="boolean" />
+		<column name="longitude" type="String" />
+		<column name="latitude" type="String" />
+
+		<column name="constructionTrackerUniqueId" type="String" />
+		<column name="IntiatorUserId" type="long" />
+
+		<column name="dddReview" type="String" />
+		<column name="dddReviewDoc" type="long" />
+		
+		<column name="createdDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+		<finder name="constructionTrackerId"
+			return-type="ConstructionTracker">
+			<finder-column name="constructionTrackerId" />
+		</finder>
+
+		<finder name="holdWithUserId" return-type="Collection">
+			<finder-column name="holdWithUserId" />
+		</finder>
+
+		<finder name="applicationStatus" return-type="Collection">
+			<finder-column name="applicationStatus" />
+		</finder>
+
+		<finder name="IntiatorUserId" return-type="ConstructionTracker">
+			<finder-column name="IntiatorUserId" />
+		</finder>
+
+	</entity>
+
+
+
+	<entity local-service="true" name="Budget"
+		remote-service="false" uuid="false">
+
+		<column name="budgetId" primary="true" type="long" />
+
+		<column name="financialYear" type="String" />
+		<column name="department" type="String" />
+		<column name="requestedBudget" type="String" />
+		<column name="approvedBudget" type="String" />
+		<column name="totalBudget" type="String" />
+		<column name="recievedAmount" type="String" />
+		<column name="totalSpend" type="String" />
+		<column name="overallPercentage" type="String" />
+		<column name="budgetDate" type="Date" />
+		<column name="remarks" type="String" />
+		
+		<column name="category" type="String" />
+		<column name="supplementaryDemand" type="String" />
+		<column name="totalFund" type="String" />
+		<column name="attachments" type="String" />
+		<column name="master" type="String" />
+		<column name="uniqueId" type="String" />
+		
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		
+		<order by="desc">
+            <order-column name="budgetId" />
+        </order>
+
+		<finder name="UserId" return-type="Budget">
+			<finder-column name="userId" />
+		</finder>
+		
+		<finder name="FinancialYear" return-type="Collection">
+			<finder-column name="financialYear" />
+		</finder>
+		
+		<finder name="FinancialYearAndCategory" return-type="Collection">
+			<finder-column name="financialYear" />
+			<finder-column name="category" />
+		</finder>
+
+	</entity>
+	<entity name="Grievance" local-service="true"
+		remote-service="false" uuid="false">
+		<column name="grievanceId" primary="true" type="long" />
+
+		<!-- Administration Section -->
+		<column name="division" type="long" />
+		<column name="district" type="long" />
+		<column name="taluka" type="long" />
+
+		<!-- Complaint Details -->
+		<column name="complaintDate" type="Date" />
+		<column name="complaintType" type="String" />
+		<column name="complaintText" type="String" />
+
+		<!-- Self-Declaration -->
+		<column name="selfDeclaration" type="boolean" />
+		<column name="status" type="String" />
+		<!-- Audit Fields -->
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<order by="desc">
+			<order-column name="grievanceId" />
+		</order>
+		<finder name="Status" return-type="Collection">
+			<finder-column name="status" />
+		</finder>
+		<finder name="StatusAndUserId" return-type="Collection">
+			<finder-column name="status" />
+			<finder-column name="userId" />
+		</finder>
+	</entity>
+
+
+	<entity name="FundDistribution" local-service="true"
+		remote-service="false" uuid="false">
+
+		<column name="fundDistributionId" primary="true" type="long" />
+
+		<column name="division" type="long" />
+		<column name="district" type="long" />
+		<column name="category" type="long" />
+		<column name="subCategory" type="long" />
+		<column name="budget" type="String" />
+		<column name="remarks" type="String" />
+
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		
+		<order by="desc">
+            <order-column name="fundDistributionId" />
+        </order>
+
+	</entity>
+	<entity name="TransferApplication" local-service="true"
+		remote-service="false" uuid="false">
+		<column name="transferApplicationId" primary="true" type="long" />
+
+		<!-- List of Applications -->
+		<column name="grievanceId" type="long" />
+
+		<!-- Review -->
+		<column name="solutionByHo" type="String" />
+		<column name="reviewByHo" type="String" />
+
+		<column name="solutionByDSO" type="String" />
+		<column name="reviewByDSO" type="String" />
+
+		<column name="solutionByTSO" type="String" />
+		<column name="reviewByTSO" type="String" />
+
+		<!-- Transfer -->
+		<column name="transferTo" type="long" />
+		<column name="transfer" type="String" />
+		<column name="transferApplication" type="long" />
+		<column name="taluka" type="long" />
+		<column name="district" type="long" />
+
+		<!-- Audit -->
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<order by="desc">
+			<order-column name="modifiedDate" />
+		</order>
+		<finder name="Transfer" return-type="Collection">
+			<finder-column name="transfer" />
+		</finder>
+		<finder name="GrievanceId" return-type="TransferApplication">
+			<finder-column name="grievanceId" />
+		</finder>
+		
+	</entity>
+	<entity name="CertificateVerification" local-service="true"
+		remote-service="false" uuid="false">
+		<column name="certificateVerificationId" primary="true"
+			type="long" />
+
+		<column name="firstName" type="String" />
+		<column name="lastName" type="String" />
+		<column name="mothersName" type="String" />
+		<column name="fathersName" type="String" />
+		<column name="gender" type="int" />
+		<column name="dateOfBirth" type="Date" />
+		<column name="aadharNumber" type="String" />
+		<column name="certificate" type="String" />
+		<column name="approveReject" type="boolean" />
+		<column name="remarks" type="String" />
+
+		<!-- Audit fields -->
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+
+        <order by="desc">
+            <order-column name="certificateVerificationId" />
+        </order>
+        
+		<finder name="UserId" return-type="CertificateVerification">
+			<finder-column name="userId" />
+		</finder>
+	</entity>
+	<!-- TrainingCentre Entity -->
+	<entity name="TrainingCentre" local-service="true"
+		remote-service="true">
+		<column name="trainingCentreId" type="long" primary="true" />
+		<column name="division" type="String" />
+		<column name="district" type="String" />
+		<column name="centreType" type="String" />
+		<column name="sportsType" type="String" />
+		<column name="geoTag" type="String" />
+		<column name="latitude" type="String" />
+		<column name="longitude" type="String" />
+		<column name="gisMap" type="String" />
+		<column name="dprDocPath" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="formstatus" type="String" />	
+		<column name="userid" type="long" />
+		<column name="divdepDirUserid" type="long" />
+		<column name="divdepDirDecision" type="boolean" />
+		<column name="divdepDirRemarks" type="String" />
+		<column name="hoDirUserid" type="long" />
+		<column name="hoDecision" type="boolean" />
+		<column name="hoRemarks" type="String" />
+		<column name="status" type="String" />
+			
+		<!-- Order for listing -->
+		<order by="asc">
+			<order-column name="district" />
+		</order>
+
+		<!-- Finder methods -->
+		<finder name="Division" return-type="Collection">
+			<finder-column name="division" />
+		</finder>
+		<finder name="District" return-type="Collection">
+			<finder-column name="district" />
+		</finder>
+		
+		<finder name="GetByUserIdAndFormStatus" return-type="TrainingCentre">
+			<finder-column name="userid" />
+			<finder-column name="formstatus" />
+		</finder>
+	</entity>
+
+	<!-- Coach Entity -->
+	<entity name="Coach" local-service="true" remote-service="true">
+		<column name="coachId" type="long" primary="true" />
+		<column name="trainingCentreId" type="long" />
+		<column name="coachType" type="String" />
+		<column name="fullName" type="String" />
+		<column name="mobileNumber" type="String" />
+		<column name="email" type="String" />
+		<column name="sportsName" type="String" />
+		<column name="address" type="String" />
+		<column name="tracksuitSize" type="String" />
+		<column name="tshirtSize" type="String" />
+		<column name="shortsSize" type="String" />
+		<column name="shoesSize" type="String" />
+		<column name="remarks" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="formStatus" type="String" />
+		<column name="district" type="String" />
+		
+		
+		<!-- Finder methods -->
+		<finder name="TrainingCentreId" return-type="Collection">
+			<finder-column name="trainingCentreId" />
+		</finder>
+		<finder name="Email" return-type="Coach">
+			<finder-column name="email" />
+		</finder>
+		
+		<!-- Reference to TrainingCentre -->
+		<reference entity="TrainingCentre" package-path="com.mhdsys.schema" /> 
+		
+	</entity>
+
+	<!-- SportsPerson Entity -->
+	<entity name="SportsPerson" local-service="true"
+		remote-service="true">
+		<column name="sportsPersonId" type="long" primary="true" />
+		<column name="trainingCentreId" type="long" />
+		<column name="fullName" type="String" />
+		<column name="dateOfBirth" type="Date" />
+		<column name="schoolName" type="String" />
+		<column name="mobileNumber" type="String" />
+		<column name="address" type="String" />
+		<column name="entryDate" type="Date" />
+		<column name="ranking" type="String" />
+		<column name="achievementLevel" type="String" />
+		<column name="remarks" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="formStatus" type="String" />
+		<!-- Finder methods -->
+		<finder name="TrainingCentreId" return-type="Collection">
+			<finder-column name="trainingCentreId" />
+		</finder>
+		
+		<!-- Reference to TrainingCentre -->
+		<reference entity="TrainingCentre" package-path="com.mhdsys.schema"/> 
+		
+	</entity>
+
+	<!-- FinancialDetail Entity -->
+	<entity name="TrainingCentreFinancialDetail"
+		local-service="true" remote-service="true">
+		<column name="financialDetailId" type="long" primary="true" />
+		<column name="trainingCentreId" type="long" />
+		<column name="description" type="String" />
+		<column name="grAmount" type="double" />
+		<column name="requestedAmount" type="double" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="formStatus" type="String" />
+
+		<!-- Finder methods -->
+		<finder name="TrainingCentreId" return-type="Collection">
+			<finder-column name="trainingCentreId" />
+		</finder>
+		
+		<!-- Reference to TrainingCentre -->
+		<reference entity="TrainingCentre" package-path="com.mhdsys.schema"/> 
+		
+	</entity>
+
+	<!-- Report Entity -->
+	<entity name="TrainingCentreReport" local-service="true"
+		remote-service="true">
+		<column name="reportId" type="long" primary="true" />
+		<column name="trainingCentreId" type="long" />
+		<column name="description" type="String" />
+		<column name="remarks" type="String" />
+		<column name="attachmentPath" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="formStatus" type="String" />
+		
+		<!-- Finder methods -->
+		<finder name="TrainingCentreId" return-type="Collection">
+			<finder-column name="trainingCentreId" />
+		</finder>
+		
+		<!-- Reference to TrainingCentre -->
+	    <reference entity="TrainingCentre" package-path="com.mhdsys.schema"/> 
+		
+	</entity>
+	
+	<!-- Servent -->
+	<entity name="Servant" local-service="true"
+		remote-service="true">
+		<column name="servantId" type="long" primary="true" />
+		<column name="trainingCentreId" type="long" />
+		<column name="name" type="String" />
+		<column name="surname" type="String" />
+		<column name="address" type="String" />
+		<column name="dob" type="Date" />
+		<column name="joiningDate" type="Date" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="formStatus" type="String" />
+		<!-- Finder methods -->
+		
+		<finder name="TrainingCentreId" return-type="Collection">
+			<finder-column name="trainingCentreId" />
+		</finder>
+		
+		<!-- Reference to TrainingCentre -->
+	    <reference entity="TrainingCentre" package-path="com.mhdsys.schema"/> 
+		
+	</entity>
+	
+	<!-- coaching wing monthly report -->
+	<entity name="CoachingWingMonthlyReport" local-service="true"
+		remote-service="true">
+		<column name="coachingWingMonthlyReportId" type="long" primary="true" />
+		<column name="timestamp" type="Date" />
+		<column name="reportMonth" type="String" />
+		<column name="userId" type="long" />
+		<column name="coachId" type="long" />
+		<column name="coachName" type="String" />
+		<column name="district" type="String" />
+		<column name="educationalQualification" type="String" />
+		<column name="otherCourse" type="String" />
+		<column name="sportsName" type="String" />
+		<column name="trainingCenterPlace" type="String" />
+		<column name="noOfPlayers" type="String" />
+		<column name="performanceOfThePlayers" type="String" />
+		<column name="trainingProgram" type="String" />
+		<column name="playerAnalysisMethod" type="String" />
+		<column name="planningForBestPlayers" type="String" />
+		<column name="idea" type="String" />
+		<column name="assistanceAndEffort" type="String" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<column name="reportStatus" type="String" />
+		<column name="status" type="String" />
+		<column name="dsoDirUserid" type="long" />
+		<column name="dsoDecision" type="boolean" />
+		<column name="dsoRemarks" type="String" />
+		<column name="digitalSignature" type="long" />
+		<column name="digitalSignaturePath" type="String" />
+		<!-- Finder methods -->
+		
+	</entity>
+	
+	
+	
+	<entity name="UnitRegistration" local-service="true"
+		remote-service="false">
+		<column name="unitRegistrationId" type="long" primary="true" />
+		<column name="unitType" type="String" />
+		<column name="unitName" type="String" />
+		<column name="unitCharterNumber" type="int" />
+		<column name="year" type="String" />
+		<column name="udis" type="String" />
+		<column name="schoolName" type="String" />
+		<column name="address" type="String" />
+		<column name="pincode" type="String" />
+		<column name="schoolEmail" type="String" />
+		<column name="schoolContact" type="String" />
+		<column name="principalMobile" type="String" />
+		<column name="selfDeclaration" type="boolean" />
+		<!-- Audit fields -->
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+	</entity>
+	<entity name="ScoutAndGuideRegistration" local-service="true"
+		remote-service="false">
+
+		<!-- Personal Details -->
+		<column name="scoutAndGuideRegistrationId" type="long"
+			primary="true" />
+		<column name="firstName" type="String" />
+		<column name="lastName" type="String" />
+		<column name="motherName" type="String" />
+		<column name="fatherName" type="String" />
+		<column name="gender" type="String" />
+
+		<!-- Employee Details -->
+		<column name="designation" type="String" />
+		<column name="schoolName" type="String" />
+
+		<!-- Verification -->
+		<column name="aadharNumber" type="String" />
+		<column name="emailId" type="String" />
+		<column name="mobileNumber" type="String" />
+		<column name="aadharCardFileEntryId" type="long" />
+
+		<!-- Audit Fields -->
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<finder name="UserId" return-type="ScoutAndGuideRegistration">
+			<finder-column name="userId" />
+		</finder>
+	</entity>
+	<entity name="StudentRegistration" local-service="true"
+		remote-service="false">
+		<column name="studentRegistrationId" type="long" primary="true" />
+		<column name="firstName" type="String" />
+		<column name="lastName" type="String" />
+		<column name="fathersName" type="String" />
+		<column name="mothersName" type="String" />
+		<column name="gender" type="String" />
+		<column name="aadharNumber" type="String" />
+		<column name="standard" type="String" />
+		<column name="transfer" type="boolean" />
+		<column name="transferTo" type="String" />
+		<column name="schoolCollegeName" type="String" />
+		<column name="registerTo" type="String" />
+		<column name="unitType" type="String" />
+
+		<column name="userId" type="long" />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<order by="desc">
+            <order-column name="studentRegistrationId" />
+        </order>
+		<finder name="Gender" return-type="Collection">
+			<finder-column name="gender" />
+		</finder>
+		<finder name="RegisterTo" return-type="Collection">
+			<finder-column name="registerTo" />
+		</finder>
+		
+	</entity>
+	
+	<entity name="SportsFacilityMaster" local-service="true" remote-service="false">
+		<column name="sportsFacilityId" type="long" primary="true" />
+		<column name="facilityName" type="String" />
+		<column name="facilityType" type="String" />
+		
+		<column name="facilityArea" type="String" />
+		
+		<column name="longitude" type="String" />
+		<column name="latitude" type="String" />
+		
+		<column name="geotagPhotos" type="String" />
+		<column name="type" type="String" />
+		<column name="fees" type="String" />
+		<column name="bookingUrl" type="String" />
+		<column name="contactPersonName" type="String" />
+		<column name="contactPersonNumber" type="String" />
+		
+		<column name="isUpdatedByHO" type="Boolean" />
+		<column name="isUpdatedByDSO" type="Boolean" />
+		
+		<column name="creatorUserId" type="long" />
+		<column name="modifierUserId" type="long" />
+	
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		
+		<finder name="facilityName" return-type="Collection">
+			<finder-column name="facilityName" />
+		</finder>
+		<finder name="facilityType" return-type="Collection">
+			<finder-column name="facilityType" />
+		</finder>
+		<finder name="type" return-type="Collection">
+			<finder-column name="type" />
+		</finder>
+		<finder name="creatorUserId" return-type="Collection">
+			<finder-column name="creatorUserId" />
+		</finder>
+		
+	</entity>
+	
+	<entity name="sportsFacilityBooking" local-service="true" remote-service="false">
+		<column name="facilityBookingId" type="long" primary="true" />
+		<column name="facilityBookingUniqueId" type="String" />
+		<column name="selectedFacility" type="long" />
+		<column name="type" type="String" />
+		<column name="Date" type="Date" />
+		<column name="batch" type="String" />
+		<column name="timeFrom" type="String" />
+		<column name="timeTo" type="String" />
+		<column name="sportCourt" type="String" />
+		<column name="name" type="String" />
+		<column name="contact" type="String" />
+		<column name="purpose" type="String" />
+		<column name="fees" type="String" />
+		<column name="medicalCertificate" type="long" />
+		
+		
+		<column name="creatorUserId" type="long" />
+		<column name="actionTakenByUserId" type="long" />
+		<column name="isApproved" type="Boolean" />
+		<column name="remarks" type="String" />
+		<column name="bookingStatus" type="long" />
+	
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		
+		<column name="numberOfMonths" type="String" />
+		<column name="dailyOrDate" type="String" />
+		
+		<finder name="type" return-type="Collection">
+			<finder-column name="type" />
+		</finder>
+		
+		<finder name="creatorUserId" return-type="Collection">
+			<finder-column name="creatorUserId" />
+		</finder>
+		
+		<finder name="isApproved" return-type="Collection">
+			<finder-column name="isApproved" />
+		</finder>
+		
+	</entity>
+	
+	
+	<entity name="AwardYouth" local-service="true" remote-service="false">
+
+    <!-- Primary Key -->
+    <column name="awardYouthId" primary="true" type="long" />
+
+    <!-- Personal Details -->
+    <column name="firstName" type="String" />
+    <column name="middleName" type="String" />
+    <column name="lastName" type="String" />
+    <column name="gender" type="String" />
+    <column name="address" type="String" />
+    <column name="contactNo" type="long" />
+    <column name="emailId" type="String" />
+    <column name="dob" type="Date" />
+    <column name="birthCertificate" type="long" />
+
+    <!-- Education Details -->
+    <column name="educationDetails" type="String" />
+
+    <!-- Work Details -->
+    <column name="businessDetails" type="String" />
+    <column name="workArea" type="String" />
+    <column name="workDetailsPast3Years" type="String" /> 
+    <column name="newsPaperArticle" type="String" /> 
+
+    <!-- Social Responsibility -->
+    <column name="socialResponsibility" type="long" />
+    <column name="areaWorked" type="String" />
+    <column name="areaWorkedInfo" type="String" />
+
+    <!-- Recognition -->
+    <column name="recognizedByGovt" type="String" /> 
+    <column name="recognizedWorkInfo" type="String" />
+
+    <!-- Staff Affiliation -->
+    <column name="staffOf" type="String" /> 
+    <column name="staffAffiliationInfo" type="String" />
+
+    <!-- Criminal Case -->
+    <column name="convicted" type="String" /> 
+    <column name="convictedInfo" type="String" />
+
+    <!-- Future Plans -->
+    <column name="futurePlans" type="String" />
+
+    <!-- Undertaking -->
+    <column name="undertakingAccepted" type="boolean" />
+    
+    <column name="deskDecision" type="boolean" />
+	<column name="asstDirDecision" type="boolean" />
+	<column name="ddHoDecision" type="boolean" />
+	
+	<!-- String fields for remarks -->
+	<column name="deskRemarks" type="String" />
+	<column name="asstDirRemarks" type="String" />
+	<column name="ddHoRemarks" type="String" />
+    
+    <column name="status" type="int" />
+    <column name="formStatus" type="String" />
+    <!-- Audit fields -->
+    <column name="userId" type="long" />
+    <column name="createDate" type="Date" />
+    <column name="modifiedDate" type="Date" />
+    
+     <order by="desc">
+            <order-column name="awardYouthId" />
+        </order>
+    
+    <finder name="UserId" return-type="AwardYouth">
+			<finder-column name="userId" />
+	</finder>
+
+</entity>
+
+
+<entity name="AwardYouthOrg" local-service="true" remote-service="false">
+
+        <!-- Personal Details -->
+        <column name="awardYouthOrgId" type="long" primary="true" />
+        <column name="firstName" type="String" />
+        <column name="middleName" type="String" />
+        <column name="lastName" type="String" />
+        <column name="gender" type="String" />
+        <column name="address" type="String" />
+        <column name="contactNo" type="long" />
+        <column name="emailId" type="String" />
+
+        <!-- Organisation Details -->
+        <column name="attestedCopy" type="long" />
+        <column name="constitution" type="long" />
+        <column name="officersList" type="long" />
+
+        <!-- Work Details -->
+        <column name="workArea" type="String" />
+        <column name="workDetailsPast3Years" type="String" />
+        <column name="newsPaperArticle" type="String" />
+        <column name="govtFinancialAssistance" type="String" />
+        <column name="areaWorked" type="String" />
+        <column name="areaWorkedInfo" type="String" />
+        <column name="recognizedByGovt" type="String" />
+        <column name="recognizedWorkInfo" type="String" />
+        <column name="convicted" type="String" />
+        <column name="convictedInfo" type="String" />
+        <column name="futurePlans" type="String" />
+
+        <!-- Undertaking -->
+        <column name="undertakingAccepted" type="boolean" />
+        
+        <!-- Integer fields for approve/reject decisions -->
+        <column name="formStatus" type="String" />
+		<column name="deskDecision" type="boolean" />
+		<column name="asstDirDecision" type="boolean" />
+		<column name="ddHoDecision" type="boolean" />
+		
+		<!-- String fields for remarks -->
+		<column name="deskRemarks" type="String" />
+		<column name="asstDirRemarks" type="String" />
+		<column name="ddHoRemarks" type="String" />
+
+        <!-- Default Fields -->
+         <column name="status" type="int" />
+        <column name="userId" type="long" />
+        <column name="createDate" type="Date" />
+        <column name="modifiedDate" type="Date" />
+        
+         <order by="desc">
+            <order-column name="awardYouthOrgId" />
+        </order>
+        
+          <finder name="UserId" return-type="AwardYouthOrg">
+			<finder-column name="userId" />
+	     </finder>
+    </entity>
+	 <entity name="EventCertificate" local-service="true" remote-service="false">
+
+        <!-- Form Fields -->
+        <column name="eventCertificateId" type="long" primary="true" />
+        <column name="year" type="String" />
+        <column name="eventDate" type="Date" />
+        <column name="eventName" type="String" />
+        <column name="address" type="String" />
+        <column name="certificateFiles" type="String" />
+
+
+        <!-- Audit Fields -->
+        <column name="userId" type="long" />
+        <column name="createDate" type="Date" />
+        <column name="modifiedDate" type="Date" />
+		<finder name="UserId" return-type="Collection">
+			<finder-column name="userId" />
+		</finder>
+    </entity>
+    <entity name="NCCGrant" local-service="true" remote-service="false">
+
+		<!-- Primary Key -->
+		<column name="nccGrantId" type="long" primary="true" />
+
+		<!-- Unit Details -->
+		<column name="financialYear" type="String" />
+		<column name="department" type="String" />
+		<column name="groupName" type="String" />
+		<column name="unitType" type="String" />
+		<column name="commandingOfficer" type="String" />
+		<column name="demandedNumber" type="int" />
+		<column name="schemeNumber" type="int" />
+		<column name="detailHead" type="String" />
+		<column name="utilizationCertificate" type="long" />
+
+		<!-- Grants Details -->
+		<column name="grantsReceived" type="int" />
+		<column name="grantSurrenderReapp" type="int" />
+		<column name="grantsWithdrawn" type="String" />
+		<column name="grantsWithdrawnBy" type="String" />
+		<column name="grantsSurrender" type="String" />
+		<column name="grantsSurrenderTo" type="String" />
+		<column name="grantsAllowed" type="int" />
+		<column name="grantRecievedReapp" type="int" />
+		<column name="balance" type="double" />
+		<column name="expenses" type="double" />
+		<column name="actualExpense" type="double" />
+		<column name="balanceWithDdo" type="double" />
+
+		<!-- Remarks -->
+		<column name="status" type="String" />
+		<column name="remarks" type="String" />
+		<column name="otherUpload" type="long" />
+
+		<!-- Timestamps -->
+		<column name="createDate" type="Date" />
+		<column name="modifiedDated" type="Date" />
+		<order by="desc">
+        	<order-column name="nccGrantId" />
+   		</order>
+	</entity>
+	 <entity name="NccGrantRequest" local-service="true" remote-service="false">
+
+        <!-- Audit fields -->
+        <column name="nccGrantRequestId" type="long" primary="true" />
+        <column name="userId" type="long" />
+        <column name="createDate" type="Date" />
+        <column name="modifiedDate" type="Date" />
+
+        <!-- General Info -->
+        <column name="headquarterName" type="String" />
+        <column name="unitType" type="String" />
+
+        <!-- Salary & Allowance I -->
+        <column name="caretakerAllowance" type="String" />
+        <column name="refreshmentAllowance" type="String" />
+        <column name="salaries" type="String" />
+        <column name="overTimeAllowance" type="String" />
+        <column name="telephone" type="String" />
+        <column name="electricity" type="String" />
+        <column name="waterCharges" type="String" />
+        <column name="contractualServices" type="String" />
+        <column name="domesticTravellingExpenses" type="String" />
+        <column name="officeExpenses" type="String" />
+
+        <!-- Salary & Allowance II -->
+        <column name="rent" type="String" />
+        <column name="rates" type="String" />
+        <column name="taxes" type="String" />
+        <column name="trainingActivities" type="String" />
+        <column name="atg" type="String" />
+        <column name="washingAndPolishingAllowance" type="String" />
+        <column name="petrolOilLubricants" type="String" />
+        <column name="minorWork" type="String" />
+        <column name="honorariumToAno" type="String" />
+        <column name="outfitMaintenanceAllowance" type="String" />
+        <column name="othersIfAny" type="String" />
+        <column name="grantsInAid" type="String" />
+        <column name="scholarshipOrStipend" type="String" />
+        <column name="total" type="String" />
+        <column name="status" type="String" />
+         <column name="approvalStatus" type="String" />
+        <column name="remarks" type="String" />
+        <column name="actualTotal" type="String" />
+        
+		<order by="desc">
+        	<order-column name="nccGrantRequestId" />
+    	</order>
+
+    </entity>
+    
+<entity name="DistrictGrantScheme" local-service="true" remote-service="false">
+
+	<!-- Primary Key -->
+	<column name="districtGrantSchemeId" type="long" primary="true" />
+	
+	<!-- Grant and Scheme Details -->
+	<column name="category" type="String" />
+	<column name="subCategory" type="String" />
+	<column name="project" type="String" />
+	<column name="type" type="String" />
+	
+	<!-- Other Details -->
+	<column name="details" type="String" />
+	<column name="geoTagPhotos" type="String" />
+	<column name="latitude" type="String" />
+	<column name="longitude" type="String" />
+	
+	<!-- Required Documents Details -->
+	<column name="dprDocument" type="long" />
+	<column name="supportedDocuments" type="String" />
+	
+	<!-- User Id -->
+	<column name="userId" type="long" />
+	
+	<column name="status" type="String" />
+	
+	<!-- Remarks -->
+	<column name="hoVerification" type="String" />
+	<column name="hoRemarks" type="String" />
+	<column name="ddVerification" type="String" />
+	<column name="ddRemarks" type="String" />
+	
+	<column name="distributedFund" type="String" />
+
+	<!-- Timestamps -->
+	<column name="createDate" type="Date" />
+	<column name="modifiedDated" type="Date" />
+	
+	<order by="desc">
+        <order-column name="districtGrantSchemeId" />
+    </order>
+    
+    <finder name="UserId" return-type="Collection">
+		<finder-column name="userId" />
+	</finder>
+
+</entity>
+
+<entity name="FacilityRating" local-service="true" remote-service="false">
+
+        <!-- Form Fields -->
+        <column name="facilityRatingId" type="long" primary="true" />
+        <column name="ratingUniqueId" type="String" />
+        <column name="facilityMasterId" type="long" />
+        <column name="rating" type="String" />
+        <column name="comment" type="String" />
+        <column name="hoReplyToReview" type="String" />
+
+        <!-- Audit Fields -->
+        <column name="creatorUserId" type="long" />
+         <column name="userName" type="String" />
+        <column name="createDate" type="Date" />
+        <column name="modifiedDate" type="Date" />
+        
+		<finder name="ratingUniqueId" return-type="FacilityRating">
+			<finder-column name="ratingUniqueId" />
+		</finder>
+		<finder name="creatorUserId" return-type="Collection">
+			<finder-column name="creatorUserId" />
+		</finder>
+    </entity>
+    
+    <entity name="FinancialAssistance" local-service="true" remote-service="false">
+    
+    <!-- Primary Key -->
+    <column name="financialAssistanceId" type="long" primary="true" />
+
+      <column name="fullName" type="String" />
+      <column name="mobileNumber" type="String" />
+      <column name="address" type="String" />
+      <column name="pinCode" type="long" />
+      <column name="emailId" type="String" />
+    
+    <!-- Sports Performance -->
+    <column name="sportsPerformanceDetails" type="String" /> 
+	 <column name="certifiedLetter" type="String" />
+    <column name="certifiedLetterFile" type="long" /> 
+
+    <!-- Financial Details -->
+    <column name="assistanceMatter" type="String" />
+    <column name="assistanceMatterFile" type="long" />
+    
+    <column name="itemsEstimate" type="String" />
+    <column name="itemsEstimateFile" type="long" />
+
+    <column name="expenseBudget" type="String" />
+    <column name="expenseBudgetFile" type="long" />
+
+    <column name="priceList" type="String" />
+    <column name="priceListFile" type="long" />
+
+    <column name="expenditureEstimate" type="String" />
+    <column name="expenditureEstimateFile" type="long" />
+
+    <column name="workReport" type="String" />
+    <column name="workReportFile" type="long" />
+
+    <column name="isDeclarationAccepted" type="boolean" />
+    
+    <column name="hoVerification" type="String" />
+    <column name="hoRemarks" type="String" />
+    <column name="ddVerification" type="String" />
+    <column name="ddRemarks" type="String" />
+    
+    <column name="userId" type="long" />
+    <column name="createDate" type="Date" />
+    <column name="modifiedDate" type="Date" />
+    
+     <finder name="UserId" return-type="Collection">
+			<finder-column name="userId" />
+       </finder>
+
+</entity>
+
+
+<entity name="IntSportsComp" local-service="true" remote-service="false">
+    <!-- Primary Key -->
+    <column name="intSportsCompId" type="long" primary="true" />
+
+    <column name="fullName" type="String" />
+    <column name="dob" type="String" />
+    <column name="mobileNo" type="String" />
+    <column name="emailId" type="String" />
+    <column name="aadhaarCard" type="long" />
+    <column name="panCard" type="long" />
+    <column name="domicileCertificate" type="long" />
+    <column name="passBook" type="long" />
+    <column name="cancelledCheck" type="long" />
+    
+    <column name="competitionLevel" type="String" />
+    <column name="competitionName" type="String" />
+    <column name="competitionYear" type="String" />
+    <column name="selectionLetter" type="long" />
+    <column name="competitionDate" type="Date" />
+    <column name="competitionPlace" type="String" />
+    <column name="competitionPerformance" type="String" />
+    <column name="competitionRank" type="String" />
+    <column name="competitionCertificate" type="long" />
+    
+    <column name="itemBudgets" type="String" />
+    <column name="affidavit" type="long" />
+    <column name="guranteeLetter" type="long" />
+
+    <column name="isDeclarationAccepted" type="boolean" />
+    
+    <column name="hoVerification" type="String" />
+    <column name="hoRemarks" type="String" />
+    <column name="ddVerification" type="String" />
+    <column name="ddRemarks" type="String" />
+    
+    <column name="userId" type="long" />
+    <column name="createDate" type="Date" />
+    <column name="modifiedDate" type="Date" />
+    
+     <finder name="UserId" return-type="Collection">
+			<finder-column name="userId" />
+       </finder>
+    
+</entity>
+
+<entity name="AwardWinner" local-service="true" remote-service="false">
+
+        <column name="awardWinnerId" type="long" primary="true" />
+        
+          <!-- Personal Details -->
+         <column name="fullName" type="String" />
+        <column name="dob" type="Date" />
+        <column name="mobileNumber" type="String" />
+        <column name="emailId" type="String" />
+        <column name="aadhaarCardFile" type="long" />
+        <column name="panCardFile" type="long" />
+        <column name="domicileCertificateFile" type="long" />
+
+        <!-- Competition Details -->
+        <column name="competitionLevel" type="String" /> <!-- Dropdown -->
+        <column name="competitionName" type="String" />
+        <column name="competitionYear" type="int" />
+        <column name="competitionDrawFile" type="long" />
+        <column name="organizationSelectionLetterFile" type="long" />
+        <column name="competitionDate" type="Date" />
+        <column name="placeOfCompetition" type="String" />
+        <column name="competitionPerformance" type="String" />
+        <column name="competitionRank" type="String" /> <!-- Dropdown -->
+        <column name="competitionResultFile" type="long" />
+        <column name="competitionCertificateFile" type="long" />
+        
+        <!-- Bank Details -->
+        <column name="bankName" type="String" />
+        <column name="ifscCode" type="String" />
+        <column name="accountNumber" type="String" />
+
+        <!-- File Entry IDs (Documents & Media) -->
+        <column name="bankStatementFile" type="long" />
+        <column name="bankPassbookFile" type="long" />
+        <column name="cancelledCheckFile" type="long" />
+        <column name="playersConsentLetterFile" type="long" />
+        <column name="affidavitFile" type="long" />
+
+        <!-- Declaration -->
+        <column name="isDeclarationAccepted" type="boolean" />
+        
+        <column name="hoVerification" type="String" />
+        <column name="hoRemarks" type="String" />
+        <column name="ddVerification" type="String" />
+        <column name="ddRemarks" type="String" />
+
+        <!-- Auditing Fields -->
+       
+        <column name="userId" type="long" />
+        <column name="createDate" type="Date" />
+        <column name="modifiedDate" type="Date" />
+        
+         <finder name="UserId" return-type="Collection">
+			<finder-column name="userId" />
+       </finder>
+
+    </entity>
+    <entity name="CouncilSportCompetitionDetails" local-service="true" remote-service="false">
+	<!-- Basic Audit Fields -->
+	<column name="councilSportCompetitionDetailsId" type="long"
+		primary="true" />
+	<column name="userId" type="long" />
+	<column name="createDate" type="Date" />
+	<column name="modifiedDate" type="Date" />
+
+	<!-- Competition Details -->
+	<column name="councilOrganizationName" type="String" />
+	<column name="councilOrganizationAddress" type="String" />
+	<column name="councilCompetitionName" type="String" />
+	<column name="councilCompetitionLevel" type="String" />
+	<column name="councilCompetitionSponsor" type="String" />
+	<column name="councilSponsorAddress" type="String" />
+	<column name="councilTeamPlayersCount" type="int" />
+	<column name="councilPlayerListAttachmentId" type="long" />
+	<column name="councilCompetitionVenue" type="String" />
+	<column name="councilCompetitionDuration" type="Date" />
+	<column name="councilEstimatedCost" type="double" />
+	<column name="councilEstimatedCostAttachmentId" type="long" />
+	<column name="councilFederationConsent" type="String" />
+	<column name="councilFederationConsentAttachmentId" type="long" />
+	<column name="councilRegistrationNumber" type="String" />
+	<column name="councilDirectorateApprovalNumber" type="String" />
+	<column name="councilDirectorateApprovalAttachmentId"
+		type="long" />
+	<column name="councilDistrictAffiliationAttachmentId"
+		type="long" />
+	<column name="councilCertificateAffiliationAttachmentId"
+		type="long" />
+
+	<!-- organization -->
+	<!-- Additional Council Fields Based on New Form -->
+
+	<!-- Rule 3 Approval -->
+	<column name="councilRule3Approval" type="String" />
+
+	<!-- Directorate Approval -->
+	<column name="councilPrescribedFormatDSO" type="String" />
+	<column name="councilPrescribedFormatAttachmentId" type="long" />
+	<column name="councilCaStatement" type="String" />
+	<column name="councilCaStatementAttachmentId" type="long" />
+	<column name="councilOfficeBearersList" type="String" />
+	<column name="councilOfficeBearersAttachmentId" type="long" />
+	<column name="councilOrganizationCertificate" type="String" />
+	<column name="councilOrganizationCertificateAttachmentId"
+		type="long" />
+	<column name="councilSportsTrainingPrevious" type="String" />
+	<column name="councilSportsTrainingDetails" type="String" />
+	<column name="councilSportsGrantFormDetails" type="String" />
+	<column name="councilConcernLetterAttachmentId" type="long" />
+	<column name="councilCostEstimationAttachmentId" type="long" />
+
+	<!-- organization -->
+	<!-- Post Competition -->
+	<column name="councilDetailedReportAttachmentId" type="long" />
+	<column name="councilAuditedStatementAttachmentId" type="long" />
+	<column name="councilTeamPlayersListAttachmentId" type="long" />
+	<column name="councilFundsRaised" type="double" />
+	<column name="councilActualLoss" type="double" />
+	<column name="councilSouvenirIssued" type="String" />
+	<column name="councilSouvenirAttachmentId" type="long" />
+	<column name="councilCompetitionPhotosId" type="String" />
+	<column name="councilAffidavitAttachmentId" type="long" />
+	<column name="isDeclarationAccepted" type="boolean" />
+	<!-- remarks -->
+	<column name="doVerification" type="String" />
+	<column name="doRemarks" type="String" />
+	<column name="ddVerification" type="String" />
+	<column name="ddRemarks" type="String" />
+	
+	
+    
+     <finder name="UserId" return-type="Collection">
+			<finder-column name="userId" />
+       </finder>
+	
+	
+    </entity>
+    
+    <entity name="AspiringAthlete" local-service="true" remote-service="false">
+	
+	 <!-- Primary Key -->
+        <column name="aspiringAthleteId" type="long" primary="true" />
+
+    <!-- Personal Details -->
+    <column name="nameOfApplicant" type="String" />
+    <column name="address" type="String" />
+    <column name="pinCode" type="long" />
+    <column name="contactNumber" type="long" />
+    <column name="emailId" type="String" />
+    <column name="domicileFile" type="long" />
+
+    <!-- Sport Details -->
+    <column name="sportName" type="String" />
+    <column name="sportType" type="String" />
+    <column name="competitionLevel" type="String" />
+    <column name="competitionName" type="String" />
+    <column name="placeOfCompetition" type="String" />
+    <column name="competitionDate" type="Date" />
+    <column name="competitionRank" type="String" />
+    <column name="medalAchieved" type="String" />
+
+    <!-- Previous Competition Details -->
+    <column name="prevCompetitionName" type="String" />
+    <column name="prevPlace" type="String" />
+    <column name="pastCompetitionYear" type="long" />
+    <column name="pastCompetitionDate" type="Date" />
+    <column name="pastCompetitionRank" type="String" />
+    <column name="selectionLetterFile" type="long" />
+    <column name="selectionCertificateFile" type="long" />
+    <column name="newRecordCertificateFile" type="long" />
+    <column name="grantedSport" type="String" />
+    <column name="grantedSportName" type="String" />
+
+    <!-- Financial Details -->
+    <column name="travelCost" type="String" />
+    <column name="entryFees" type="String" />
+    <column name="hotelFees" type="String" />
+    <column name="mealCost" type="String" />
+    <column name="preCompetitionTrainingFees" type="String" />
+    <column name="trainingEquipmentCost" type="String" />
+    <column name="guidanceFeeFromExpert" type="String" />
+    <column name="trainingFee" type="String" />
+    <column name="costOfImportSportEquipment" type="String" />
+    <column name="totalCost" type="String" />
+
+    <!-- Bank Details -->
+    <column name="bankName" type="String" />
+    <column name="ifscCode" type="String" />
+    <column name="accountNumber" type="long" />
+    <column name="bankStatement" type="long" />
+
+    <!-- Declarations -->
+    <column name="affidavit" type="long" />
+    <column name="affidavitBondpaper" type="long" />
+    <column name="isDeclarationAccepted" type="boolean" />
+    
+     <column name="userId" type="long" />
+    <column name="createDate" type="Date" />
+    <column name="modifiedDate" type="Date" />
+    
+     <finder name="UserId" return-type="Collection">
+			<finder-column name="userId" />
+       </finder>
+
+</entity>
+
+	<entity name="MobileSession" local-service="true" remote-service="false" cache-enabled="true">
+		<column name="sid" type="long" primary="true" />
+		<column name="userId" type="long"  />
+		<column name="status" type="int"  />
+		<column name="createDate" type="Date" />
+		<column name="modifiedDate" type="Date" />
+		<finder return-type="MobileSession" name="sidAndUserId">
+			<finder-column name="sid"></finder-column>
+			<finder-column name="userId"></finder-column>
+		</finder>
+		<finder return-type="Collection" name="statusAndUserId">
+			<finder-column name="sid"></finder-column>
+			<finder-column name="userId"></finder-column>
+		</finder>
+	</entity>
+	
+	
+	<entity local-service="true" name="SchemeMaster"
+		remote-service="true" uuid="false">
+		<column name="schemeMasterId" primary="true" type="long" />
+		<column name="schemeName_en" type="String" />
+		<column name="schemeName_hi" type="String" />
+		<column name="schemeName_mr" type="String" />
+		<column name="uniqueId" type="String" />
+		<column name="isActive" type="boolean" />
+
+		<finder name="ActiveState" return-type="Collection">
+			<finder-column name="isActive" />
+		</finder>
+	</entity>
+	
+	<entity local-service="true" name="CommittedMaster"
+		remote-service="true" uuid="false">
+		<column name="committedMasterId" primary="true" type="long" />
+		<column name="committedName_en" type="String" />
+		<column name="committedName_hi" type="String" />
+		<column name="schemeName_mr" type="String" />
+		<column name="uniqueId" type="String" />
+		<column name="isActive" type="boolean" />
+
+		<finder name="ActiveState" return-type="Collection">
+			<finder-column name="isActive" />
+		</finder>
+	</entity>
+    
+</service-builder>

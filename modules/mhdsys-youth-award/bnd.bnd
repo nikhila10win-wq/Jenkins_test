@@ -1,0 +1,7 @@
+Bundle-Name: mhdsys-youth-award
+Bundle-SymbolicName: com.mhdsys.youth.award
+Bundle-Version: 1.0.0
+Export-Package: com.mhdsys.youth.award.constants
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"

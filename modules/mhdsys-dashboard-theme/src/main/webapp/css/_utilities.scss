@@ -1,0 +1,155 @@
+body {
+    font-family: Poppins-Regular !important;
+	background-color: #F5F5F5 !important;
+    transition: all 0.5s;
+}
+
+.portlet-content-editable {
+    padding: 0px !important;
+    background: transparent !important;
+}
+
+.portlet-decorate .portlet-content {
+    background: transparent !important;
+    padding: 0px !important;
+}
+
+.portlet-title-editable, .portlet-title-text  {
+    display: none !important;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #888;
+	border-radius: 25px;
+}
+
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+/*Common Utilities*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 700;
+	line-height: 1.1;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-size: 40px;
+}
+
+h2 {
+	font-size: 22px;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+h4 {
+	font-size: 16px;
+}
+
+h5 {
+	font-size: 14px;
+}
+
+h6 {
+	font-size: 12px;
+}
+
+a {
+	text-decoration: none;
+	transition: all 0.5s;
+	margin: 0;
+	padding: 0;
+	color: #111111;
+}
+
+a:hover,
+a:focus {
+	color: #014AB0;
+}
+
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+.common-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 130px;
+    height: 50px;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color: #15479E;
+    transition: all 0.5s;
+    text-transform: uppercase;
+}
+  
+.common-btn:focus {
+    color: #ffffff;
+}
+  
+.common-btn:hover {
+    background-color: #15479E;
+    color: #ffffff;
+}
+
+/*Dropdown Component*/
+.dropdown-item:focus, .dropdown-item:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: #15479E;
+}
+
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: .255em;
+    vertical-align: middle;
+    content: "\F282";
+    font-family: "Bootstrap-icons";
+    border: 0px;
+	color: #fff;
+}
+
+.dropdown:hover .dropdown-toggle::after {
+    rotate: 180deg;
+    transition: all 0.5s ease-out;
+}
+
+.dropdown-item {
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    margin: 0px;
+}

@@ -1,0 +1,9 @@
+/* top-left corner */
+.universal-table table thead tr th:nth-child(2) {
+  border-top-left-radius: 15px!important;
+}
+
+/* bottom-left corner */
+.universal-table table tbody tr:last-child td:nth-child(2) {
+  border-bottom-left-radius: 15px;
+}

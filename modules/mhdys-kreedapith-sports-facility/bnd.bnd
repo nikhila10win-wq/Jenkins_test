@@ -1,0 +1,7 @@
+Bundle-Name: mhdys-kreedapith-sports-facility
+Bundle-SymbolicName: mhdys.kreedapith.sports.facility
+Bundle-Version: 1.0.0
+Export-Package: mhdys.kreedapith.sports.facility.constants
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"

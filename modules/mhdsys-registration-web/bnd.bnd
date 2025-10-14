@@ -1,0 +1,7 @@
+Bundle-Name: mhdsys-registration-web
+Bundle-SymbolicName: com.mhdsys.registration.web
+Bundle-Version: 1.0.0
+Export-Package: com.mhdsys.registration.web.constants
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"

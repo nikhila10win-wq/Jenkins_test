@@ -1,0 +1,32 @@
+@media(max-width:729px){
+
+    .common-forms-div .card .card-body .btn {
+        margin-top: 0px;
+	}
+	#facility-list_wrapper .top {
+		display: block!important;
+	}
+	.dataTables_wrapper .dataTables_length{
+		text-align:left!important;
+	}
+	.card-body.universal-table {
+    padding: 10px;
+}
+	}
+	
+	
+	
+.dPicker {
+	position: relative;
+
+	.bi-calendar-week {
+		position: absolute;
+	    right: 15px;
+	    top: 33px;
+	}
+}
+
+.facilityPhotosBtn {
+  margin-top: 5% !important;
+  padding: 10px !important;
+}

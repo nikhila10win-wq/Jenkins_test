@@ -1,0 +1,153 @@
+<%-- <%@ include file="/init.jsp" %> --%>
+<div class="card card-background p-0">
+    <div class="card-header header-card">
+        <liferay-ui:message key="review-by-deputy-director" />
+    </div>
+    <div class="card-body">
+    	
+        <!-- Row 5 -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>
+                        <liferay-ui:message key="approval" />
+                        <sup class="text-danger">*</sup>
+                    </label><br />
+                    <!-- Approve Radio -->
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="dsoDecision" value="true" id="dsoDecisionApprove" 
+                          />
+                        <label class="form-check-label" for="ddDecisionApprove">
+                            <liferay-ui:message key="approve" />
+                        </label>
+                    </div>
+                
+                    <!-- Reject Radio -->
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="dsoDecision" value="false" id="dsoDecisionReject"
+                         checked/>
+                        <label class="form-check-label" for="ddDecisionReject">
+                            <liferay-ui:message key="reject" />
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="dsoremarksLabel"><liferay-ui:message key="remarks" /> <sup class="text-danger">*</sup></label>
+                    <textarea class="form-control" id="dsoRemarks" name="dsoRemarks" rows="2" placeholder="<liferay-ui:message key="enter-remarks" />"></textarea>
+                	 <p class="error-container" id="dsoremarks-error"></p>
+                </div>
+	                <div class="form-group">
+	                        <label class="form-label"><liferay-ui:message key="digital-signature" /><sup class="text-danger">*</sup>
+				                <em class="bi bi-info-circle-fill" title="<liferay-ui:message key="allowed-only-jpg-jpeg-png-file-of-size-2mb" />">
+				                </em>
+			        		</label>
+	                        <div class="custom-file">
+				                <label><liferay-ui:message key="digital-signature" /><sup class="text-danger">*</sup></label>
+				                <input type="file" class="custom-file-input geoTagPhotos" id="digitalSignature" name="digitalSignature"
+				                onchange="handleFileUpload(event, 'digitalSignature', 'digitalSignatureNewPreviewContainer', 'digitalSignatureNewPreviewLink', 'digitalSignatureNewDeleteButton')"> 
+				                <label class="custom-file-label" for="digitalSignature">
+				                    <liferay-ui:message key="choose-file" />
+				                </label>
+				            </div>
+				             <div class="ownerProofid d-none mt-3" id="digitalSignatureNewPreviewContainer">
+					                <a class="digitalSignatureCls" id="digitalSignatureNewPreviewLink" href="" target="_blank"
+					                    style="flex-grow: 1; text-decoration: none; white-space: nowrap;overflow: hidden; max-width: 200px; color: #26268E;"></a>
+					                <button type="button" id="digitalSignatureNewDeleteButton" class="digitalSignatureUploadBtn close"
+					                    aria-label="Close" onclick="deleteFile('digitalSignatureNewPreviewContainer', 'digitalSignature')">
+					                    <span aria-hidden="true" class="text-danger"><em class="bi bi-x-circle-fill"></em></span>
+					                </button>
+					            </div>
+		            <!-- Error message -->
+		            <span class="error-container" id="digitalSignatureError"></span>
+	              </div>
+             
+            </div>
+            
+        </div> 
+        
+    </div>
+</div>
+<%-- <c:if test="${mode eq 'view' and isDSO}">
+      	<div class="card-footer bg-transparent text-right p-4">
+      			<!-- <button type="button" class="btn btn-primary" onclick="saveTrainingCenterDetails(event,'save','reports')">
+                       <liferay-ui:message key="submit" />
+                  </button> -->
+                <!--  <button type="submit" class="btn btn-primary">
+                      <liferay-ui:message key="submit" />
+                 </button> -->
+                 
+      	</div>
+	</c:if> --%>
+<script>
+//Single file upload
+	function handleFileUpload(event, id, filePreviewContainer, filePreviewLink, deleteBtn) {
+  
+	    $("#dprDocPath").val(0);
+  
+	    const fileInput = event.target;
+	    const file = fileInput.files[0]; // Get the uploaded file
+	    const previewContainer = document.getElementById(filePreviewContainer);
+	    const previewLink = document.getElementById(filePreviewLink);
+	    const deleteButton = document.getElementById(deleteBtn);
+
+	    previewContainer.classList.add('d-none');
+	    previewContainer.classList.remove('d-flex');
+	    previewLink.textContent = '';
+	    previewLink.href = '';
+	    deleteButton.dataset.filename = '';
+	    
+	    if (file && $('#' + id).val() !== '' && (typeof $('#' + id).valid === 'function' ? $('#' + id).valid() : true)) {   
+	        const fileName = file.name;
+
+	        previewContainer.classList.remove('d-none');
+	        previewContainer.classList.add('d-flex');
+
+	        previewLink.textContent = fileName;
+	        previewLink.href = URL.createObjectURL(file); 
+	        previewLink.target = "_blank";
+	        
+	        Object.assign(previewLink.style, {
+	            textDecoration: "none",
+	           // wordWrap: "break-word",
+	           // whiteSpace: "normal",
+	          //  overflow: "hidden",
+	          //  maxWidth: "200px"
+	        });
+
+	        deleteButton.dataset.filename = fileName; // Store file name in button dataset
+	    }
+	}
+	
+	function deleteFile(filePreviewContainer,id) {
+	    const previewContainer = document.getElementById(filePreviewContainer);
+	    const fileInput = document.getElementById(id);
+
+	    fileInput.value = "";
+		$(".custom-file-input").siblings(".custom-file-label").addClass("selected").html(" <liferay-ui:message key='choose-file' />"); 
+	    previewContainer.classList.add('d-none');
+	    previewContainer.classList.remove('d-flex');
+	}
+	
+	
+	$(document).ready(function(){
+		
+		
+		 $('input[type="radio"][name="dsoDecision"]').on('change', function() {
+	            var dsoDecision = $(this).val();
+	            console.log("dsoDecision ::::"+dsoDecision);
+	            if(dsoDecision=='false'){
+	            	$('.dsoremarksLabel').html('').html('<liferay-ui:message key="remarks" /><sup class="text-danger">*</sup>');
+	            }else{
+	            	$('.dsoremarksLabel').html('').html('<liferay-ui:message key="remarks" />');
+	            	document.getElementById("dsoremarks-error").textContent = "<liferay-ui:message key='' />";
+	            }
+	        });
+		
+		
+	});
+	
+	
+</script>

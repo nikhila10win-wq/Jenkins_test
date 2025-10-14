@@ -1,0 +1,214 @@
+<%-- <%@ include file="/init.jsp" %> --%>
+<%--  1> ${trainingCenterDTO.hoDecision}
+2> ${trainingCenterDTO.hoRemarks}
+1.statusValue-> ${trainingCenterDTO.statusValue}
+2.status ->${trainingCenterDTO.status}
+3.formstatus-> ${trainingCenterDTO.formstatus} --%>
+<div class="card card-background p-0">
+    <div class="card-header header-card">
+        <liferay-ui:message key="review-by-ho" />
+    </div>
+    <div class="card-body">
+        <!-- Row 5 -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>
+                        <liferay-ui:message key="approval" />
+                        <sup class="text-danger">*</sup>
+                    </label><br />
+                
+                    <!-- Approve Radio -->
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="ddHoDecision" value="true" id="ddHoDecisionApprove"
+                          <%-- <c:choose>
+                                <c:when test="${not empty trainingCenterDTO.hoRemarks}">disabled</c:when>
+                                <c:otherwise>checked</c:otherwise>
+                            </c:choose> --%>
+                        <c:if test="${trainingCenterDTO.hoDecision == 'true'}">checked</c:if> <c:if test="${trainingCenterDTO.status ne 'PENDING_WITH_HO'}">disabled</c:if> />
+                        <label class="form-check-label" for="ddHoDecisionApprove">
+                            <liferay-ui:message key="approve" />
+                        </label>
+                    </div>
+                
+                    <!-- Reject Radio -->
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="ddHoDecision" value="false" id="ddHoDecisionReject"
+                        <c:if test="${trainingCenterDTO.hoDecision == 'false'}">checked</c:if> <c:if test="${trainingCenterDTO.status ne 'PENDING_WITH_HO'}">disabled</c:if> />
+                        <label class="form-check-label" for="ddHoDecisionReject">
+                            <liferay-ui:message key="reject" />
+                        </label>
+                    </div>
+                </div>
+            </div> 
+
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="horemarksLabel"><liferay-ui:message key="remarks" /> <c:if test="${trainingCenterDTO.hoDecision == 'false'}"><sup class="text-danger">*</sup></c:if></label>
+                    <textarea class="form-control" id="ddHoRemarks" name="ddHoRemarks" rows="2" placeholder="<liferay-ui:message key="enter-remarks" />" maxlength="250"
+                        <c:if test="${trainingCenterDTO.status ne 'PENDING_WITH_HO'}">disabled</c:if> >${trainingCenterDTO.hoRemarks}</textarea>
+                        <p class="error-container" id="horemarks-error"></p>
+                </div>
+            </div>
+        </div>
+         <c:if test="${mode eq 'view' and ishoadmin}">
+        	<c:if test="${trainingCenterDTO.status eq 'PENDING_WITH_HO'}">
+	        	<div class="card-footer bg-transparent text-right p-4">
+	        			<!-- <button type="button" class="btn btn-primary" onclick="saveTrainingCenterDetails(event,'save','reports')">
+	                         <liferay-ui:message key="submit" />
+	                    </button> -->
+	                    <button type="button" class="btn btn-primary" onclick="setActiveTab('financial-details','reports-and-attachments','previous')">
+                             <liferay-ui:message key="previous" />
+                         </button>
+	                     <button type="submit" id="horemarksbtn" class="btn btn-primary">
+	                         <liferay-ui:message key="submit" />
+	                    </button>
+	        	</div>
+        	</c:if>
+        </c:if> 
+    </div>
+</div>
+<script>
+	$(document).ready(function(){
+		
+		$('#horemarksbtn').click(function(e){
+			console.log("HO remarks submit button clicked ::");
+			var ddHoDecisionValue=$('input[name="ddHoDecision"]:checked').val();
+			var ddHoRemarksValue=$('#ddHoRemarks').val();
+			console.log("ddHoDecisionValue ::::"+ddHoDecisionValue);
+			console.log("ddHoRemarksValue ::::"+ddHoRemarksValue);
+			var errorMessage=[];
+			if(ddHoDecisionValue=='false'){
+				console.log("ddd rejected ::::");
+				if(!ddHoRemarksValue){
+					document.getElementById("horemarks-error").textContent = "<liferay-ui:message key='please-enter-remarks' />";
+					e.preventDefault();
+				}else{
+					document.getElementById("horemarks-error").textContent = "<liferay-ui:message key='' />";
+					
+					
+					
+					//Validating remarks values
+		   			var trimmedValue = $.trim(ddHoRemarksValue.replace(/\s{2,}/g, ' '));
+		   			var regex =/^[a-zA-Z0-9 .,/-]*$/; 
+		   			var actualValue1=trimmedValue;
+		   			var actualValue=actualValue1.replace(/[^a-zA-Z0-9\s.,-]|(?<!\.)$/g, '');
+		   			$('#ddHoRemarks').val(actualValue);
+					console.log("actualValue.length :::" +actualValue.length);
+					if(actualValue){
+						if(actualValue.length<5){
+							document.getElementById("horemarks-error").textContent = "<liferay-ui:message key='please-enter-minimum-5-character' />";
+							errorMessage.push("<liferay-ui:message key='please-enter-minimum-5-character' />");
+							//e.preventDefault();
+						}else if (!regex.test(actualValue)) {
+		       	            console.log("1 not allowed special character  ::");
+		       	         	document.getElementById("horemarks-error").textContent = "<liferay-ui:message key='given-special-character-not-allowed' />";
+		       	         	errorMessage.push("<liferay-ui:message key='given-special-character-not-allowed' />");
+		       	         	//e.preventDefault();
+		       			}else if(/([.\/ -,])\1+/.test(actualValue)){
+		       	         	console.log("2 not allowed special character  ::");
+		       	      		document.getElementById("horemarks-error").textContent = "<liferay-ui:message key='consecutive-special-characters-not-allowed' />";
+		       	      		errorMessage.push("<liferay-ui:message key='consecutive-special-characters-not-allowed' />");
+		       	      		//e.preventDefault();
+		       	        }else {
+		       	         	console.log("allowed special character  ::");
+		       	         document.getElementById("horemarks-error").textContent = "";
+		       	        }
+					}else {
+		       	         document.getElementById("horemarks-error").textContent = "";
+		   	        }
+				}
+			}else{
+				console.log("ddd approved ::::");
+				if(ddHoRemarksValue){
+					
+					var trimmedValue = $.trim(ddHoRemarksValue.replace(/\s{2,}/g, ' '));
+		   			var regex =/^[a-zA-Z0-9 .,/-]*$/; 
+		   			var actualValue1=trimmedValue;
+		   			var actualValue=actualValue1.replace(/[^a-zA-Z0-9\s.,-]|(?<!\.)$/g, '');
+		   			$('#ddHoRemarks').val(actualValue);
+					console.log("actualValue.length :::" +actualValue.length);
+					if(actualValue){
+						if(actualValue.length<5){
+							document.getElementById("horemarks-error").textContent = "<liferay-ui:message key='please-enter-minimum-5-character' />";
+							errorMessage.push("<liferay-ui:message key='please-enter-minimum-5-character' />");
+							//e.preventDefault();
+						}else if (!regex.test(actualValue)) {
+		       	            console.log("1 not allowed special character  ::");
+		       	         	document.getElementById("horemarks-error").textContent = "<liferay-ui:message key='given-special-character-not-allowed' />";
+		       	         	errorMessage.push("<liferay-ui:message key='given-special-character-not-allowed' />");
+		       	         	//e.preventDefault();
+		       			}else if(/([.\/ -,])\1+/.test(actualValue)){
+		       	         	console.log("2 not allowed special character  ::");
+		       	      		document.getElementById("horemarks-error").textContent = "<liferay-ui:message key='consecutive-special-characters-not-allowed' />";
+		       	      		errorMessage.push("<liferay-ui:message key='consecutive-special-characters-not-allowed' />");
+		       	      		//e.preventDefault();
+		       	        }else {
+		       	         	console.log("allowed special character  ::");
+		       	         document.getElementById("horemarks-error").textContent = "";
+		       	        }
+					}else {
+		       	         document.getElementById("horemarks-error").textContent = "";
+		   	        }
+				}else{
+					  document.getElementById("horemarks-error").textContent = "";
+				}
+			}
+			
+			console.log("errorMessage in HO review  :::" +errorMessage);
+			if(errorMessage.length>0){
+				e.preventDefault();
+			}else{
+				console.log("inside no errors::");
+			}
+			
+			//e.preventDefault();
+		});
+		
+		
+		 $('input[type="radio"][name="ddHoDecision"]').on('change', function() {
+	            var ddHoDecision = $(this).val();
+	            console.log("ddHoDecision ::::"+ddHoDecision);
+	            if(ddHoDecision=='false'){
+	            	$('.horemarksLabel').html('').html('<liferay-ui:message key="remarks" /><sup class="text-danger">*</sup>');
+	            }else{
+	            	$('.horemarksLabel').html('').html('<liferay-ui:message key="remarks" />');
+	            	document.getElementById("horemarks-error").textContent = "<liferay-ui:message key='' />";
+	            }
+	        });
+		
+		
+		 $(document).on('keyup','#ddHoRemarks',function(){
+				var addressValue=$(this).val();
+	   			var currentId=$(this).attr("id");
+	   			var trimmedValue = $.trim(addressValue.replace(/\s{2,}/g, ' '));
+	   			var counterAddress=currentId.split("_");
+	   			var regex =/^[a-zA-Z0-9 .,/-]*$/; 
+	   			var actualValue1=$(this).val();
+	   			var actualValue=actualValue1.replace(/[^a-zA-Z0-9\s.,-]|(?<!\.)$/g, '');
+	   			$(this).val(actualValue);
+				console.log("actualValue.length :::" +actualValue.length);
+				if(actualValue){
+					if(actualValue.length<5){
+						document.getElementById("horemarks-error").textContent = "<liferay-ui:message key='please-enter-minimum-5-character' />";
+					}else if (!regex.test(actualValue)) {
+	       	            console.log("1 not allowed special character  ::");
+	       	         	document.getElementById("horemarks-error").textContent = "<liferay-ui:message key='given-special-character-not-allowed' />";
+	       			}else if(/([.\/ -,])\1+/.test(actualValue)){
+	       	         	console.log("2 not allowed special character  ::");
+	       	      		document.getElementById("horemarks-error").textContent = "<liferay-ui:message key='consecutive-special-characters-not-allowed' />";
+	       	        }else {
+	       	         	console.log("allowed special character  ::");
+	       	         document.getElementById("horemarks-error").textContent = "";
+	       	        }
+				}else {
+	       	         document.getElementById("horemarks-error").textContent = "";
+	   	        }
+			});
+		
+	});
+
+</script>
+
+
+

@@ -1,0 +1,7 @@
+Bundle-Name: mhdsys-login-events
+Bundle-SymbolicName: com.mhdsys.login.events
+Bundle-Version: 1.0.0
+Export-Package: com.mhdsys.login.events.constants
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"

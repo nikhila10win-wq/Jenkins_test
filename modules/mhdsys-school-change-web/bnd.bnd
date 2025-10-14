@@ -1,0 +1,7 @@
+Bundle-Name: mhdsys-school-change-web
+Bundle-SymbolicName: com.mhdsys.school.change.web
+Bundle-Version: 1.0.0
+Export-Package: com.mhdsys.school.change.web.constants
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"

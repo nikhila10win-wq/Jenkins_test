@@ -1,0 +1,380 @@
+@media (min-width: 992px) {
+	.maharashtraSports-dashboard-wrapper.closed-sidebar {
+		.maharashtraSports-header {
+			.deshbordHeaderLogo {
+				width: 80px;
+				min-width: 80px;
+				column-gap: 0;
+				justify-content: center;
+				flex-direction: column;
+				padding: 15px;
+				row-gap: 8px;
+				.logo {
+					display: none;
+				}
+				.mob-logo {
+					display: block !important;
+				}
+			}
+			.deshbordHeader-content {
+				width: calc(100% - 80px);
+			}
+		}
+		.maharashtraSports-main-content {
+			.deshbordSidebar {
+				width: 80px;
+				min-width: 80px;
+				.sidebarContent {
+					.sidebarList {
+						li {
+							a {
+								width: 40px;
+								height: 40px;
+								min-height: 40px;
+								min-width: 40px;
+								padding: 7px 0;
+								column-gap: 0;
+								justify-content: center;
+								text-indent: -9999999px;
+								margin: auto;
+								.icon {
+									text-indent: 0;
+								}
+								.badge {
+									transform: translateX(-1000px);
+								}
+								&::after {
+									display: none;
+								}
+							}
+							.sidebarLogin {
+								li {
+									a {
+										margin: 0 17px;
+									}
+								}
+							}
+						}
+					}
+					.sidebarLogin {
+						width: 40px;
+						li {
+							a {
+								margin: 0 !important;
+							}
+						}
+					}
+				}
+			}
+			.maharashtraSports-body-main {
+				width: calc(100% - 80px);
+				footer {
+					width: calc(100% - 80px);
+				}
+			}
+		}
+	}
+}
+@media (max-width: 1440px) {
+	.maharashtraSports-dashboard-wrapper {
+		.maharashtraSports-main-content {
+			.deshbordSidebar {
+				.sidebarContent {
+					max-height: 410px;
+					overflow-y: scroll;
+				}
+			}
+			.maharashtraSports-body-main {
+				.maharashtraSports-page-main {
+					.maharashtraSports-box {
+						padding: 90px 25px 30px;
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 992px) {
+	.maharashtraSports-dashboard-wrapper {
+		.maharashtraSports-header {
+			.deshbordHeaderLogo {
+				display: none;
+			}
+			.deshbordHeader-content {
+				width: 100%;
+				padding: 12px 24px;
+			}
+		}
+		.maharashtraSports-main-content {
+			.deshbordSidebar {
+				transform: translateX(-100%);
+			}
+			.maharashtraSports-body-main {
+				width: 100%;
+				footer {
+					width: 100%;
+				}
+			}
+		}
+	}
+	.maharashtraSports-dashboard-wrapper.closed-sidebar {
+		.maharashtraSports-main-content {
+			.deshbordSidebar {
+				transform: translateX(0);
+			}
+		}
+	}
+	  .common-forms-div .card .card-body .btn {
+        margin-top: 0px;
+        margin-bottom: 10px;
+	}
+}
+@media (max-width: 576px) {
+	.maharashtraSports-dashboard-wrapper {
+		.maharashtraSports-header {
+			.deshbordHeader-content {
+				.headerContent-left {
+					h3 {
+						display: none;
+					}
+				}
+			}
+		}
+		.maharashtraSports-main-content {
+			.maharashtraSports-body-main {
+				nav {
+					padding: 20px 25px 0;
+				}
+				.maharashtraSports-page-main {
+					.maharashtraSports-report-main {
+						margin: 10px auto 15px;
+					}
+					.row {
+						row-gap: 5px;
+					}
+					.maharashtraSports-box {
+						padding: 65px 25px 20px;
+						.maharashtraSports-icon {
+							height: 60px;
+							width: 60px;
+							top: -30px;
+							svg {
+								width: 35px;
+								height: 30px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.card-footer .d-flex > .btn {
+    	margin-bottom: 0.6rem; 
+  }
+}
+@media (max-width: 480px) {
+	.maharashtraSports-dashboard-wrapper {
+		.maharashtraSports-header {
+			.deshbordHeader-content {
+				padding: 12px;
+				.logo {
+					img {
+						width: 150px;
+					}
+				}
+				.headerContent-right {
+					.myDropdown {
+						.dropdownList.notification {
+							right: -66px;
+						}
+					}
+				}
+			}
+		}
+		.maharashtraSports-main-content {
+			.maharashtraSports-body-main {
+				.maharashtraSports-page-main.padd-sec {
+					padding: 0 15px 20px;
+				}
+				.maharashtraSports-page-main {
+					.graph {
+						padding: 15px 5px 0;
+						#myChart1 {
+							width: 250px !important;
+							height: 250px !important;
+						}
+					}
+				}
+			}
+		}
+	}
+	 .card-footer .d-flex > .btn {
+    	margin-bottom: 0.6rem; 
+  	}
+  	.image-width-emoji {
+    width: 10%;
+}
+}
+
+
+@media (max-width: 1700px) {
+	.maharashtraSports-login-wrap {
+		.maharashtraSports-main-img {
+			width: 480px;
+		}
+	}
+}
+@media (max-width: 1199px) {
+	.maharashtraSports-login-wrap {
+		height: 100%;
+		padding: 15px 20px;
+	}
+}
+@media (max-width: 992px) {
+	.maharashtraSports-login-wrap {
+		&:before {
+			width: 100%;
+		}
+	}
+}
+@media (max-width: 576px) {
+	.maharashtraSports-login-wrap {
+		padding: 15px 0;
+		.maharashtraSports-main-img {
+			width: 100%;
+			margin: 30px auto 0;
+		}
+		.maharashtraSports-login-form {
+			padding: 40px 25px;
+			border-radius: 30px;
+		}
+		ul.maharashtraSports-input-box {
+			flex-wrap: wrap;
+		}
+	}
+	h1 {
+		font-size: 26px;
+	}
+	  .common-forms-div .card .card-body .btn {
+        margin-bottom: 10px;
+	}
+	.image-width-emoji {
+    width: 10%;
+}
+}
+
+@media (max-width: 768px) {
+    .maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable .bottom {
+      flex-direction: column;
+      row-gap: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main {
+      padding: 20px 15px;
+    }
+    .maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-report-main {
+      width: 100%;
+    }
+     .common-forms-div .card .card-body .btn {
+        margin-top: 0px;
+        margin-bottom: 10px;
+	} 
+	.image-width-emoji {
+    width: 10%;
+}
+}
+
+
+
+@media(max-width:729px) {
+	.lang-convert .portlet .portlet-body .form-group .form-control {
+		padding-right: 13px;
+	}
+
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right {
+		column-gap: 10px !important;
+	}
+
+	.dropdown-toggle {
+		display: none;
+	}
+
+	.profileImg img {
+		display: block !important;
+		width: 30px;
+		height: 30px;
+		object-fit: cover;
+	}
+
+	.common-forms-div .card .card-body .btn {
+		/*margin-top: -30px;*/
+		margin-top:-5px;
+		padding: 5px 10px;
+	}
+
+	.common-forms-div .card .card-body .d-flex {
+		display: block !important;
+	}
+
+	#captchaInput {
+		margin-left: 0px !important;
+	}
+
+	.closed-sidebar .deshbordSidebar .sidebarContent .sidebarList li a .icon .url-link {
+		display: inline-block !important;
+	}
+	
+/*filter responsive*/
+    .common-forms-div .card .card-body .btn {
+        margin-top: 0px;
+        margin-bottom: 10px;
+	}
+	#facility-list_wrapper .top {
+		display: block!important;
+	}
+	.dataTables_wrapper .dataTables_length{
+		text-align:left!important;
+	}
+	.card-body.universal-table {
+    padding: 10px !important;
+    }
+    .universal-table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+    display: table-cell !important;
+	}
+	div.dataTables_wrapper{
+	    margin-top: 20px !important;
+	}
+	div.dt-container .dt-search input{
+   	width:100%;
+	}
+	.common-forms-div .card .card-footer .btn {
+    padding:10px!important;
+	}
+	.col-md-12 {
+		padding:5px!important;
+	}
+	#awards-list_wrapper .top {
+		display: block!important;
+	}
+	.dataTables_info{
+	display:none;
+	}
+	    .dataTables_wrapper .dataTables_paginate {
+        margin-top: -50px!important;
+        text-align: right!important;
+    }
+}
+
+
+
+@media (max-width: 998px) {
+	  .universal-table table {
+		    overflow-x: scroll;
+		    display: block;
+		}
+		}
+

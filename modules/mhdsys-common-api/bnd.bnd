@@ -1,0 +1,9 @@
+Bundle-Name: mhdsys-common-api
+Bundle-SymbolicName: com.mhdsys.common.api
+Bundle-Version: 1.0.0
+Export-Package: \
+	com.mhdsys.common.api.*,\
+	com.mhdsys.common.pojo.*
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"

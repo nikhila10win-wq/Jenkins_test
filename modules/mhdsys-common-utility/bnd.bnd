@@ -1,0 +1,9 @@
+Bundle-Name: mhdsys-common-utility
+Bundle-SymbolicName: com.mhdsys.common.utility
+Bundle-Version: 1.0.0
+Export-Package: \
+	com.mhdsys.common.utility.constants,\
+	com.mhdsys.common.util
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"

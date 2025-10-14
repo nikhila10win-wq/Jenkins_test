@@ -1,0 +1,1379 @@
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	background-color: #26268e;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	z-index: 5;
+	transition: all 0.5s;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .hamburger {
+	width: 14px;
+	height: fit-content;
+	min-height: 12px;
+	background-color: transparent;
+	padding: 0;
+	border: none;
+	outline: none;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .hamburger .line {
+	width: 15px;
+	height: 2px;
+	border-radius: 5px;
+	background-color: #ffffff;
+	display: block;
+	transition: all 0.5s;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .hamburger .line:nth-child(2) {
+	margin: 3px 0;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .hamburger.is-active {
+	transition: all 0.3s ease-in-out;
+	transition-delay: 0.6s;
+	transform: rotate(45deg);
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .hamburger.is-active .line:nth-child(1) {
+	transform: translateY(1px);
+	transition-delay: 0.3s;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .hamburger.is-active .line:nth-child(2) {
+	width: 0px;
+	height: 0;
+	margin: 0;
+	transition-delay: 0.3s;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .hamburger.is-active .line:nth-child(3) {
+	transform: translateY(-1px) rotate(90deg);
+	transition-delay: 0.3s;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeaderLogo {
+	width: 280px;
+	height: 65px;
+	float: left;
+	padding: 14px 24px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	column-gap: 30px;
+	transition: all 0.5s;
+	background-color: #FFFFFF;
+	box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeaderLogo .logo {
+	transition: all 0.5s;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content {
+	width: calc(100% - 280px);
+	float: left;
+	padding: 0 24px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	transition: all 0.5s;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-left {
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	column-gap: 17px;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-left h3 {
+	color: #FFFFFF;
+    font-size: 16px;
+    font-family: Poppins-Semibold;
+    margin-bottom: 0;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	column-gap: 25px;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .list {
+	display: flex;
+	column-gap: 20px;
+	align-items: baseline;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .list li {
+	position: relative;
+	min-width: 45px;
+	border-radius: 50px;
+	text-align: center;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .list li ul {
+	display: none;
+	position: absolute;
+	width: 238px;
+	right: 0px;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .list li ul li {
+	display: block !important;
+	white-space: nowrap;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .list .myDropdown .dropdownList {
+	top: 65px;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .profile .userProfile {
+	display: flex;
+	align-items: center;
+	column-gap: 10px;
+	cursor: pointer;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .profile .userProfile .profileName h5 {
+	color: #ffffff;
+	text-align: left;
+	font-size: 14px;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .profile .userProfile .profileName h5 svg {
+	margin-left: 4px;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .profile .userProfile .profileName h5 svg path {
+	fill: #ffffff;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .profile .userProfile .profileName p {
+	font-size: 10px;
+	color: #ffffff;
+	line-height: 11px;
+	margin-top: 5px;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .profile .userProfile .profileName p svg {
+	margin-left: 4px;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .myDropdown {
+	position: relative;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .myDropdown .dropdownList {
+	position: absolute;
+	width: 100%;
+	min-width: 238px;
+	top: 50px;
+	right: 0;
+	border-radius: 0 0 5px 5px;
+	display: none;
+	overflow: hidden;
+	box-shadow: 4px 4px 40px 0 #0000001a;
+	z-index: 9999;
+	background-color: #FFFFFF;
+	padding: 10px 0 0 0;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .myDropdown .dropdownList:before {
+	content: '';
+	width: 100%;
+	height: 5px;
+	background-color: #15479E;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .myDropdown .dropdownList li a {
+	padding: 10px 30px;
+	display: flex;
+	column-gap: 10px;
+	align-items: center;
+	justify-content: flex-start;
+	background-color: #FFFFFF;
+	color: #111111;
+	font-size: 14px;
+	transition: all 0.5s;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .myDropdown .dropdownList li a:hover {
+	background-color: #15479E;
+	color: #ffffff;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .myDropdown .dropdownList li a:hover svg path {
+	fill: #ffffff;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .myDropdown .dropdownList.notification {
+	width: 100%;
+	min-width: 280px;
+	top: 52px;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .myDropdown .dropdownList.notification .noti-head {
+	padding: 10px 15px 10px;
+	border-bottom: 1px solid #C6E2FF;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .myDropdown .dropdownList.notification ul {
+	height: 250px;
+	overflow-y: scroll;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .myDropdown .dropdownList.notification ul li a {
+	padding: 10px 15px;
+	border-bottom: 1px solid #C6E2FF;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .myDropdown .dropdownList.notification ul li a .icon-text {
+	column-gap: 10px;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .myDropdown .dropdownList.notification ul li a .icon-text span {
+	background-color: #EAF3FC;
+	height: 25px;
+	width: 25px;
+	border-radius: 50px;
+	text-align: center;
+	line-height: 25px;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .myDropdown .dropdownList.notification ul li a .icon-text span svg {
+	height: 13px;
+	width: 13px;
+	fill: #0E62B1;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .myDropdown .dropdownList.notification ul li a .icon-text h6 {
+	text-align: left;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .myDropdown .dropdownList.notification ul li a .icon-text p {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .myDropdown .dropdownList.notification ul li a .time {
+	font-size: 12px;
+	max-width: 50%;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .myDropdown .dropdownList.notification ul li a:hover .icon-text span svg path {
+	fill: #0E62B1;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .myDropdown .dropdownList.notification ul li:last-child a {
+	border-bottom: 0;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .myDropdown .dropdownList.notification .common-btn {
+	border-radius: 0;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .myDropdown .dropdownList.notification .common-btn {
+	background: #15479e;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .myDropdown .dropdownList.notification li ul {
+	display: block;
+	position: unset;
+	width: 100%;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content {
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar {
+	width: 280px;
+	min-width: 280px;
+	height: calc(100% - 46.36px);
+	padding-top: 35px;
+	float: left;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background-color: #FFFFFF;
+	z-index: 4;
+	transition: all 0.5s;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent {
+	padding: 10px;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li {
+	margin-top: 10px;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li>a {
+	display: flex;
+	align-items: center;
+	column-gap: 15px;
+	width: 100%;
+	padding: 15px;
+	border-radius: 5px;
+	font-size: 14px;
+	font-weight: 500;
+	transition: all 0.5s;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li>a .icon.stroke svg path {
+	fill: none;
+	stroke: #0E62B1;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li>a.active {
+	background-color: #15479E;
+	border-radius: 0px 8px 8px 0px;
+	color: #ffffff !important;
+	border-left: 5px solid #F7941E;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li>a.active span svg path {
+	fill: #ffffff;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li>a.active span.stroke svg path {
+	fill: none !important;
+	stroke: #ffffff;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li>a.active:after {
+	border-color: #ffffff !important;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li:hover>a,
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li.active>a {
+	background-color: #26268e;
+	border-radius: 0px 8px 8px 0px;
+	color: #ffffff;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li:hover>a span svg path,
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li.active>a span svg path {
+	fill: #ffffff;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li:hover>a span.stroke svg path,
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li.active>a span.stroke svg path {
+	fill: none !important;
+	stroke: #ffffff;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li.submenuDropdown {
+	--submenuIcon: #797979;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li.submenuDropdown #submenuClick {
+	position: relative;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li.submenuDropdown #submenuClick:hover::after {
+	border-color: #ffffff;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li.submenuDropdown .submenuList {
+	padding: 0 25px;
+	padding-top: 15px;
+	display: none;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li.submenuDropdown .submenuList li {
+	margin-top: 7px;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li.submenuDropdown .submenuList li a {
+	padding: 7px 0 7px 25px !important;
+	background-color: transparent !important;
+	color: #111111;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li.submenuDropdown .submenuList li:hover a {
+	color: #ffffff;
+	border-radius: 8px 8px 8px 8px;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li.submenuDropdown .submenuList li:hover a.active {
+	color: #ffffff;
+	border-radius: 8px 8px 8px 8px;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li.submenuDropdown.active #submenuClick::after {
+	border-color: #ffffff;
+	transform: translateY(-50%) rotate(130deg);
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarLogin {
+	width: 235px;
+	padding: 14px 0px;
+	margin-top: 20px;
+	transition: all 0.5s;
+	position: fixed;
+	bottom: 0;
+	border-top: 1px solid rgba(17, 17, 17, 0.1);
+	background-color: #FFFFFF;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarLogin p {
+	font-size: 14px;
+	line-height: 14px;
+	font-weight: 500;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarLogin span {
+	font-size: 12px;
+	line-height: 12px;
+	color: #111111;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main {
+	width: calc(100% - 280px);
+	padding-top: 65px;
+	float: right;
+	transition: all 0.5s;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main nav {
+	padding: 20px 25px;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main nav li {
+	font-size: 14px;
+	color: #797979;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main nav li a {
+	font-size: 14px;
+	color: #797979;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main {
+	padding: 20px 25px;
+	margin-bottom: 70px;
+} 
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-box {
+	margin-top: 50px;
+	border-radius: 10px;
+	padding: 120px 25px 60px;
+	background: linear-gradient(180deg, #3485D8 0%, #06C6FC 100%);
+	transition: all 0.5s;
+	display: block;
+	height: 80%;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-box:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0px;
+	background-image: url("../images/shape.png");
+	width: 100%;
+	height: 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position-x: center;
+	transition: all 0.5s;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-box .maharashtraSports-icon {
+	height: 100px;
+	width: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 100px;
+	background-color: #FFFFFF;
+	box-shadow: 0px 2px 15px rgba(17, 17, 17, 0.06);
+	position: absolute;
+	top: -50px;
+	transform: translateX(-50%);
+	left: 50%;
+	transition: all 0.5s;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-box .maharashtraSports-icon:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: all 0.5s;
+	width: 100%;
+	height: 100%;
+	border-radius: 100%;
+	transform: scale(0);
+	z-index: -1;
+	background: linear-gradient(180deg, #3485D8 0%, #06C6FC 100%);
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-box h4 {
+	color: #ffffff;
+	line-height: 20px;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-box:hover .maharashtraSports-icon:before {
+	transform: scale(1);
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-box:hover .maharashtraSports-icon svg path {
+	fill: #ffffff;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-box:hover:after {
+	height: 60%;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-box.maharashtraSports-bg2 {
+	background: linear-gradient(180deg, #F59225 0%, #F9BF3A 100%);
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-box.maharashtraSports-bg2 .maharashtraSports-icon::before {
+	background: linear-gradient(180deg, #F59225 0%, #F9BF3A 100%);
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-box.maharashtraSports-bg3 {
+	background: linear-gradient(180deg, #F37699 0%, #FD8F79 100%);
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-box.maharashtraSports-bg3 .maharashtraSports-icon::before {
+	background: linear-gradient(180deg, #F37699 0%, #FD8F79 100%);
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-box.maharashtraSports-bg4 {
+	background: linear-gradient(180deg, #06C9E9 0%, #00E5D5 100%);
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-box.maharashtraSports-bg4 .maharashtraSports-icon::before {
+	background: linear-gradient(180deg, #06C9E9 0%, #00E5D5 100%);
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .graph {
+	background-color: #FFFFFF;
+	box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.07);
+	border-radius: 10px;
+	padding: 30px;
+	height: 95%;
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .graph .graph-head {
+	flex-wrap: wrap;
+	row-gap: 15px;
+	column-gap: 10px;
+}
+
+
+.maharashtraSports-dashboard-wrapper.deshbordmainFixed .maharashtraSports-header {
+	width: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+
+.maharashtraSports-dashboard-wrapper.deshbordmainFixed .maharashtraSports-main-content .deshbordSidebar {
+	height: 100%;
+}
+
+@media (min-width: 992px) {
+	.maharashtraSports-dashboard-wrapper.closed-sidebar .maharashtraSports-header .deshbordHeaderLogo {
+		width: 80px;
+		min-width: 80px;
+		column-gap: 0;
+		justify-content: center;
+		flex-direction: column;
+		padding: 15px;
+		row-gap: 8px;
+	}
+
+	.maharashtraSports-dashboard-wrapper.closed-sidebar .maharashtraSports-header .deshbordHeaderLogo .logo {
+		display: none;
+	}
+
+	.maharashtraSports-dashboard-wrapper.closed-sidebar .maharashtraSports-header .deshbordHeaderLogo .mob-logo {
+		display: block !important;
+	}
+
+	.maharashtraSports-dashboard-wrapper.closed-sidebar .maharashtraSports-header .deshbordHeader-content {
+		width: calc(100% - 80px);
+	}
+
+	.maharashtraSports-dashboard-wrapper.closed-sidebar .maharashtraSports-main-content .deshbordSidebar {
+		width: 80px;
+		min-width: 80px;
+	}
+
+	.maharashtraSports-dashboard-wrapper.closed-sidebar .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li a {
+		width: 40px;
+		height: 40px;
+		min-height: 40px;
+		min-width: 40px;
+		padding: 7px 0;
+		column-gap: 0;
+		justify-content: center;
+		text-indent: -9999999px;
+		margin: auto;
+	}
+
+	.maharashtraSports-dashboard-wrapper.closed-sidebar .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li a .icon {
+		text-indent: 0;
+	}
+
+	.maharashtraSports-dashboard-wrapper.closed-sidebar .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li a .badge {
+		transform: translateX(-1000px);
+	}
+
+	.maharashtraSports-dashboard-wrapper.closed-sidebar .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li a::after {
+		display: none;
+	}
+
+	.maharashtraSports-dashboard-wrapper.closed-sidebar .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarList li .sidebarLogin li a {
+		margin: 0 17px;
+	}
+
+	.maharashtraSports-dashboard-wrapper.closed-sidebar .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarLogin {
+		width: 40px;
+	}
+
+	.maharashtraSports-dashboard-wrapper.closed-sidebar .maharashtraSports-main-content .deshbordSidebar .sidebarContent .sidebarLogin li a {
+		margin: 0 !important;
+	}
+
+	.maharashtraSports-dashboard-wrapper.closed-sidebar .maharashtraSports-main-content .maharashtraSports-body-main {
+		width: calc(100% - 80px);
+	}
+
+	.maharashtraSports-dashboard-wrapper.closed-sidebar .maharashtraSports-main-content .maharashtraSports-body-main footer {
+		width: calc(100% - 80px);
+	}
+}
+
+@media (max-width: 1440px) {
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar .sidebarContent {
+		max-height: 410px;
+		overflow-y: scroll;
+	}
+
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-box {
+		padding: 90px 25px 30px;
+	}
+}
+
+@media (max-width: 992px) {
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeaderLogo {
+		display: none;
+	}
+
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content {
+		width: 100%;
+		padding: 12px 24px;
+	}
+
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .deshbordSidebar {
+		transform: translateX(-100%);
+	}
+
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main {
+		width: 100%;
+	}
+
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main footer {
+		width: 100%;
+	}
+
+	.maharashtraSports-dashboard-wrapper.closed-sidebar .maharashtraSports-main-content .deshbordSidebar {
+		transform: translateX(0);
+	}
+}
+
+@media (max-width: 576px) {
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-left h3 {
+		display: none;
+	}
+
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main nav {
+		padding: 20px 25px 0;
+	}
+
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-report-main {
+		margin: 10px auto 15px;
+	}
+
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .row {
+		row-gap: 5px;
+	}
+
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-box {
+		padding: 65px 25px 20px;
+	}
+
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-box .maharashtraSports-icon {
+		height: 60px;
+		width: 60px;
+		top: -30px;
+	}
+
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-box .maharashtraSports-icon svg {
+		width: 35px;
+		height: 30px;
+	}
+}
+
+@media (max-width: 480px) {
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content {
+		padding: 12px;
+	}
+
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .logo img {
+		width: 150px;
+	}
+
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .myDropdown .dropdownList.notification {
+		right: -66px;
+	}
+
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main.padd-sec {
+		padding: 0 15px 20px;
+	}
+
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .graph {
+		padding: 15px 5px 0;
+	}
+
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .graph #myChart1 {
+		width: 250px !important;
+		height: 250px !important;
+	}
+}
+
+/* login scss */
+.maharashtraSports-login-wrap {
+	background-color: #FFFFFF;
+	padding: 15px 60px;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.maharashtraSports-login-wrap:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 60%;
+	background: #F2F9FF;
+	z-index: 1;
+}
+
+.maharashtraSports-login-wrap .container-fluid {
+	z-index: 2;
+}
+
+.maharashtraSports-login-wrap .maharashtraSports-main-img {
+	width: 650px;
+	margin: 65px auto 0;
+}
+
+.maharashtraSports-login-wrap .maharashtraSports-login-form {
+	background-color: #15479E;
+	border-radius: 50px;
+	padding: 50px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.maharashtraSports-login-wrap .maharashtraSports-login-form h1 {
+	color: #ffffff;
+	border-left: 5px solid #ffffff;
+	padding-left: 15px;
+}
+
+.maharashtraSports-login-wrap .maharashtraSports-login-form form .maharashtraSports-forgot {
+	color: #ffffff;
+}
+
+.maharashtraSports-login-wrap .maharashtraSports-login-form form .maharashtraSports-captcha {
+	column-gap: 10px;
+	flex-wrap: wrap;
+	row-gap: 20px;
+}
+
+.maharashtraSports-login-wrap .maharashtraSports-login-form form .maharashtraSports-captcha .maharashtraSports-captcha-img {
+	background-color: #FFFFFF;
+	border-radius: 5px;
+	padding: 10px;
+	min-width: 170px;
+}
+
+.maharashtraSports-login-wrap .maharashtraSports-login-form form .maharashtraSports-captcha .maharashtraSports-captcha-img img {
+	width: 100px;
+}
+
+.maharashtraSports-login-wrap .maharashtraSports-login-form form .maharashtraSports-captcha input {
+	min-width: 170px;
+	background-color: #ffffff;
+	border: none;
+	border-radius: 3px;
+	height: 40px;
+	padding: 5px 10px;
+}
+
+.maharashtraSports-login-wrap .maharashtraSports-login-form form .maharashtraSports-captcha input:focus-visible {
+	outline: none;
+}
+
+.maharashtraSports-login-wrap .maharashtraSports-login-form form .maharashtraSports-captcha input::placeholder {
+	color: #797979;
+}
+
+.maharashtraSports-login-wrap .maharashtraSports-login-form form .maharashtraSports-login-btn {
+	margin-top: 40px;
+}
+
+.maharashtraSports-login-wrap .maharashtraSports-login-form form .maharashtraSports-login-btn a {
+	display: inline-block;
+	width: 100%;
+	height: 50px;
+	text-transform: uppercase;
+	background-color: #FFFFFF;
+	color: #0E62B1;
+	border: 1px solid #ffffff;
+	border-radius: 5px;
+	transition: all 0.5s;
+	text-align: center;
+	line-height: 50px;
+}
+
+.maharashtraSports-login-wrap .maharashtraSports-login-form form .maharashtraSports-login-btn a:hover {
+	background-color: transparent;
+	color: #ffffff;
+}
+
+/* responsive */
+@media (max-width: 1700px) {
+	.maharashtraSports-login-wrap .maharashtraSports-main-img {
+		width: 480px;
+	}
+}
+
+@media (max-width: 1199px) {
+	.maharashtraSports-login-wrap {
+		height: 100%;
+		padding: 15px 20px;
+	}
+}
+
+@media (max-width: 992px) {
+	.maharashtraSports-login-wrap:before {
+		width: 100%;
+	}
+}
+
+@media (max-width: 576px) {
+	.maharashtraSports-login-wrap {
+		padding: 15px 0;
+	}
+
+	.maharashtraSports-login-wrap .maharashtraSports-main-img {
+		width: 100%;
+		margin: 30px auto 0;
+	}
+
+	.maharashtraSports-login-wrap .maharashtraSports-login-form {
+		padding: 40px 25px;
+		border-radius: 30px;
+	}
+
+	.maharashtraSports-login-wrap ul.maharashtraSports-input-box {
+		flex-wrap: wrap;
+	}
+
+	h1 {
+		font-size: 26px;
+	}
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-report-main {
+	max-width: 420px;
+	background-color: #FFFFFF;
+	margin: 10px auto 50px;
+	max-width: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	padding: 5px;
+	border-radius: 5px;
+	column-gap: 8px;
+	box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.07);
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-report-main li a {
+	display: inline-block;
+	color: #111111;
+	font-size: 16px;
+	min-width: 130px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-weight: 500;
+	transition: all 0.5s;
+	border-radius: 5px;
+	border: none;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-report-main li a:hover,
+.maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-report-main li a.active {
+	background-color: #15479E;
+	color: #ffffff;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-upload-report .maharashtraSports-report {
+	background-color: #FFFFFF;
+	box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.07);
+	border-radius: 10px;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-upload-report .maharashtraSports-report h4 {
+	color: #111111;
+	padding: 20px 33px 15px;
+	border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-upload-report .maharashtraSports-report form {
+	padding: 33px;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-upload-report .maharashtraSports-report form label {
+	color: #111111;
+	font-size: 14px;
+	line-height: 16px;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-upload-report .maharashtraSports-report form input {
+	background-color: #E9F3FC;
+	color: #111111;
+	border-radius: 5px;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-upload-report .maharashtraSports-report form input::placeholder {
+	color: #111111;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-upload-report .maharashtraSports-report form .common-btn {
+	text-align: center;
+	line-height: 50px;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-upload-report .maharashtraSports-report form .file-upload {
+	display: block;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-upload-report .maharashtraSports-report form .file-upload .file-select {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 5px;
+	color: #111111;
+	cursor: pointer;
+	height: 50px;
+	line-height: 40px;
+	text-align: left;
+	background: #E9F3FC;
+	overflow: hidden;
+	position: relative;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-upload-report .maharashtraSports-report form .file-upload .file-select .file-select-button {
+	border-radius: 5px;
+	font-size: 14px;
+	color: #ffffff;
+	margin: 5px;
+	height: 40px;
+	background-color: #15479E;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-upload-report .maharashtraSports-report form .file-upload .file-select .file-select-name {
+	font-size: 12px;
+	color: #111111;
+	padding-left: 15px;
+	line-height: 16px;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-upload-report .maharashtraSports-report form .file-upload .file-select input[type="file"] {
+	z-index: 100;
+	cursor: pointer;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-upload-report .maharashtraSports-report form .file-upload .file-select.file-select-disabled {
+	opacity: 0.65;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-upload-report .maharashtraSports-report form .file-upload .file-select.file-select-disabled:hover {
+	cursor: default;
+	display: block;
+	border: 2px solid #dce4ec;
+	color: #34495e;
+	cursor: pointer;
+	height: 40px;
+	line-height: 40px;
+	margin-top: 5px;
+	text-align: left;
+	background: #ffffff;
+	overflow: hidden;
+	position: relative;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-upload-report .maharashtraSports-report form .file-upload .file-select.file-select-disabled:hover .file-select-name {
+	line-height: 40px;
+	display: inline-block;
+	padding: 0 10px;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table {
+	background-color: #FFFFFF;
+	box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.07);
+	border-radius: 10px;
+	margin: 0 25px;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable table {
+	border: 1px solid #C6E2FF;
+	border-radius: 5px;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable table thead {
+	background-color: #15479E;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable table thead th {
+	padding: 17px 30px !important;
+	color: #ffffff;
+	font-size: 14px;
+	line-height: 16px;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable table thead th:first-child {
+	border-top-left-radius: 5px;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable table thead th:last-child {
+	border-top-right-radius: 5px;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable table tbody .odd {
+	background-color: #EAF3FC;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable table tbody td {
+	padding: 17px 30px !important;
+	color: #111111;
+	font-size: 14px;
+	line-height: 16px;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable .bottom {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable .bottom .left {
+	display: flex;
+	align-items: center;
+	column-gap: 10px;
+	margin-top: 20px;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable .bottom .left label {
+	position: relative;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable .bottom .left label:before {
+	content: '';
+	width: 8px;
+	height: 8px;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 2;
+	transform: rotate(45deg) translateY(-50%);
+	border: 1px solid #111111;
+	border-left: 0;
+	border-top: 0;
+	right: 15px;
+	top: 42%;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable .bottom .left select {
+	background-color: #EAF3FC;
+	border: none;
+	font-weight: 700;
+	font-size: 14px;
+	position: relative;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable .bottom .left select:focus,
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable .bottom .left select:focus-visible {
+	outline: none;
+	box-shadow: none;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable .bottom .left .dataTables_info {
+	padding-top: 0;
+	font-size: 14px;
+	color: #111111;
+	font-weight: 500;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable .bottom .pagination {
+	margin-top: 20px;
+	column-gap: 10px;
+	flex-wrap: wrap;
+	row-gap: 20px;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable .bottom .pagination .page-item .page-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 40px;
+	min-width: 40px;
+	color: #707070;
+	border: 1px solid #E7E7E7;
+	border-radius: 5px;
+	transition: all 0.5s;
+	text-transform: uppercase;
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 500;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable .bottom .pagination .page-item .page-link:hover {
+	background: linear-gradient(180deg, #3195F3 0%, #0E62B1 100%);
+	color: #ffffff;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable .bottom .pagination .page-item.active .page-link {
+	color: #ffffff;
+	background-color: #15479E;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable .bottom .pagination .page-item.active .page-link:hover {
+	background: linear-gradient(180deg, #3195F3 0%, #0E62B1 100%);
+	color: #ffffff;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable .bottom .pagination .page-item.next .page-link {
+	min-width: 100px;
+	color: #ffffff;
+	background-color: #15479E;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable .bottom .pagination .page-item.next .page-link:hover {
+	background: linear-gradient(180deg, #3195F3 0%, #0E62B1 100%);
+	color: #ffffff;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable .bottom .pagination .page-item.disabled {
+	min-width: 100px;
+	color: #111111;
+	background-color: #EAF3FC;
+	border-color: #C6E2FF;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.calendar-main #calendar {
+	background-color: #FFFFFF;
+	box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.07);
+	border-radius: 10px;
+	padding: 20px 30px;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.calendar-main #calendar .fc-state-default {
+	height: 50px;
+	width: 50px;
+	margin-left: 7px;
+	border-radius: 5px;
+	background-color: #15479E;
+	color: #ffffff;
+	border: none;
+	transition: all 0.5s;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.calendar-main #calendar .fc-state-default:hover {
+	background: linear-gradient(180deg, #3195F3 0%, #0E62B1 100%);
+	color: #ffffff;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.calendar-main #calendar .fc-day-header {
+	height: 45px;
+	max-width: 100px;
+	line-height: 45px;
+	font-size: 12px;
+	color: #272526;
+	background-color: #EAF3FC;
+	transition: all 0.5;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.calendar-main #calendar .fc-day-header:hover {
+	color: #0E62B1;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.calendar-main #calendar .fc-day-header.fc-sun,
+.maharashtraSports-body-main .maharashtraSports-page-main.calendar-main #calendar .fc-day-header.fc-sat {
+	background-color: #15479E;
+	color: #ffffff;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.calendar-main #calendar .fc-day-header.fc-sun:hover,
+.maharashtraSports-body-main .maharashtraSports-page-main.calendar-main #calendar .fc-day-header.fc-sat:hover {
+	background: linear-gradient(180deg, #3195F3 0%, #0E62B1 100%);
+	color: #ffffff;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.calendar-main #calendar .fc-sat {
+	color: #0E62B1;
+	font-weight: 700;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.calendar-main .fc th,
+.maharashtraSports-body-main .maharashtraSports-page-main.calendar-main .fc td {
+	border-width: 0px;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.calendar-main .fc tbody td {
+	border-width: 1px !important;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.calendar-main .fc-toolbar .fc-left {
+	margin-top: 15px;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.calendar-main .fc-unthemed .fc-today {
+	background-color: #EAF3FC;
+	color: #0E62B1;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-statement-wrapper .table-cont {
+	overflow-x: scroll;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-statement-wrapper .table-cont table {
+	width: 1400px;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-statement-wrapper .table-cont table tbody input {
+	border: none;
+	min-height: 40px;
+	padding-left: 20px;
+	display: block;
+	margin: auto;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-statement-wrapper .table-cont table tbody td {
+	border: 1px solid #C6E2FF;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-statement-wrapper .table-cont table tbody td .table-remove {
+	max-width: 50px;
+	display: block !important;
+	margin: auto;
+	min-width: 50px;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-statement-wrapper .table-cont table tbody td .table-remove svg {
+	width: 15px;
+	fill: #ffffff;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-statement-wrapper .table-cont table tfoot input {
+	border: none;
+	min-height: 40px;
+	padding-left: 20px;
+	display: block;
+	margin: auto;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-statement-wrapper .table-cont table tfoot td {
+	border: 1px solid #C6E2FF;
+}
+
+.maharashtraSports-body-main .maharashtraSports-page-main.maharashtraSports-statement-wrapper .table-cont .table> :not(:last-child)> :last-child>* {
+	border-bottom-color: inherit;
+}
+
+@media (max-width: 768px) {
+	.maharashtraSports-body-main .maharashtraSports-page-main.pending-table .mydataTable .bottom {
+		flex-direction: column;
+		row-gap: 20px;
+	}
+}
+
+@media (max-width: 480px) {
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main {
+		padding: 20px 15px;
+	}
+
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-report-main {
+		width: 100%;
+	}
+
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-report-main li a {
+		min-width: 80px;
+		height: 40px;
+		line-height: 40px;
+		font-size: 13px;
+	}
+
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-report h4 {
+		font-size: 14px;
+		padding: 20px 15px 15px;
+	}
+
+	.maharashtraSports-dashboard-wrapper .maharashtraSports-main-content .maharashtraSports-body-main .maharashtraSports-page-main .maharashtraSports-report form {
+		padding: 20px 15px;
+	}
+
+	.maharashtraSports-body-main .maharashtraSports-page-main.calendar-main #calendar {
+		padding: 20px 15px;
+	}
+
+	.maharashtraSports-body-main .maharashtraSports-page-main.calendar-main #calendar .fc-state-default {
+		height: 40px;
+		width: 40px;
+	}
+
+	.fc-left h2 {
+		font-size: 16px !important;
+	}
+}
+
+.maharashtraSports-dashboard-wrapper .maharashtraSports-header .deshbordHeader-content .headerContent-right .myDropdown .dropdownList.notification .common-btn:hover {
+	background: #15479e;
+	margin-bottom: -5px;
+}

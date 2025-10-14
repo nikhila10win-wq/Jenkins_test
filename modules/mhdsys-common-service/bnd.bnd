@@ -1,0 +1,7 @@
+Bundle-Name: mhdsys-common-service
+Bundle-SymbolicName: com.mhdsys.common.service
+Bundle-Version: 1.0.0
+Export-Package: com.mhdsys.common.service.constants
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"

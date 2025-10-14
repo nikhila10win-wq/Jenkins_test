@@ -1,0 +1,215 @@
+//Guest Registration form UI Properties
+.common-forms-div { 
+	.card {
+		border-radius: 15px;
+		
+		.card-header {
+			background: #26268E;
+    		color: #fff;
+    		border-radius: 15px 15px 0px 0px;
+    		height: 50px;
+    		padding: 17px;
+    		
+    		h5 {
+    			margin-bottom: 0;
+    			font-size: 14px;	
+    			font-family: 'Poppins-Regular';
+    		}
+		}
+
+         .card-body {
+            .form-group {
+                margin-bottom: 2rem;
+                
+                label {
+                    margin: 0px;
+                    color: #26268E; 
+                    font-family: Poppins-Semibold;
+                    font-size: 13px;
+                }
+                
+               
+                .form-control {
+                    border: 1px solid rgb(37 37 141 / 32%);
+                    border-radius: 5px;
+                    height: 45px;
+                    font-size: 13px; 
+                    color: #000 !important;
+                    font-family: Poppins-Meduim;
+                    width:100%;
+                }
+               	
+            } 
+            .btn {
+				background-color: #26268E;
+    			border-color: #26268E;
+    			color: #fff;
+    			font-size: 13px;
+    			padding: 10px 20px;
+    			font-family: Poppins-Meduim;
+    			border-radius: 6px;
+    			margin: 0px 0px 0px 10px;
+			}
+        }
+		
+		.card-footer {
+			.btn {
+				background-color: #26268E;
+    			border-color: #26268E;
+    			color: #fff;
+    			font-size: 13px;
+    			padding: 10px 20px;
+    			font-family: Poppins-Meduim;
+    			border-radius: 6px;
+    			margin: 0px 0px 0px 10px;
+			}			
+		}
+	} 
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    background: #ff3636;
+    color: #fff;
+    padding: 0px 8px 0px 8px;
+    font-size: 16px;
+    border-radius: 15px;
+    right: 15px;
+    bottom: 15px;
+    transition: background 0.5s;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2901960784);
+    border: 2px solid white;
+    z-index: 5;
+}
+
+label.error{
+	color: red !important;
+	font-family: Poppins-Meduim !important;
+   /*  position: absolute;
+   bottom: -37%;
+    left: 27%;*/
+}
+
+.form-group .radio-text{
+   margin-right:35px;
+}
+.form-group .radio-btn{
+  vertical-align: middle;
+}
+.age-group{
+   margin-top:30px;
+}
+.ageGroupCheckbox{
+   vertical-align: middle;
+}
+.custom-file-label::after {
+   color:#fff!important;
+   background-color: #26268e!important;
+   padding:12px!important;
+   height: 45px!important;
+}
+.custom-file-label{
+   padding:12px!important;
+   height:45px!important;
+}
+.captcha-image{
+width: 100px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.btn-refersh {
+    background-color: transparent;
+    color: black;
+    border: none;
+}
+
+.card-body .card-background{
+    background-color: rgb(238, 238, 246);
+    padding: 1.5rem;
+    border-radius: 20px;
+    border: 1px solid rgb(221, 221, 237);
+}
+.card-body .card .header-card{
+	background-color: transparent;
+    color: rgb(63, 63, 155);
+    font-weight: 600;
+    font-size: 12px;
+}
+.whatsnew-card .card {
+    border: 0;
+    border-radius: 15px;
+    background: #fff;
+    margin-bottom: 25px !important;
+}
+.panel-body {
+  padding: 0px;
+}
+.pointer{
+    color: #26268e;
+    font-weight: bold;
+    margin-top: -20px;
+}
+.button-holder{
+    text-align: center;
+}
+.btn-secondary {
+    background-color: #26268e;
+    border-color: #26268e;
+    color: #fff;
+    margin-left: 20px;
+}
+.sheet-footer .btn-secondary {
+    background-color: #26268e;
+    border-color: #26268e;
+    color: #fff;
+    margin-left: 20px;
+}
+.text-signup{
+    color:red;
+    font-weight: bold;
+}
+.span-text{
+    color: #26268e;
+    font-weight: bold;
+}
+.eye-icon{
+    cursor: pointer;
+    position: absolute;
+    right: 25px;
+    top: 135px;
+}
+.mdsys .social-media li a {
+    margin-right: 15px;
+}
+.mdsys .social-media > li a i {
+    margin-right: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    background-color: red;
+}
+.btn-primary, .btn-primary:hover {
+    background-color: #26268E;
+    border-color: #26268E;
+    color: #fff;
+}
+
+
+
+#captchaInput{
+margin-left:10px;
+}
+#captchaError{
+display:none;
+}
+#captchaInput-error{
+    position: absolute;
+    top: 100%;
+    left: 35%;
+}
+.card .back-btn-cn {
+	background-color: #26268E;
+	border-color: #fff;
+}

@@ -1,0 +1,4 @@
+Bundle-Name: mhdsys-xss-filter
+Bundle-SymbolicName: com.mhdsys.xss.filter
+Bundle-Version: 1.0.0
+Export-Package: com.mhdsys.xss.filter.constants

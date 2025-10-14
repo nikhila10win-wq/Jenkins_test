@@ -1,0 +1,7 @@
+Bundle-Name: mhdsys-language-resourcebundle
+Bundle-SymbolicName: com.mhdsys.language.resourcebundle
+Bundle-Version: 1.0.0
+Export-Package: com.mhdsys.language.resourcebundle.constants
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"

@@ -1,0 +1,7 @@
+Bundle-Name: mhdsys-notification-events
+Bundle-SymbolicName: com.mhdsys.notification.events
+Bundle-Version: 1.0.0
+Export-Package: \
+	com.mhdsys.notification.events.configuration,\
+	com.mhdsys.notification.events.listener,\
+	com.mhdsys.notification.events.util

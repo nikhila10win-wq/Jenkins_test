@@ -1,0 +1,10 @@
+Bundle-Name: mhdsys-schema-api
+Bundle-SymbolicName: com.mhdsys.schema.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.mhdsys.schema.exception,\
+	com.mhdsys.schema.model,\
+	com.mhdsys.schema.service,\
+	com.mhdsys.schema.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../mhdsys-schema-service/service.xml

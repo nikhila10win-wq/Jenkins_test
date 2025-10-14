@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<custom-sql>
+     <sql id="com.mhdsys.schema.service.persistence.DivisionFinder.fetchAllDivisions">
+       <![CDATA[
+			SELECT divisionid, ${divisionNameColumn} FROM mhdsys_divisionmaster where isactive = ?;
+        ]]>
+    </sql>
+     <sql id="com.mhdsys.schema.service.persistence.DivisionMasterFinder.fetchDivisionByDivisionId">
+       <![CDATA[
+			SELECT divisionid, ${divisionNameColumn} FROM mhdsys_divisionmaster where isactive = ? and divisionid = ?;
+        ]]>
+    </sql>
+    <sql id="com.mhdsys.schema.service.persistence.DistrictFinder.fetchAllDistrictsByDivisionId">
+       <![CDATA[
+		SELECT 
+		    table2.districtid, 
+		    ${districtNameColumn}, 
+		    table2.divisionid, 
+		    table1.${divisionNameColumn}
+		FROM 
+		    mhdsys_districtmaster table2
+		JOIN 
+		    mhdsys_divisionmaster table1 
+		    ON CAST(table1.divisionid AS BIGINT) = CAST(table2.divisionid AS BIGINT)
+		WHERE 
+		    CAST(table2.isactive AS BOOLEAN) = ?
+		    AND CAST(table1.isactive AS BOOLEAN) = ?
+		    AND CAST(table1.divisionid AS BIGINT) = ?;
+        ]]>
+    </sql>
+    <sql id="com.mhdsys.schema.service.persistence.DistrictFinder.fetchDistrictByDistrictId">
+       <![CDATA[
+		SELECT 
+		    table2.districtid, 
+		    ${districtNameColumn}, 
+		    table2.divisionid, 
+		    table1.${divisionNameColumn}
+		FROM 
+		    mhdsys_districtmaster table2
+		JOIN 
+		    mhdsys_divisionmaster table1 
+		    ON CAST(table1.divisionid AS BIGINT) = CAST(table2.divisionid AS BIGINT)
+		WHERE 
+		    CAST(table2.isactive AS BOOLEAN) = ?
+		    AND CAST(table1.isactive AS BOOLEAN) = ?
+		    AND CAST(table2.districtid AS BIGINT) = ?;
+        ]]>
+    </sql>
+    <sql id="com.mhdsys.schema.service.persistence.TalukaFinder.fetchTalukasByDivisionIdAndDistrictId">
+       <![CDATA[
+		SELECT 
+		    table1.divisionid, 
+		    ${divisionNameColumn},
+		    table2.districtid, 
+		    ${districtNameColumn},
+		    table3.talukaid, 
+		    ${talukaNameColumn}
+		FROM 
+		    mhdsys_divisionmaster table1
+		JOIN 
+		    mhdsys_districtmaster table2 
+		    ON CAST(table1.divisionid AS BIGINT) = CAST(table2.divisionid AS BIGINT)
+		    AND CAST(table2.isactive AS BOOLEAN) = ?
+		JOIN 
+		    mhdsys_talukamaster table3 
+		    ON CAST(table2.districtid AS BIGINT) = CAST(table3.districtid AS BIGINT)
+		    AND CAST(table3.divisionid AS BIGINT) = CAST(table1.divisionid AS BIGINT)
+		    AND CAST(table3.isactive AS BOOLEAN) = ?
+		WHERE 
+		    CAST(table1.isactive AS BOOLEAN) = ?
+		    AND CAST(table1.divisionid AS BIGINT) = ?
+		    AND CAST(table2.districtid AS BIGINT) = ?
+		ORDER BY 
+		    table1.divisionid, 
+		    table2.districtid, 
+		    table3.talukaid;
+        ]]>
+    </sql>
+	<sql id="com.mhdsys.schema.service.persistence.TalukaFinder.fetchTalukaByTalukaId">
+       <![CDATA[
+		SELECT 
+		    table1.divisionid, 
+		    ${divisionNameColumn},
+		    table2.districtid, 
+		    ${districtNameColumn},
+		    table3.talukaid, 
+		    ${talukaNameColumn}
+		FROM 
+		    mhdsys_divisionmaster table1
+		JOIN 
+		    mhdsys_districtmaster table2 
+		    ON CAST(table1.divisionid AS BIGINT) = CAST(table2.divisionid AS BIGINT)
+		    AND CAST(table2.isactive AS BOOLEAN) = ?
+		JOIN 
+		    mhdsys_talukamaster table3 
+		    ON CAST(table2.districtid AS BIGINT) = CAST(table3.districtid AS BIGINT)
+		    AND CAST(table3.divisionid AS BIGINT) = CAST(table1.divisionid AS BIGINT)
+		    AND CAST(table3.isactive AS BOOLEAN) = ?
+		WHERE 
+		    CAST(table1.isactive AS BOOLEAN) = ?
+		    AND CAST(table3.talukaid AS BIGINT) = ?
+		ORDER BY 
+		    table1.divisionid, 
+		    table2.districtid, 
+		    table3.talukaid;
+        ]]>
+    </sql>
+    <sql id="com.mhdsys.schema.service.persistence.TalukaFinder.fetchDDTbyDDTids">
+       <![CDATA[
+		SELECT 
+		    table1.divisionid, 
+		    ${divisionNameColumn},
+		    table2.districtid, 
+		    ${districtNameColumn},
+		    table3.talukaid, 
+		    ${talukaNameColumn}
+		FROM 
+		    mhdsys_divisionmaster table1
+		JOIN 
+		    mhdsys_districtmaster table2 
+		    ON CAST(table1.divisionid AS BIGINT) = CAST(table2.divisionid AS BIGINT)
+		    AND CAST(table2.isactive AS BOOLEAN) = ?
+		JOIN 
+		    mhdsys_talukamaster table3 
+		    ON CAST(table2.districtid AS BIGINT) = CAST(table3.districtid AS BIGINT)
+		    AND CAST(table3.divisionid AS BIGINT) = CAST(table1.divisionid AS BIGINT)
+		    AND CAST(table3.isactive AS BOOLEAN) = ?
+		WHERE 
+		    CAST(table1.isactive AS BOOLEAN) = ?
+		    AND CAST(table1.divisionid AS BIGINT) = ?
+		    AND CAST(table2.districtid AS BIGINT) = ?
+		    AND CAST(table3.talukaid AS BIGINT) = ?
+		ORDER BY 
+		    table1.divisionid, 
+		    table2.districtid, 
+		    table3.talukaid;
+		LIMIT 1;
+        ]]>
+    </sql>
+    <sql id="com.mhdsys.schema.service.persistence.PTTeacherApplicationFinder.getPtTeacherFormByStatus">
+       <![CDATA[
+			SELECT * FROM mhdsys_ptteacherapplication WHERE status IN ($PARAMS$)
+			ORDER BY createdate DESC;
+        ]]>
+    </sql>
+     <sql id="com.mhdsys.schema.service.persistence.PTTeacherApplicationFinder.getParticipantName">
+       <![CDATA[
+			SELECT participantName
+        FROM mhdsys_ptteacherapplication
+        WHERE applicationNumber ILIKE ? 
+           OR participantName ILIKE ?
+        ORDER BY participantName ASC
+        LIMIT 10; 
+        ]]>
+    </sql>
+    <sql id="com.mhdsys.schema.service.persistence.SchoolCollegeOfficerRegistrationFinder.findByParticipantName">
+       <![CDATA[
+			SELECT firstname || ' ' || lastname AS fullname,userid
+		FROM mhdsys_schoolcollegeofficerregistration
+		WHERE (firstname ILIKE ? OR lastname ILIKE ?)
+		  AND currentdesignation = 1
+		ORDER BY firstname ASC
+		LIMIT 10;
+ 
+        ]]>
+    </sql>
+    
+    
+    <sql id="com.mhdsys.schema.service.persistence.DistrictMasterFinder.fetchDistrictByDistrictIdAndLang">
+       <![CDATA[
+		    SELECT districtId, ${districtNameColumn} FROM mhdsys_districtmaster where isactive = ? and districtId = ?;
+       ]]>
+	</sql>
+	
+	
+	 <sql id="com.mhdsys.schema.service.persistence.TalukaMasterFinder.fetchTalukaByTalukaIdAndLang">
+       <![CDATA[
+		    SELECT talukaId, ${talukaNameColumn} FROM mhdsys_talukamaster where isactive = ? and talukaId = ?;
+       ]]>
+	</sql>
+</custom-sql>

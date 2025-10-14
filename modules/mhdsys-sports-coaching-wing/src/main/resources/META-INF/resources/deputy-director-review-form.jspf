@@ -1,0 +1,265 @@
+<%-- <%@ include file="/init.jsp" %> --%>
+<%-- 1.statusValue-> ${trainingCenterDTO.statusValue}
+2.status ->${trainingCenterDTO.status}
+3.formstatus-> ${trainingCenterDTO.formstatus}
+4. con -> ${trainingCenterDTO.status ne 'PENDING_WITH_DD'} --%>
+<div class="card card-background p-0">
+    <div class="card-header header-card">
+        <liferay-ui:message key="review-by-divisional-deputy-director" />
+    </div>
+    <div class="card-body">
+        <!-- Row 5 -->
+        
+        <!-- For DDD Starts-->
+        <c:if test="${mode eq 'view' and isdistdeputydirector}">
+		        <div class="row">
+		            <div class="col-md-6">
+		                <div class="form-group">
+		                    <label>
+		                        <liferay-ui:message key="approval" />
+		                        <sup class="text-danger">*</sup>
+		                    </label><br />
+		                
+		                    <!-- Approve Radio -->
+		                    <div class="form-check form-check-inline">
+		                        <input class="form-check-input" type="radio" name="ddDecision" value="true" id="ddDecisionApprove"
+		                            <%--  <c:choose>
+		                                <c:when test="${not empty trainingCenterDTO.divdepDirRemarks}">disabled</c:when>
+		                                <c:otherwise>checked</c:otherwise>
+		                            </c:choose> --%>
+		                            <c:if test="${trainingCenterDTO.divdepDirDecision == 'true'}">checked</c:if>  <c:if test="${trainingCenterDTO.status ne 'PENDING_WITH_DD'}">disabled</c:if>/>
+		                        <label class="form-check-label" for="ddDecisionApprove"><liferay-ui:message key="approve" /></label>
+		                    </div>
+		                
+		                    <!-- Reject Radio -->
+		                    <div class="form-check form-check-inline">
+		                        <input class="form-check-input" type="radio" name="ddDecision" value="false" id="ddDecisionReject" 
+		                          <%--  <c:choose>
+		                                <c:when test="${not empty trainingCenterDTO.divdepDirRemarks}">disabled</c:when>
+		                                <c:otherwise>checked</c:otherwise>
+		                            </c:choose> --%>
+		                            <c:if test="${trainingCenterDTO.divdepDirDecision == 'false'}">checked</c:if>  <c:if test="${trainingCenterDTO.status ne 'PENDING_WITH_DD'}">disabled</c:if> />
+		                        <label class="form-check-label" for="ddDecisionReject">
+		                            <liferay-ui:message key="reject" />
+		                        </label>
+		                    </div>
+		                </div>
+		            </div>
+		
+		            <div class="col-md-12">
+		                <div class="form-group">
+		                    <label class="dddremarksLabel"><liferay-ui:message key="remarks" />  <c:if test="${trainingCenterDTO.divdepDirDecision == 'false'}"><sup class="text-danger">*</sup></c:if></label>
+		                    <textarea class="form-control" id="ddRemarks" name="ddRemarks" rows="2" placeholder="<liferay-ui:message key="enter-remarks" />" maxlength="250"
+		                        <c:if test="${trainingCenterDTO.status ne 'PENDING_WITH_DD'}">disabled</c:if>
+		                        >${trainingCenterDTO.divdepDirRemarks}</textarea>
+		                       <p class="error-container" id="dddremarks-error"></p>
+		                </div>
+		            </div>
+		        </div> 
+        </c:if>
+        
+        <!-- For DDD Ends-->
+        
+        
+       <!-- For HO Starts-->
+          <c:if test="${mode eq 'view' and ishoadmin}">
+          			<div class="row">
+		            <div class="col-md-6">
+		                <div class="form-group">
+		                    <label>
+		                        <liferay-ui:message key="approval" />
+		                        <sup class="text-danger">*</sup>
+		                    </label><br />
+		                
+		                    <!-- Approve Radio -->
+		                    <div class="form-check form-check-inline">
+		                        <input class="form-check-input" type="radio" name="ddDecision" value="true" id="ddDecisionApprove" disabled="disabled"
+		                            <%--  <c:choose>
+		                                <c:when test="${not empty trainingCenterDTO.divdepDirRemarks}">disabled</c:when>
+		                                <c:otherwise>checked</c:otherwise>
+		                            </c:choose> --%>
+		                            <c:if test="${trainingCenterDTO.divdepDirDecision == 'true'}">checked</c:if>/>
+		                        <label class="form-check-label" for="ddDecisionApprove"><liferay-ui:message key="approve" /></label>
+		                    </div>
+		                
+		                    <!-- Reject Radio -->
+		                    <div class="form-check form-check-inline">
+		                        <input class="form-check-input" type="radio" name="ddDecision" value="false" id="ddDecisionReject" disabled="disabled"
+		                          <%--  <c:choose>
+		                                <c:when test="${not empty trainingCenterDTO.divdepDirRemarks}">disabled</c:when>
+		                                <c:otherwise>checked</c:otherwise>
+		                            </c:choose> --%>
+		                            <c:if test="${trainingCenterDTO.divdepDirDecision == 'false'}">checked</c:if>  />
+		                        <label class="form-check-label" for="ddDecisionReject">
+		                            <liferay-ui:message key="reject" />
+		                        </label>
+		                    </div>
+		                </div>
+		            </div>
+		
+		            <div class="col-md-12">
+		                <div class="form-group">
+		                    <label><liferay-ui:message key="remarks" /><c:if test="${trainingCenterDTO.divdepDirDecision == 'false'}"> <sup class="text-danger">*</sup></c:if></label>
+		                    <textarea class="form-control" id="ddRemarks" name="ddRemarks" rows="2" placeholder="<liferay-ui:message key="enter-remarks" />" disabled="disabled">${trainingCenterDTO.divdepDirRemarks}</textarea>
+		                </div>
+		            </div>
+		        </div> 
+          </c:if>
+          
+        <!-- For HO Ends-->
+        
+        
+        <c:if test="${mode eq 'view' and isdistdeputydirector}">
+        	<c:if test="${trainingCenterDTO.status eq 'PENDING_WITH_DD'}">
+	        	<div class="card-footer bg-transparent text-right p-4">
+	        			<!-- <button type="button" class="btn btn-primary" onclick="saveTrainingCenterDetails(event,'save','reports')">
+	                         <liferay-ui:message key="submit" />
+	                    </button> -->
+	                    <button type="button" class="btn btn-primary" onclick="setActiveTab('financial-details','reports-and-attachments','previous')">
+                                    <liferay-ui:message key="previous" />
+                                </button>
+	                    <button type="submit" id="dddsubmtbtn" class="btn btn-primary">
+	                         <liferay-ui:message key="submit" />
+	                    </button>
+	        	</div>
+        	</c:if>
+        </c:if>
+    </div>
+</div>
+<script>
+		$(document).ready(function(){
+			 $('input[type="radio"][name="ddDecision"]').on('change', function() {
+		            var ddDecisionValue = $(this).val();
+		            console.log("ddDecisionValue ::::"+ddDecisionValue);
+		            if(ddDecisionValue=='false'){
+		            	$('.dddremarksLabel').html('').html('<liferay-ui:message key="remarks" /><sup class="text-danger">*</sup>');
+		            }else{
+		            	$('.dddremarksLabel').html('').html('<liferay-ui:message key="remarks" />');
+		            	document.getElementById("dddremarks-error").textContent = "<liferay-ui:message key='' />";
+		            }
+		        });
+			
+			
+			$('#dddsubmtbtn').click(function(e){
+				console.log("DDD submit button clicked ::");
+				var ddDecisionValue=$('input[name="ddDecision"]:checked').val();
+				var ddRemarksValue=$('#ddRemarks').val();
+				console.log("ddDecisionValue ::::"+ddDecisionValue);
+				console.log("ddRemarksValue ::::"+ddRemarksValue);
+				var errorMessage=[];
+				
+				if(ddDecisionValue=='false'){
+					console.log("ddd rejected ::::");
+					if(!ddRemarksValue){
+						document.getElementById("dddremarks-error").textContent = "<liferay-ui:message key='please-enter-remarks' />";
+						errorMessage.push("<liferay-ui:message key='please-enter-remarks' />");
+						//e.preventDefault();
+					}else{
+							//Validating remarks values
+			   			var trimmedValue = $.trim(ddRemarksValue.replace(/\s{2,}/g, ' '));
+			   			var regex =/^[a-zA-Z0-9 .,/-]*$/; 
+			   			var actualValue1=trimmedValue;
+			   			var actualValue=actualValue1.replace(/[^a-zA-Z0-9\s.,-]|(?<!\.)$/g, '');
+			   			$('#ddRemarks').val(actualValue);
+						console.log("actualValue.length :::" +actualValue.length);
+						if(actualValue){
+							if(actualValue.length<5){
+								document.getElementById("dddremarks-error").textContent = "<liferay-ui:message key='please-enter-minimum-5-character' />";
+								errorMessage.push("<liferay-ui:message key='please-enter-minimum-5-character' />");
+								//e.preventDefault();
+							}else if (!regex.test(actualValue)) {
+			       	            console.log("1 not allowed special character  ::");
+			       	         	document.getElementById("dddremarks-error").textContent = "<liferay-ui:message key='given-special-character-not-allowed' />";
+			       	         	errorMessage.push("<liferay-ui:message key='given-special-character-not-allowed' />");
+			       	         	//e.preventDefault();
+			       			}else if(/([.\/ -,])\1+/.test(actualValue)){
+			       	         	console.log("2 not allowed special character  ::");
+			       	      		document.getElementById("dddremarks-error").textContent = "<liferay-ui:message key='consecutive-special-characters-not-allowed' />";
+			       	      		errorMessage.push("<liferay-ui:message key='consecutive-special-characters-not-allowed' />");
+			       	      		//e.preventDefault();
+			       	        }else {
+			       	         	console.log("allowed special character  ::");
+			       	         document.getElementById("dddremarks-error").textContent = "";
+			       	        }
+						}else {
+			       	         document.getElementById("dddremarks-error").textContent = "";
+			   	        }
+					}
+				}else{
+					console.log("ddd approved ::::");
+					document.getElementById("dddremarks-error").textContent = "<liferay-ui:message key='' />";
+					
+					if(ddRemarksValue){
+						
+						var trimmedValue = $.trim(ddRemarksValue.replace(/\s{2,}/g, ' '));
+			   			var regex =/^[a-zA-Z0-9 .,/-]*$/; 
+			   			var actualValue1=trimmedValue;
+			   			var actualValue=actualValue1.replace(/[^a-zA-Z0-9\s.,-]|(?<!\.)$/g, '');
+			   			$('#ddRemarks').val(actualValue);
+						console.log("actualValue.length :::" +actualValue.length);
+						if(actualValue){
+							if(actualValue.length<5){
+								document.getElementById("dddremarks-error").textContent = "<liferay-ui:message key='please-enter-minimum-5-character' />";
+								errorMessage.push("<liferay-ui:message key='please-enter-minimum-5-character' />");
+								//e.preventDefault();
+							}else if (!regex.test(actualValue)) {
+			       	            console.log("1 not allowed special character  ::");
+			       	         	document.getElementById("dddremarks-error").textContent = "<liferay-ui:message key='given-special-character-not-allowed' />";
+			       	         	errorMessage.push("<liferay-ui:message key='given-special-character-not-allowed' />");
+			       	         	//e.preventDefault();
+			       			}else if(/([.\/ -,])\1+/.test(actualValue)){
+			       	         	console.log("2 not allowed special character  ::");
+			       	      		document.getElementById("dddremarks-error").textContent = "<liferay-ui:message key='consecutive-special-characters-not-allowed' />";
+			       	      		errorMessage.push("<liferay-ui:message key='consecutive-special-characters-not-allowed' />");
+			       	      		//e.preventDefault();
+			       	        }else {
+			       	         	console.log("allowed special character  ::");
+			       	         document.getElementById("dddremarks-error").textContent = "";
+			       	        }
+						}else {
+			       	         document.getElementById("dddremarks-error").textContent = "";
+			   	        }
+					}else{
+						  document.getElementById("dddremarks-error").textContent = "";
+					}
+				}
+				console.log("errorMessage in ddd review  :::" +errorMessage);
+				if(errorMessage.length>0){
+					e.preventDefault();
+				}else{
+					console.log("inside no errors::");
+				}
+			});
+			
+			
+			
+			$(document).on('keyup','#ddRemarks',function(){
+				var addressValue=$(this).val();
+	   			var currentId=$(this).attr("id");
+	   			var trimmedValue = $.trim(addressValue.replace(/\s{2,}/g, ' '));
+	   			var counterAddress=currentId.split("_");
+	   			var regex =/^[a-zA-Z0-9 .,/-]*$/; 
+	   			var actualValue1=$(this).val();
+	   			var actualValue=actualValue1.replace(/[^a-zA-Z0-9\s.,-]|(?<!\.)$/g, '');
+	   			$(this).val(actualValue);
+				console.log("actualValue.length :::" +actualValue.length);
+				if(actualValue){
+					if(actualValue.length<5){
+						document.getElementById("dddremarks-error").textContent = "<liferay-ui:message key='please-enter-minimum-5-character' />";
+					}else if (!regex.test(actualValue)) {
+	       	            console.log("1 not allowed special character  ::");
+	       	         	document.getElementById("dddremarks-error").textContent = "<liferay-ui:message key='given-special-character-not-allowed' />";
+	       			}else if(/([.\/ -,])\1+/.test(actualValue)){
+	       	         	console.log("2 not allowed special character  ::");
+	       	      		document.getElementById("dddremarks-error").textContent = "<liferay-ui:message key='consecutive-special-characters-not-allowed' />";
+	       	        }else {
+	       	         	console.log("allowed special character  ::");
+	       	         document.getElementById("dddremarks-error").textContent = "";
+	       	        }
+				}else {
+	       	         document.getElementById("dddremarks-error").textContent = "";
+	   	        }
+			});
+		});
+</script>
+

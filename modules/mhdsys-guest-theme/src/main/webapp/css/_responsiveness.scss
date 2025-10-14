@@ -1,0 +1,321 @@
+@media(max-width: 993px){
+    .gap {
+        padding: 100px 0;
+    } 
+    .p-60 {
+        padding-left: 0px;
+        padding-right: 00px;
+        padding-top: 40px;
+    } 
+    .error{
+        padding: 80px;
+        width: 80%;
+	 }  
+  
+} 
+ 
+@media(max-width: 576px){
+    .gap {
+        padding: 80px 0;
+    } 
+    
+    .footer-bootom-bar.fore .wpo-lower-footer {
+        padding: 0px 0;
+        padding-top: 60px;
+    }
+     
+    footer.footer-two .wpo-lower-footer p, footer.footer-two .footer-bootom-bar a {
+        color: black;
+        text-align: center;
+    } 
+     
+}
+
+@media(max-width: 500px){ 
+    #mobile-nav, .mobile-nav{
+        width: 100%;
+    } 
+}
+
+ 
+
+@media(max-width: 450px){ 
+    .social-media {
+        margin: 0;
+        flex-wrap: wrap;
+    }
+    .wpo-lower-footer .boder {
+        margin: 10px !important;
+    }
+    .subscribe svg {
+        margin-bottom: 16px;
+    }
+    .subscribe{
+        padding: 24px;
+    }
+    .subscribe .d-flex.align-items-center {
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+    }
+    .social-media li{
+        margin-bottom: 10px;
+    } 
+    .Information ul li{
+        width: 100%;
+    }
+    .contact-info a{
+        font-size: 16px;
+    }
+    .widget-title p {
+        width: 100%;
+    }
+    .gifts-img i {
+        font-size: 14px;
+    } 
+} 
+
+@media(max-width: 375px){
+    .footer-bootom-bar a{
+        font-size: 14px;
+    } 
+}
+
+
+.mobileNavigaiton {
+	.portlet {
+    	margin-bottom: 0;
+	}
+}
+
+.portlet-layout .portlet-header {
+    margin-bottom: 0;
+}
+
+
+
+/* New Media Queries */
+/*----------------------------------------------------------------*/
+/* Small Devices (Phones, up to 576px) */
+@media (max-width: 576px) { 
+	.mobileNavigaiton {
+		display: block;
+	}
+	
+	.top-bar, .second-bar {
+		display: none;
+	}
+	
+	.hero-slider {
+    	margin-top: 0px !important;
+    }
+
+    #sportsNav {
+        .navbar-collapse { 
+            position: fixed;
+            top: 85px;
+            background: #fff;
+            z-index: 9;
+            left: 0px;
+            width: 100%;
+            padding: 10px;
+            border-radius: 0;
+            border-top: 2px solid #ddd;
+        }
+    }
+    
+    .megamenu-bg .d-flex {
+        display: block !important;
+    }
+	
+}
+
+
+/*----------------------------------------------------------------*/
+/* Medium Devices (Tablets, 577px to 768px) */
+@media (min-width: 577px) and (max-width: 768px) {
+	.mobileNavigaiton {
+		display: block;
+	}
+	
+	.top-bar, .second-bar {
+		display: none;
+	}
+	
+	.hero-slider {
+    	margin-top: 0px !important;
+	}
+
+    #sportsNav {
+        .navbar-collapse { 
+            position: fixed;
+            top: 85px;
+            background: #fff;
+            z-index: 9;
+            left: 0px;
+            width: 100%;
+            padding: 10px;
+            border-radius: 0;
+            border-top: 2px solid #ddd;
+        }
+    }
+    
+    .megamenu-bg .d-flex {
+        display: block !important;
+    }
+    	 	#captchaInput-error{
+left:60%!important;
+}
+}
+
+
+/*----------------------------------------------------------------*/
+/* Large Devices (Desktops, 769px to 992px) */
+@media (min-width: 769px) and (max-width: 992px) {  
+	.mobileNavigaiton {
+		display: block;
+	}
+	
+	.top-bar, .second-bar {
+		display: none;
+	}
+	
+	.hero-slider {
+    	margin-top: 0px !important;
+	}
+
+    #sportsNav {
+        .navbar-collapse { 
+            position: fixed;
+            top: 85px;
+            background: #fff;
+            z-index: 9;
+            left: 0px;
+            width: 100%;
+            padding: 10px;
+            border-radius: 0;
+            border-top: 2px solid #ddd;
+        }
+    }
+    
+    .megamenu-bg .d-flex {
+        display: block !important;
+    }
+ 
+}
+
+
+/*----------------------------------------------------------------*/
+/* Extra Large Devices (Large Desktops, 993px and up) */
+@media (min-width: 993px) {
+	.mobileNavigaiton {
+		display: none;
+	}
+
+}
+/*------------------------------------*/
+/* Phones (portrait) */
+@media (max-width: 575.98px) {
+        .banner-img {
+        margin-top: -20px!important;
+    }
+    .error {
+        padding: 10px!important;
+    }
+    
+    .panel-body {
+        padding: 0px;
+    }
+    .mdsys .social-media {
+        padding-left: 0px;
+        display: block;
+    }
+    img.white-logo{
+        margin-bottom: 25px;
+    }
+    .navbar-light .navbar-toggler{
+            margin-top: -25px;
+    }
+    .mdsys .Information {
+          padding-top: 0px;
+    }
+    .mdsys .gap{
+        margin-top: 30px!important;
+        padding: 0px;
+    }
+     .common-forms-div .card .card-body .form-group label {
+  font-size:12px;
+  padding: 0px!important;
+  }
+   #captchaInput{
+    font-size: 12px;
+}
+}
+/* Phones (landscape) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+     .navbar-light .navbar-toggler{
+        margin-left: -25px;
+    }
+    .error {
+        padding: 10px!important;
+    }
+     .common-forms-div .card .card-body .form-group label {
+  font-size:12px;
+  padding: 0px!important;
+  }
+     #captchaInput{
+    font-size: 12px;
+}
+#captchaInput-error{
+left:40%;
+}
+}
+ 
+/* Tablets */
+@media (min-width: 768px) and (max-width: 991.98px) {
+      .banner-img {
+        margin-top: 0px!important;
+    }
+   .error {
+        padding: 10px!important;
+    }
+     .common-forms-div .card .card-body .form-group label {
+  font-size:12px;
+  padding: 0px!important;
+  }
+    #captchaInput{
+    font-size: 12px;
+}
+	 	#captchaInput-error{
+left:60%!important;
+}
+}
+ 
+/* Small laptops */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+
+}
+ 
+/* Large desktops */
+@media (min-width: 1200px) {
+}
+
+@media(max-width:729px){
+.common-forms-div .card .card-body .btn {
+      margin-top: -30px;
+    padding: 5px 10px;
+  }
+  .common-forms-div .card .card-body .d-flex{
+  display: block!important;
+  }
+  .common-forms-div .card .card-body .form-group label {
+  font-size:12px;
+  padding: 0px!important;
+  }
+  #captchaInput{
+margin-left:0px!important;
+}
+#captchaInput-error{
+left:0%;
+}
+}

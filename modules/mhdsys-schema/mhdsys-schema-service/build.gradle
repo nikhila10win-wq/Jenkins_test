@@ -1,0 +1,13 @@
+dependencies {
+	api project(":modules:mhdsys-schema:mhdsys-schema-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.dxp.api"
+}
+
+buildService {
+	apiDir = "../mhdsys-schema-api/src/main/java"
+	testDir = "../mhdsys-schema-test/src/testIntegration/java"
+	databaseNameMaxLength=100 
+}
+
+group = "com.mhdsys.schema"

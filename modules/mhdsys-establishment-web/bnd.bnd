@@ -1,0 +1,7 @@
+Bundle-Name: mhdsys-establishment-web
+Bundle-SymbolicName: com.mhdys.establishment.com
+Bundle-Version: 1.0.0
+Export-Package: com.mhdys.establishment.com.constants
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"

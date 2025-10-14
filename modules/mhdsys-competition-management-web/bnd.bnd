@@ -1,0 +1,7 @@
+Bundle-Name: mhdsys-competition-management-web
+Bundle-SymbolicName: com.mhdsys.competition.management
+Bundle-Version: 1.0.0
+Export-Package: com.mhdsys.competition.management.constants
+Provide-Capability:\
+	liferay.language.resources;\
+		resource.bundle.base.name="content.Language"

@@ -1,0 +1,1404 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.mhdsys.schema.model.AspiringAthlete">
+		<field name="aspiringAthleteId" type="long" />
+		<field name="nameOfApplicant" type="String" />
+		<field name="address" type="String" />
+		<field name="pinCode" type="long" />
+		<field name="contactNumber" type="long" />
+		<field name="emailId" type="String" />
+		<field name="domicileFile" type="long" />
+		<field name="sportName" type="String" />
+		<field name="sportType" type="String" />
+		<field name="competitionLevel" type="String" />
+		<field name="competitionName" type="String" />
+		<field name="placeOfCompetition" type="String" />
+		<field name="competitionDate" type="Date" />
+		<field name="competitionRank" type="String" />
+		<field name="medalAchieved" type="String" />
+		<field name="prevCompetitionName" type="String" />
+		<field name="prevPlace" type="String" />
+		<field name="pastCompetitionYear" type="long" />
+		<field name="pastCompetitionDate" type="Date" />
+		<field name="pastCompetitionRank" type="String" />
+		<field name="selectionLetterFile" type="long" />
+		<field name="selectionCertificateFile" type="long" />
+		<field name="newRecordCertificateFile" type="long" />
+		<field name="grantedSport" type="String" />
+		<field name="grantedSportName" type="String" />
+		<field name="travelCost" type="String" />
+		<field name="entryFees" type="String" />
+		<field name="hotelFees" type="String" />
+		<field name="mealCost" type="String" />
+		<field name="preCompetitionTrainingFees" type="String" />
+		<field name="trainingEquipmentCost" type="String" />
+		<field name="guidanceFeeFromExpert" type="String" />
+		<field name="trainingFee" type="String" />
+		<field name="costOfImportSportEquipment" type="String" />
+		<field name="totalCost" type="String" />
+		<field name="bankName" type="String" />
+		<field name="ifscCode" type="String" />
+		<field name="accountNumber" type="long" />
+		<field name="bankStatement" type="long" />
+		<field name="affidavit" type="long" />
+		<field name="affidavitBondpaper" type="long" />
+		<field name="isDeclarationAccepted" type="boolean" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.AwardApplication">
+		<field name="awardApplicationId" type="long" />
+		<field name="competitionLevelId" type="long" />
+		<field name="competitionName" type="String" />
+		<field name="competitionPlace" type="String" />
+		<field name="participationYear" type="String" />
+		<field name="sportId" type="long" />
+		<field name="medalRecieved" type="String" />
+		<field name="category" type="long" />
+		<field name="countryOfCompetition" type="String" />
+		<field name="cityOfCompetition" type="String" />
+		<field name="competitionStartDate" type="Date" />
+		<field name="competitionEndDate" type="Date" />
+		<field name="highestPerformance" type="String" />
+		<field name="certificateId" type="long" />
+		<field name="coachName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="userId" type="long" />
+		<field name="userType" type="String" />
+		<field name="noOfParticipation" type="long" />
+		<field name="noOfMedalRecieved" type="long" />
+		<field name="undertakingId" type="long" />
+		<field name="gender" type="int" />
+		<field name="status" type="String" />
+		<field name="awardPointByDeskOff" type="String" />
+		<field name="deskOffRemarks" type="String" />
+		<field name="overallDeskOffRemarks" type="String">
+			<hint name="max-length">5000</hint>
+			<hint name="column-type">VARCHAR(5000)</hint>
+		</field>
+		<field name="sportsDeskOffUserId" type="long" />
+		<field name="sportsDeskOffName" type="String" />
+		<field name="awardPointByAsso" type="String" />
+		<field name="overallAssoRemarks" type="String">
+			<hint name="max-length">5000</hint>
+			<hint name="column-type">VARCHAR(5000)</hint>
+		</field>
+		<field name="associationName" type="String" />
+		<field name="name" type="String" />
+		<field name="appointmentLetter" type="long" />
+		<field name="awardPointByHo" type="String" />
+		<field name="overallHoRemarks" type="String" />
+		<field name="isVerified" type="boolean" />
+		<field name="assignToDeskOff" type="boolean" />
+		<field name="deskOffSport" type="String" />
+		<field name="directoryApproval" type="boolean" />
+		<field name="coachFromDate" type="Date" />
+		<field name="coachToDate" type="Date" />
+		<field name="sportpersonName" type="String" />
+		<field name="otherSportName" type="String" />
+		<field name="campaignDescription" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="deskofficerUserId" type="long" />
+		<field name="associationUserId" type="long" />
+		<field name="hoUserId" type="long" />
+		<field name="directorRemarks" type="String" />
+		<field name="directorComments" type="String" />
+		<field name="mainDeskOffRemarks" type="String" />
+		<field name="mainDeskOffVerification" type="String" />
+		<field name="awardYear" type="String" />
+		<field name="awardNameId" type="long" />
+		<field name="sportsCompetitionLevelId" type="long" />
+		<field name="sportsTypeId" type="long" />
+		<field name="points" type="String" />
+	</model>
+	<model name="com.mhdsys.schema.model.AwardNameMaster">
+		<field name="awardNameMasterId" type="long" />
+		<field name="name_en" type="String" />
+		<field name="name_hi" type="String" />
+		<field name="name_mr" type="String" />
+		<field name="isActive" type="boolean" />
+	</model>
+	<model name="com.mhdsys.schema.model.AwardPoints">
+		<field name="awardPointsId" type="long" />
+		<field name="competitionLevelId" type="long" />
+		<field name="awardYear" type="String" />
+		<field name="awardNameId" type="long" />
+		<field name="sportsCompetitionLevelId" type="long" />
+		<field name="sportsNameId" type="long" />
+		<field name="sportsTypeId" type="long" />
+		<field name="category" type="long" />
+		<field name="winner" type="String" />
+		<field name="firstRunnerUp" type="String" />
+		<field name="secondRunnerUp" type="String" />
+		<field name="participant" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.AwardWinner">
+		<field name="awardWinnerId" type="long" />
+		<field name="fullName" type="String" />
+		<field name="dob" type="Date" />
+		<field name="mobileNumber" type="String" />
+		<field name="emailId" type="String" />
+		<field name="aadhaarCardFile" type="long" />
+		<field name="panCardFile" type="long" />
+		<field name="domicileCertificateFile" type="long" />
+		<field name="competitionLevel" type="String" />
+		<field name="competitionName" type="String" />
+		<field name="competitionYear" type="int" />
+		<field name="competitionDrawFile" type="long" />
+		<field name="organizationSelectionLetterFile" type="long" />
+		<field name="competitionDate" type="Date" />
+		<field name="placeOfCompetition" type="String" />
+		<field name="competitionPerformance" type="String" />
+		<field name="competitionRank" type="String" />
+		<field name="competitionResultFile" type="long" />
+		<field name="competitionCertificateFile" type="long" />
+		<field name="bankName" type="String" />
+		<field name="ifscCode" type="String" />
+		<field name="accountNumber" type="String" />
+		<field name="bankStatementFile" type="long" />
+		<field name="bankPassbookFile" type="long" />
+		<field name="cancelledCheckFile" type="long" />
+		<field name="playersConsentLetterFile" type="long" />
+		<field name="affidavitFile" type="long" />
+		<field name="isDeclarationAccepted" type="boolean" />
+		<field name="hoVerification" type="String" />
+		<field name="hoRemarks" type="String" />
+		<field name="ddVerification" type="String" />
+		<field name="ddRemarks" type="String" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.AwardYouth">
+		<field name="awardYouthId" type="long" />
+		<field name="firstName" type="String" />
+		<field name="middleName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="gender" type="String" />
+		<field name="address" type="String">
+			<hint name="max-length">250</hint>
+		</field>
+		<field name="contactNo" type="long" />
+		<field name="emailId" type="String" />
+		<field name="dob" type="Date" />
+		<field name="birthCertificate" type="long" />
+		<field name="educationDetails" type="String" />
+		<field name="businessDetails" type="String" />
+		<field name="workArea" type="String" />
+		<field name="workDetailsPast3Years" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="newsPaperArticle" type="String" />
+		<field name="socialResponsibility" type="long" />
+		<field name="areaWorked" type="String" />
+		<field name="areaWorkedInfo" type="String" />
+		<field name="recognizedByGovt" type="String" />
+		<field name="recognizedWorkInfo" type="String" />
+		<field name="staffOf" type="String" />
+		<field name="staffAffiliationInfo" type="String" />
+		<field name="convicted" type="String" />
+		<field name="convictedInfo" type="String" />
+		<field name="futurePlans" type="String" />
+		<field name="undertakingAccepted" type="boolean" />
+		<field name="deskDecision" type="boolean" />
+		<field name="asstDirDecision" type="boolean" />
+		<field name="ddHoDecision" type="boolean" />
+		<field name="deskRemarks" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="asstDirRemarks" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="ddHoRemarks" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="status" type="int" />
+		<field name="formStatus" type="String" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.AwardYouthOrg">
+		<field name="awardYouthOrgId" type="long" />
+		<field name="firstName" type="String" />
+		<field name="middleName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="gender" type="String" />
+		<field name="address" type="String">
+			<hint name="max-length">250</hint>
+		</field>
+		<field name="contactNo" type="long" />
+		<field name="emailId" type="String" />
+		<field name="attestedCopy" type="long" />
+		<field name="constitution" type="long" />
+		<field name="officersList" type="long" />
+		<field name="workArea" type="String" />
+		<field name="workDetailsPast3Years" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="newsPaperArticle" type="String" />
+		<field name="govtFinancialAssistance" type="String" />
+		<field name="areaWorked" type="String" />
+		<field name="areaWorkedInfo" type="String" />
+		<field name="recognizedByGovt" type="String" />
+		<field name="recognizedWorkInfo" type="String" />
+		<field name="convicted" type="String" />
+		<field name="convictedInfo" type="String" />
+		<field name="futurePlans" type="String" />
+		<field name="undertakingAccepted" type="boolean" />
+		<field name="formStatus" type="String" />
+		<field name="deskDecision" type="boolean" />
+		<field name="asstDirDecision" type="boolean" />
+		<field name="ddHoDecision" type="boolean" />
+		<field name="deskRemarks" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="asstDirRemarks" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="ddHoRemarks" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="status" type="int" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.Budget">
+		<field name="budgetId" type="long" />
+		<field name="financialYear" type="String" />
+		<field name="department" type="String" />
+		<field name="requestedBudget" type="String" />
+		<field name="approvedBudget" type="String" />
+		<field name="totalBudget" type="String" />
+		<field name="recievedAmount" type="String" />
+		<field name="totalSpend" type="String" />
+		<field name="overallPercentage" type="String" />
+		<field name="budgetDate" type="Date" />
+		<field name="remarks" type="String" />
+		<field name="category" type="String" />
+		<field name="supplementaryDemand" type="String" />
+		<field name="totalFund" type="String" />
+		<field name="attachments" type="String" />
+		<field name="master" type="String" />
+		<field name="uniqueId" type="String" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.CategoryMaster">
+		<field name="categoryMasterId" type="long" />
+		<field name="name" type="String" />
+		<field name="isActive" type="boolean" />
+	</model>
+	<model name="com.mhdsys.schema.model.CertificateVerification">
+		<field name="certificateVerificationId" type="long" />
+		<field name="firstName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="mothersName" type="String" />
+		<field name="fathersName" type="String" />
+		<field name="gender" type="int" />
+		<field name="dateOfBirth" type="Date" />
+		<field name="aadharNumber" type="String" />
+		<field name="certificate" type="String" />
+		<field name="approveReject" type="boolean" />
+		<field name="remarks" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.Coach">
+		<field name="coachId" type="long" />
+		<field name="trainingCentreId" type="long" />
+		<field name="coachType" type="String" />
+		<field name="fullName" type="String" />
+		<field name="mobileNumber" type="String" />
+		<field name="email" type="String" />
+		<field name="sportsName" type="String" />
+		<field name="address" type="String" />
+		<field name="tracksuitSize" type="String" />
+		<field name="tshirtSize" type="String" />
+		<field name="shortsSize" type="String" />
+		<field name="shoesSize" type="String" />
+		<field name="remarks" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="formStatus" type="String" />
+		<field name="district" type="String" />
+	</model>
+	<model name="com.mhdsys.schema.model.CoachingWingMonthlyReport">
+		<field name="coachingWingMonthlyReportId" type="long" />
+		<field name="timestamp" type="Date" />
+		<field name="reportMonth" type="String" />
+		<field name="userId" type="long" />
+		<field name="coachId" type="long" />
+		<field name="coachName" type="String" />
+		<field name="district" type="String" />
+		<field name="educationalQualification" type="String" />
+		<field name="otherCourse" type="String" />
+		<field name="sportsName" type="String" />
+		<field name="trainingCenterPlace" type="String" />
+		<field name="noOfPlayers" type="String" />
+		<field name="performanceOfThePlayers" type="String" />
+		<field name="trainingProgram" type="String" />
+		<field name="playerAnalysisMethod" type="String" />
+		<field name="planningForBestPlayers" type="String" />
+		<field name="idea" type="String" />
+		<field name="assistanceAndEffort" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="reportStatus" type="String" />
+		<field name="status" type="String" />
+		<field name="dsoDirUserid" type="long" />
+		<field name="dsoDecision" type="boolean" />
+		<field name="dsoRemarks" type="String" />
+		<field name="digitalSignature" type="long" />
+		<field name="digitalSignaturePath" type="String" />
+	</model>
+	<model name="com.mhdsys.schema.model.CommittedMaster">
+		<field name="committedMasterId" type="long" />
+		<field name="committedName_en" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="committedName_hi" type="String" />
+		<field name="schemeName_mr" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="uniqueId" type="String" />
+		<field name="isActive" type="boolean" />
+	</model>
+	<model name="com.mhdsys.schema.model.CompetitionInitiation">
+		<field name="competitionInitiationId" type="long" />
+		<field name="competitionMasterId" type="long" />
+		<field name="sportId" type="long" />
+		<field name="categoryId" type="long" />
+		<field name="underForteen" type="boolean" />
+		<field name="underSeventeen" type="boolean" />
+		<field name="underNineteen" type="boolean" />
+		<field name="competitionStartDate" type="Date" />
+		<field name="competitionEndDate" type="Date" />
+		<field name="fees" type="double" />
+		<field name="affiliationFeesByTotalCount" type="double" />
+		<field name="affiliationFeesByCategory" type="double" />
+		<field name="venueDetails" type="String" />
+		<field name="selfDeclaration" type="boolean" />
+		<field name="taluka" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="districtOrTaluka" type="int" />
+	</model>
+	<model name="com.mhdsys.schema.model.CompetitionLevelMaster">
+		<field name="competitionLevelMasterId" type="long" />
+		<field name="name_en" type="String" />
+		<field name="name_hi" type="String" />
+		<field name="name_mr" type="String" />
+		<field name="isActive" type="boolean" />
+	</model>
+	<model name="com.mhdsys.schema.model.CompetitionMaster">
+		<field name="competitionMasterId" type="long" />
+		<field name="sportTypeId" type="int" />
+		<field name="sportId" type="long" />
+		<field name="categoryId" type="long" />
+		<field name="underForteen" type="boolean" />
+		<field name="underSeventeen" type="boolean" />
+		<field name="underNineteen" type="boolean" />
+		<field name="underForteenCutOffDate" type="Date" />
+		<field name="underSeventeenCutOffDate" type="Date" />
+		<field name="underNineteenCutOffDate" type="Date" />
+		<field name="fees" type="double" />
+		<field name="currentYear" type="boolean" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.CompetitionResultUpload">
+		<field name="competitionResultUploadId" type="long" />
+		<field name="competitionScheduledId" type="long" />
+		<field name="competitionInitiationId" type="long" />
+		<field name="reachedGround" type="boolean" />
+		<field name="winnerName" type="String" />
+		<field name="firstRunnerUpName" type="String" />
+		<field name="secondRunnerUpName" type="String" />
+		<field name="thirdRunnerUpName" type="String" />
+		<field name="firstScoreSheetFileEntryId" type="long" />
+		<field name="secondAndThirdScoreSheetFileEntryId" type="long" />
+		<field name="selfDeclaration" type="boolean" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.CompetitionSchedule">
+		<field name="competitionScheduleId" type="long" />
+		<field name="competitionInitiationId" type="long" />
+		<field name="ptTeacherApplicationId" type="long" />
+		<field name="competitionName" type="String" />
+		<field name="gender" type="boolean" />
+		<field name="districtOrTaluka" type="int" />
+		<field name="registrationStartDate" type="Date" />
+		<field name="registrationEndDate" type="Date" />
+		<field name="lastSubmissionDate" type="Date" />
+		<field name="competitionOrganizerName" type="String" />
+		<field name="competitionOrganizerContact" type="String" />
+		<field name="srNumber" type="int" />
+		<field name="startTime" type="Date" />
+		<field name="reportingTime" type="Date" />
+		<field name="resultUpload" type="boolean" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.CompetitionWorkflowStatus">
+		<field name="competitionWorkflowStatusId" type="long" />
+		<field name="description" type="String" />
+	</model>
+	<model name="com.mhdsys.schema.model.ConstructionTracker">
+		<field name="constructionTrackerId" type="long" />
+		<field name="division" type="String" />
+		<field name="district" type="String" />
+		<field name="taluka" type="String" />
+		<field name="statusOfComplex" type="String" />
+		<field name="address" type="String" />
+		<field name="GeoTagPhoto" type="String">
+			<hint name="max-length">50000</hint>
+		</field>
+		<field name="officerName" type="String" />
+		<field name="contactNumber" type="String" />
+		<field name="landAvailable" type="String" />
+		<field name="typeOfLand" type="String" />
+		<field name="area" type="long" />
+		<field name="ownership" type="String" />
+		<field name="administrationJSON" type="String">
+			<hint name="max-length">50000</hint>
+		</field>
+		<field name="fundsJSON" type="String">
+			<hint name="max-length">50000</hint>
+		</field>
+		<field name="govtGrantsJSON" type="String">
+			<hint name="max-length">50000</hint>
+		</field>
+		<field name="otherSourcesJSON" type="String">
+			<hint name="max-length">50000</hint>
+		</field>
+		<field name="otherTotalReceivedAmount" type="String" />
+		<field name="otherTotalExpenditureAmount" type="String" />
+		<field name="otherTotalBalanceAmount" type="String" />
+		<field name="architectAppointed" type="String" />
+		<field name="executingAgency" type="String" />
+		<field name="nameOfTheFirm" type="String" />
+		<field name="progressDetailsJSON" type="String">
+			<hint name="max-length">50000</hint>
+		</field>
+		<field name="UCCCStatus" type="String" />
+		<field name="UCCCAmount" type="String" />
+		<field name="UCCCExtension" type="String" />
+		<field name="UCCCRevisedCompletionDate" type="Date" />
+		<field name="workCompletedInTimeline" type="String" />
+		<field name="UCCCReason" type="String" />
+		<field name="panalAction" type="String" />
+		<field name="panalActionDoc" type="long" />
+		<field name="hoReview" type="String" />
+		<field name="hoReviewDoc" type="long" />
+		<field name="applicationStatus" type="long" />
+		<field name="holdWithUserId" type="long" />
+		<field name="isSaveAsDraft" type="boolean" />
+		<field name="longitude" type="String" />
+		<field name="latitude" type="String" />
+		<field name="constructionTrackerUniqueId" type="String" />
+		<field name="IntiatorUserId" type="long" />
+		<field name="dddReview" type="String" />
+		<field name="dddReviewDoc" type="long" />
+		<field name="createdDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.CouncilSportCompetitionDetails">
+		<field name="councilSportCompetitionDetailsId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="councilOrganizationName" type="String" />
+		<field name="councilOrganizationAddress" type="String" />
+		<field name="councilCompetitionName" type="String" />
+		<field name="councilCompetitionLevel" type="String" />
+		<field name="councilCompetitionSponsor" type="String" />
+		<field name="councilSponsorAddress" type="String" />
+		<field name="councilTeamPlayersCount" type="int" />
+		<field name="councilPlayerListAttachmentId" type="long" />
+		<field name="councilCompetitionVenue" type="String" />
+		<field name="councilCompetitionDuration" type="Date" />
+		<field name="councilEstimatedCost" type="double" />
+		<field name="councilEstimatedCostAttachmentId" type="long" />
+		<field name="councilFederationConsent" type="String" />
+		<field name="councilFederationConsentAttachmentId" type="long" />
+		<field name="councilRegistrationNumber" type="String" />
+		<field name="councilDirectorateApprovalNumber" type="String" />
+		<field name="councilDirectorateApprovalAttachmentId" type="long" />
+		<field name="councilDistrictAffiliationAttachmentId" type="long" />
+		<field name="councilCertificateAffiliationAttachmentId" type="long" />
+		<field name="councilRule3Approval" type="String" />
+		<field name="councilPrescribedFormatDSO" type="String" />
+		<field name="councilPrescribedFormatAttachmentId" type="long" />
+		<field name="councilCaStatement" type="String" />
+		<field name="councilCaStatementAttachmentId" type="long" />
+		<field name="councilOfficeBearersList" type="String" />
+		<field name="councilOfficeBearersAttachmentId" type="long" />
+		<field name="councilOrganizationCertificate" type="String" />
+		<field name="councilOrganizationCertificateAttachmentId" type="long" />
+		<field name="councilSportsTrainingPrevious" type="String" />
+		<field name="councilSportsTrainingDetails" type="String" />
+		<field name="councilSportsGrantFormDetails" type="String" />
+		<field name="councilConcernLetterAttachmentId" type="long" />
+		<field name="councilCostEstimationAttachmentId" type="long" />
+		<field name="councilDetailedReportAttachmentId" type="long" />
+		<field name="councilAuditedStatementAttachmentId" type="long" />
+		<field name="councilTeamPlayersListAttachmentId" type="long" />
+		<field name="councilFundsRaised" type="double" />
+		<field name="councilActualLoss" type="double" />
+		<field name="councilSouvenirIssued" type="String" />
+		<field name="councilSouvenirAttachmentId" type="long" />
+		<field name="councilCompetitionPhotosId" type="String" />
+		<field name="councilAffidavitAttachmentId" type="long" />
+		<field name="isDeclarationAccepted" type="boolean" />
+		<field name="doVerification" type="String" />
+		<field name="doRemarks" type="String" />
+		<field name="ddVerification" type="String" />
+		<field name="ddRemarks" type="String" />
+	</model>
+	<model name="com.mhdsys.schema.model.DistrictGrantScheme">
+		<field name="districtGrantSchemeId" type="long" />
+		<field name="category" type="String" />
+		<field name="subCategory" type="String" />
+		<field name="project" type="String" />
+		<field name="type" type="String" />
+		<field name="details" type="String" />
+		<field name="geoTagPhotos" type="String" />
+		<field name="latitude" type="String" />
+		<field name="longitude" type="String" />
+		<field name="dprDocument" type="long" />
+		<field name="supportedDocuments" type="String" />
+		<field name="userId" type="long" />
+		<field name="status" type="String" />
+		<field name="hoVerification" type="String" />
+		<field name="hoRemarks" type="String" />
+		<field name="ddVerification" type="String" />
+		<field name="ddRemarks" type="String" />
+		<field name="distributedFund" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDated" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.DistrictMaster">
+		<field name="districtId" type="long" />
+		<field name="districtName_en" type="String" />
+		<field name="districtName_hi" type="String" />
+		<field name="districtName_mr" type="String" />
+		<field name="isActive" type="boolean" />
+		<field name="divisionId" type="long" />
+	</model>
+	<model name="com.mhdsys.schema.model.DivisionMaster">
+		<field name="divisionId" type="long" />
+		<field name="divisionName_en" type="String" />
+		<field name="divisionName_hi" type="String" />
+		<field name="divisionName_mr" type="String" />
+		<field name="isActive" type="boolean" />
+	</model>
+	<model name="com.mhdsys.schema.model.EstablishmentDetails">
+		<field name="establishmentDetailId" type="long" />
+		<field name="personalDetails" type="Boolean" />
+		<field name="serviceDetails" type="Boolean" />
+		<field name="trainingDetails" type="Boolean" />
+		<field name="npsDetails" type="Boolean" />
+		<field name="gpfDetails" type="Boolean" />
+		<field name="postingStatus" type="Boolean" />
+		<field name="roasterStatus" type="Boolean" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.EventCertificate">
+		<field name="eventCertificateId" type="long" />
+		<field name="year" type="String" />
+		<field name="eventDate" type="Date" />
+		<field name="eventName" type="String" />
+		<field name="address" type="String" />
+		<field name="certificateFiles" type="String" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.FacilityRating">
+		<field name="facilityRatingId" type="long" />
+		<field name="ratingUniqueId" type="String" />
+		<field name="facilityMasterId" type="long" />
+		<field name="rating" type="String" />
+		<field name="comment" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="hoReplyToReview" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="creatorUserId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.FinancialAssistance">
+		<field name="financialAssistanceId" type="long" />
+		<field name="fullName" type="String" />
+		<field name="mobileNumber" type="String" />
+		<field name="address" type="String" />
+		<field name="pinCode" type="long" />
+		<field name="emailId" type="String" />
+		<field name="sportsPerformanceDetails" type="String" />
+		<field name="certifiedLetter" type="String" />
+		<field name="certifiedLetterFile" type="long" />
+		<field name="assistanceMatter" type="String" />
+		<field name="assistanceMatterFile" type="long" />
+		<field name="itemsEstimate" type="String" />
+		<field name="itemsEstimateFile" type="long" />
+		<field name="expenseBudget" type="String" />
+		<field name="expenseBudgetFile" type="long" />
+		<field name="priceList" type="String" />
+		<field name="priceListFile" type="long" />
+		<field name="expenditureEstimate" type="String" />
+		<field name="expenditureEstimateFile" type="long" />
+		<field name="workReport" type="String" />
+		<field name="workReportFile" type="long" />
+		<field name="isDeclarationAccepted" type="boolean" />
+		<field name="hoVerification" type="String" />
+		<field name="hoRemarks" type="String" />
+		<field name="ddVerification" type="String" />
+		<field name="ddRemarks" type="String" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.FundDistribution">
+		<field name="fundDistributionId" type="long" />
+		<field name="division" type="long" />
+		<field name="district" type="long" />
+		<field name="category" type="long" />
+		<field name="subCategory" type="long" />
+		<field name="budget" type="String" />
+		<field name="remarks" type="String" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.GPFDetails">
+		<field name="gPFDetailsId" type="long" />
+		<field name="establishmentDetailId" type="long" />
+		<field name="gpfNumber" type="String" />
+		<field name="refundableAmount" type="String" />
+		<field name="refundableAmountDate" type="Date" />
+		<field name="nonRefundableAmount" type="String" />
+		<field name="nonRefundableAmountDate" type="Date" />
+		<field name="monthlyDeductionAmount" type="String" />
+		<field name="monthlyInstallmentAmount" type="String" />
+		<field name="numberOfMonthlyInstallment" type="String" />
+		<field name="balanceAmount" type="String" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="typeOfRecord" type="String" />
+	</model>
+	<model name="com.mhdsys.schema.model.Grievance">
+		<field name="grievanceId" type="long" />
+		<field name="division" type="long" />
+		<field name="district" type="long" />
+		<field name="taluka" type="long" />
+		<field name="complaintDate" type="Date" />
+		<field name="complaintType" type="String" />
+		<field name="complaintText" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="selfDeclaration" type="boolean" />
+		<field name="status" type="String" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.IntSportsComp">
+		<field name="intSportsCompId" type="long" />
+		<field name="fullName" type="String" />
+		<field name="dob" type="String" />
+		<field name="mobileNo" type="String" />
+		<field name="emailId" type="String" />
+		<field name="aadhaarCard" type="long" />
+		<field name="panCard" type="long" />
+		<field name="domicileCertificate" type="long" />
+		<field name="passBook" type="long" />
+		<field name="cancelledCheck" type="long" />
+		<field name="competitionLevel" type="String" />
+		<field name="competitionName" type="String" />
+		<field name="competitionYear" type="String" />
+		<field name="selectionLetter" type="long" />
+		<field name="competitionDate" type="Date" />
+		<field name="competitionPlace" type="String" />
+		<field name="competitionPerformance" type="String" />
+		<field name="competitionRank" type="String" />
+		<field name="competitionCertificate" type="long" />
+		<field name="itemBudgets" type="String" />
+		<field name="affidavit" type="long" />
+		<field name="guranteeLetter" type="long" />
+		<field name="isDeclarationAccepted" type="boolean" />
+		<field name="hoVerification" type="String" />
+		<field name="hoRemarks" type="String" />
+		<field name="ddVerification" type="String" />
+		<field name="ddRemarks" type="String" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.MobileSession">
+		<field name="sid" type="long" />
+		<field name="userId" type="long" />
+		<field name="status" type="int" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.NCCGrant">
+		<field name="nccGrantId" type="long" />
+		<field name="financialYear" type="String" />
+		<field name="department" type="String" />
+		<field name="groupName" type="String" />
+		<field name="unitType" type="String" />
+		<field name="commandingOfficer" type="String" />
+		<field name="demandedNumber" type="int" />
+		<field name="schemeNumber" type="int" />
+		<field name="detailHead" type="String" />
+		<field name="utilizationCertificate" type="long" />
+		<field name="grantsReceived" type="int" />
+		<field name="grantSurrenderReapp" type="int" />
+		<field name="grantsWithdrawn" type="String" />
+		<field name="grantsWithdrawnBy" type="String" />
+		<field name="grantsSurrender" type="String" />
+		<field name="grantsSurrenderTo" type="String" />
+		<field name="grantsAllowed" type="int" />
+		<field name="grantRecievedReapp" type="int" />
+		<field name="balance" type="double" />
+		<field name="expenses" type="double" />
+		<field name="actualExpense" type="double" />
+		<field name="balanceWithDdo" type="double" />
+		<field name="status" type="String" />
+		<field name="remarks" type="String" />
+		<field name="otherUpload" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDated" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.NccGrantRequest">
+		<field name="nccGrantRequestId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="headquarterName" type="String" />
+		<field name="unitType" type="String" />
+		<field name="caretakerAllowance" type="String" />
+		<field name="refreshmentAllowance" type="String" />
+		<field name="salaries" type="String" />
+		<field name="overTimeAllowance" type="String" />
+		<field name="telephone" type="String" />
+		<field name="electricity" type="String" />
+		<field name="waterCharges" type="String" />
+		<field name="contractualServices" type="String" />
+		<field name="domesticTravellingExpenses" type="String" />
+		<field name="officeExpenses" type="String" />
+		<field name="rent" type="String" />
+		<field name="rates" type="String" />
+		<field name="taxes" type="String" />
+		<field name="trainingActivities" type="String" />
+		<field name="atg" type="String" />
+		<field name="washingAndPolishingAllowance" type="String" />
+		<field name="petrolOilLubricants" type="String" />
+		<field name="minorWork" type="String" />
+		<field name="honorariumToAno" type="String" />
+		<field name="outfitMaintenanceAllowance" type="String" />
+		<field name="othersIfAny" type="String" />
+		<field name="grantsInAid" type="String" />
+		<field name="scholarshipOrStipend" type="String" />
+		<field name="total" type="String" />
+		<field name="status" type="String" />
+		<field name="approvalStatus" type="String" />
+		<field name="remarks" type="String" />
+		<field name="actualTotal" type="String" />
+	</model>
+	<model name="com.mhdsys.schema.model.NPSDetails">
+		<field name="nPSDetailsId" type="long" />
+		<field name="establishmentDetailId" type="long" />
+		<field name="npsId" type="String" />
+		<field name="npsRefundableAmount" type="String" />
+		<field name="npsRefundableAmountDate" type="Date" />
+		<field name="npsNonRefundableAmount" type="String" />
+		<field name="npsNonRefundableAmountDate" type="Date" />
+		<field name="npsMonthlyDeductionAmount" type="String" />
+		<field name="npsMonthlyInstallmentAmount" type="String" />
+		<field name="npsNumberOfMonthlyInstallment" type="String" />
+		<field name="npsBalanceAmount" type="String" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="typeOfRecord" type="String" />
+	</model>
+	<model name="com.mhdsys.schema.model.Objection">
+		<field name="objectionId" type="long" />
+		<field name="playerName" type="String" />
+		<field name="objectorName" type="String" />
+		<field name="email" type="String" />
+		<field name="mobileNo" type="String" />
+		<field name="category" type="String" />
+		<field name="sportNo" type="long" />
+		<field name="awardYear" type="String" />
+		<field name="sportName" type="long" />
+		<field name="awardType" type="long" />
+		<field name="district" type="long" />
+		<field name="place" type="String" />
+		<field name="objectionSummary" type="String" />
+		<field name="userId" type="long" />
+		<field name="finalPointsByHo" type="String" />
+		<field name="finalRemarksByHO" type="String" />
+		<field name="objectionFileEntryId" type="long" />
+		<field name="finalRemarksByFed" type="String" />
+		<field name="doVerification" type="String" />
+		<field name="doRemarks" type="String" />
+		<field name="ddVerification" type="String" />
+		<field name="ddRemarks" type="String" />
+	</model>
+	<model name="com.mhdsys.schema.model.OfficerDesignation">
+		<field name="officerDesignationId" type="long" />
+		<field name="name" type="String" />
+	</model>
+	<model name="com.mhdsys.schema.model.PersonalDetails">
+		<field name="personalDetailsId" type="long" />
+		<field name="establishmentDetailId" type="long" />
+		<field name="typeOfRecord" type="String" />
+		<field name="employeeName" type="String" />
+		<field name="category" type="String" />
+		<field name="sevarthID" type="String" />
+		<field name="dob" type="Date" />
+		<field name="height" type="int" />
+		<field name="bodyMark" type="String" />
+		<field name="education" type="String" />
+		<field name="contactDetails" type="long" />
+		<field name="mscIT" type="String" />
+		<field name="postalAddress" type="String" />
+		<field name="hometown" type="String" />
+		<field name="permanentAddress" type="String" />
+		<field name="castCertificate" type="long" />
+		<field name="castValidity" type="long" />
+		<field name="specialAchievements" type="long" />
+		<field name="sportsAchievements" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.PostingStatus">
+		<field name="postingStatusId" type="long" />
+		<field name="establishmentDetailId" type="long" />
+		<field name="postingStatus" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="typeOfRecord" type="String" />
+	</model>
+	<model name="com.mhdsys.schema.model.Profile">
+		<field name="profileId" type="long" />
+		<field name="photoEntryId" type="String" />
+		<field name="pinCode" type="String" />
+		<field name="postalAddress" type="String" />
+		<field name="totalStudentCountBoys" type="long" />
+		<field name="totalStudentCountGirls" type="long" />
+		<field name="registrationWith" type="String" />
+		<field name="schoolCollegeRegNumberEntryId" type="long" />
+		<field name="dateofAdmissionInSchoolCollege" type="Date" />
+		<field name="nameofCoach" type="String" />
+		<field name="nameofTrainingCenter" type="String" />
+		<field name="heightInCm" type="String" />
+		<field name="weightInKg" type="String" />
+		<field name="bloodGroup" type="String" />
+		<field name="identificationMarkOnBody" type="String" />
+		<field name="castCategory" type="String" />
+		<field name="birthCertificateEntryId" type="long" />
+		<field name="formNoTwoEntryId" type="long" />
+		<field name="aadharCardEntryId" type="long" />
+		<field name="dateOfBirth" type="Date" />
+		<field name="coachingDates" type="String">
+			<hint name="max-length">10000</hint>
+		</field>
+		<field name="nationalityCertificateEntryId" type="long" />
+		<field name="disabilityApplicable" type="boolean" />
+		<field name="disabilityCertificateEntryId" type="long" />
+		<field name="qualification" type="String" />
+		<field name="typeofJobBusiness" type="String" />
+		<field name="designation" type="String" />
+		<field name="officeAddress" type="String" />
+		<field name="anyCrimeRegistered" type="boolean" />
+		<field name="policeStationName" type="String" />
+		<field name="policeStationAddress" type="String" />
+		<field name="dateOfRegistration" type="Date" />
+		<field name="characterCertificateEntryId" type="long" />
+		<field name="bankName" type="String" />
+		<field name="branchName" type="String" />
+		<field name="accountNumber" type="String" />
+		<field name="IFSCcode" type="String" />
+		<field name="acknowledgement" type="boolean" />
+		<field name="roleName" type="String" />
+		<field name="videoLink" type="String" />
+		<field name="cancelledChequeEntryId" type="long" />
+		<field name="website" type="String" />
+		<field name="foundingDate" type="Date" />
+		<field name="affiliatedWith" type="String" />
+		<field name="tanNo" type="String" />
+		<field name="userId" type="long" />
+	</model>
+	<model name="com.mhdsys.schema.model.PTTeacherApplication">
+		<field name="ptTeacherApplicationId" type="long" />
+		<field name="competitionInitiationId" type="long" />
+		<field name="applicationNumber" type="String" />
+		<field name="fees" type="double" />
+		<field name="affiliationFees" type="double" />
+		<field name="totalFees" type="double" />
+		<field name="userId" type="long" />
+		<field name="scheduled" type="boolean" />
+		<field name="feesRecieptFileEntryId" type="long" />
+		<field name="countOfTeamOrIndividual" type="int" />
+		<field name="participantName" type="String" />
+		<field name="participantUserId" type="long" />
+		<field name="status" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.Registration">
+		<field name="registrationId" type="long" />
+		<field name="state" type="long" />
+		<field name="division" type="long" />
+		<field name="district" type="long" />
+		<field name="taluka" type="long" />
+		<field name="udiseCode" type="String" />
+		<field name="firstName" type="String" />
+		<field name="PrincipalName" type="String" />
+		<field name="sportsTeacher" type="String" />
+		<field name="schoolRegNo" type="String" />
+		<field name="aadharNo" type="String" />
+		<field name="mobileNo" type="String" />
+		<field name="landlineNo" type="String" />
+		<field name="email" type="String" />
+		<field name="website" type="String" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="associationName" type="String" />
+		<field name="associationRegNo" type="String" />
+		<field name="secretaryName" type="String" />
+		<field name="departmentName" type="String" />
+		<field name="subDepartment" type="String" />
+		<field name="officialName" type="String" />
+		<field name="designation" type="String" />
+		<field name="secretaryOrgName" type="String" />
+		<field name="organizationName" type="String" />
+		<field name="foundingDate" type="Date" />
+		<field name="employeeId" type="long" />
+	</model>
+	<model name="com.mhdsys.schema.model.RegistrationFormType">
+		<field name="uuid" type="String" />
+		<field name="typeId" type="long" />
+		<field name="formType" type="String" />
+		<field name="formName" type="String" />
+	</model>
+	<model name="com.mhdsys.schema.model.RoasterStatus">
+		<field name="roasterStatusId" type="long" />
+		<field name="establishmentDetailId" type="long" />
+		<field name="nominationCodreWisePostWise" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="promotionCodreWisePostWise" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="typeOfRecord" type="String" />
+	</model>
+	<model name="com.mhdsys.schema.model.SchemeMaster">
+		<field name="schemeMasterId" type="long" />
+		<field name="schemeName_en" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="schemeName_hi" type="String" />
+		<field name="schemeName_mr" type="String">
+			<hint name="max-length">5000</hint>
+		</field>
+		<field name="uniqueId" type="String" />
+		<field name="isActive" type="boolean" />
+	</model>
+	<model name="com.mhdsys.schema.model.SchoolChange">
+		<field name="schoolChangeId" type="long" />
+		<field name="participantName" type="String" />
+		<field name="standard" type="String" />
+		<field name="fromSchool" type="String" />
+		<field name="toSchool" type="String" />
+		<field name="year" type="Date" />
+		<field name="attachment" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.SchoolCollegeOfficerRegistration">
+		<field name="schoolCollegeOfficerRegistrationId" type="long" />
+		<field name="firstName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="mothersName" type="String" />
+		<field name="fathersName" type="String" />
+		<field name="gender" type="int" />
+		<field name="type" type="String" />
+		<field name="currentDesignation" type="long" />
+		<field name="schoolOrCollegeName" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="aadharNumber" type="String" />
+		<field name="email" type="String" />
+		<field name="mobileNumber" type="String" />
+		<field name="aadharCardRecieptFileEntryId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.ScoutAndGuideRegistration">
+		<field name="scoutAndGuideRegistrationId" type="long" />
+		<field name="firstName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="motherName" type="String" />
+		<field name="fatherName" type="String" />
+		<field name="gender" type="String" />
+		<field name="designation" type="String" />
+		<field name="schoolName" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="aadharNumber" type="String" />
+		<field name="emailId" type="String" />
+		<field name="mobileNumber" type="String" />
+		<field name="aadharCardFileEntryId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.Servant">
+		<field name="servantId" type="long" />
+		<field name="trainingCentreId" type="long" />
+		<field name="name" type="String" />
+		<field name="surname" type="String" />
+		<field name="address" type="String" />
+		<field name="dob" type="Date" />
+		<field name="joiningDate" type="Date" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="formStatus" type="String" />
+	</model>
+	<model name="com.mhdsys.schema.model.ServiceDetails">
+		<field name="serviceDetailsId" type="long" />
+		<field name="establishmentDetailId" type="long" />
+		<field name="nominations" type="String" />
+		<field name="promotionExam" type="String" />
+		<field name="dateOfAppointment" type="Date" />
+		<field name="dateOfRetirement" type="Date" />
+		<field name="probationPeriod" type="String" />
+		<field name="entryLevelDepartmentExam" type="String" />
+		<field name="regularPromotionDetails" type="String" />
+		<field name="promotionTimeScale" type="String" />
+		<field name="regularPayFixation" type="String" />
+		<field name="retirementType" type="String" />
+		<field name="medicalCertificateDate" type="Date" />
+		<field name="medicalCertificate" type="long" />
+		<field name="policeVerificationDate" type="Date" />
+		<field name="policeVerification" type="long" />
+		<field name="permanencyCertificate" type="String" />
+		<field name="treasuryVerification" type="String" />
+		<field name="languageExamCertificate" type="String" />
+		<field name="awardCertificationOfHonor" type="String" />
+		<field name="confidentialReports" type="String" />
+		<field name="mattaAndDayitwaReceived" type="String" />
+		<field name="complaintDetails" type="String" />
+		<field name="noDuesCertificate" type="String" />
+		<field name="noEnquiryCertificate" type="String" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="typeOfRecord" type="String" />
+		<field name="dateOfSuspension" type="Date" />
+		<field name="reasonOfSuspension" type="String" />
+		<field name="dateOfReinstate" type="Date" />
+		<field name="departmentalEnquiryReport" type="long" />
+		<field name="punishment" type="String" />
+		<field name="seniorityList" type="long" />
+		<field name="leaveType" type="String" />
+		<field name="leaveFromDate" type="Date" />
+		<field name="leaveToDate" type="Date" />
+		<field name="leaveDocument" type="long" />
+	</model>
+	<model name="com.mhdsys.schema.model.SportPersonCoachRegistration">
+		<field name="sportPersonRegistrationId" type="long" />
+		<field name="competitionLevelId" type="long" />
+		<field name="competitionName" type="String" />
+		<field name="competitionPlace" type="String" />
+		<field name="participationYear" type="String" />
+		<field name="sportId" type="long" />
+		<field name="medalRecieved" type="String" />
+		<field name="category" type="long" />
+		<field name="countryOfCompetition" type="String" />
+		<field name="cityOfCompetition" type="String" />
+		<field name="competitionStartDate" type="Date" />
+		<field name="competitionEndDate" type="Date" />
+		<field name="highestPerformance" type="String" />
+		<field name="certificateId" type="long" />
+		<field name="coachName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="userId" type="long" />
+		<field name="userType" type="String" />
+		<field name="noOfParticipation" type="long" />
+		<field name="noOfMedalRecieved" type="long" />
+		<field name="undertakingId" type="long" />
+	</model>
+	<model name="com.mhdsys.schema.model.SportsCompLvlMaster">
+		<field name="id" type="long" />
+		<field name="competitionLevelId" type="long" />
+		<field name="name_en" type="String" />
+		<field name="name_hi" type="String" />
+		<field name="name_mr" type="String" />
+		<field name="isActive" type="boolean" />
+	</model>
+	<model name="com.mhdsys.schema.model.sportsFacilityBooking">
+		<field name="facilityBookingId" type="long" />
+		<field name="facilityBookingUniqueId" type="String" />
+		<field name="selectedFacility" type="long" />
+		<field name="type" type="String" />
+		<field name="Date" type="Date" />
+		<field name="batch" type="String" />
+		<field name="timeFrom" type="String" />
+		<field name="timeTo" type="String" />
+		<field name="sportCourt" type="String" />
+		<field name="name" type="String" />
+		<field name="contact" type="String" />
+		<field name="purpose" type="String" />
+		<field name="fees" type="String" />
+		<field name="medicalCertificate" type="long" />
+		<field name="creatorUserId" type="long" />
+		<field name="actionTakenByUserId" type="long" />
+		<field name="isApproved" type="Boolean" />
+		<field name="remarks" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="bookingStatus" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="numberOfMonths" type="String" />
+		<field name="dailyOrDate" type="String" />
+	</model>
+	<model name="com.mhdsys.schema.model.SportsFacilityMaster">
+		<field name="sportsFacilityId" type="long" />
+		<field name="facilityName" type="String" />
+		<field name="facilityType" type="String" />
+		<field name="facilityArea" type="String" />
+		<field name="longitude" type="String" />
+		<field name="latitude" type="String" />
+		<field name="geotagPhotos" type="String">
+			<hint name="max-length">50000</hint>
+		</field>
+		<field name="type" type="String" />
+		<field name="fees" type="String" />
+		<field name="bookingUrl" type="String">
+			<hint name="max-length">50000</hint>
+		</field>
+		<field name="contactPersonName" type="String" />
+		<field name="contactPersonNumber" type="String" />
+		<field name="isUpdatedByHO" type="Boolean" />
+		<field name="isUpdatedByDSO" type="Boolean" />
+		<field name="creatorUserId" type="long" />
+		<field name="modifierUserId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.SportsMaster">
+		<field name="sportMasterId" type="long" />
+		<field name="categoryId" type="long" />
+		<field name="name_en" type="String" />
+		<field name="name_hi" type="String" />
+		<field name="name_mr" type="String" />
+		<field name="isActive" type="boolean" />
+	</model>
+	<model name="com.mhdsys.schema.model.SportsPerson">
+		<field name="sportsPersonId" type="long" />
+		<field name="trainingCentreId" type="long" />
+		<field name="fullName" type="String" />
+		<field name="dateOfBirth" type="Date" />
+		<field name="schoolName" type="String" />
+		<field name="mobileNumber" type="String" />
+		<field name="address" type="String" />
+		<field name="entryDate" type="Date" />
+		<field name="ranking" type="String" />
+		<field name="achievementLevel" type="String" />
+		<field name="remarks" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="formStatus" type="String" />
+	</model>
+	<model name="com.mhdsys.schema.model.SportsTypeMaster">
+		<field name="sportsTypeMasterId" type="long" />
+		<field name="name_en" type="String" />
+		<field name="name_hi" type="String" />
+		<field name="name_mr" type="String" />
+		<field name="isActive" type="boolean" />
+	</model>
+	<model name="com.mhdsys.schema.model.StudentRegistration">
+		<field name="studentRegistrationId" type="long" />
+		<field name="firstName" type="String" />
+		<field name="lastName" type="String" />
+		<field name="fathersName" type="String" />
+		<field name="mothersName" type="String" />
+		<field name="gender" type="String" />
+		<field name="aadharNumber" type="String" />
+		<field name="standard" type="String" />
+		<field name="transfer" type="boolean" />
+		<field name="transferTo" type="String" />
+		<field name="schoolCollegeName" type="String" />
+		<field name="registerTo" type="String" />
+		<field name="unitType" type="String" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.SubCategoryMaster">
+		<field name="subCategoryId" type="long" />
+		<field name="subCategoryName_en" type="String" />
+		<field name="subCategoryName_hi" type="String" />
+		<field name="subCategoryName_mr" type="String" />
+		<field name="isActive" type="boolean" />
+		<field name="categoryMasterId" type="long" />
+	</model>
+	<model name="com.mhdsys.schema.model.TalukaMaster">
+		<field name="talukaId" type="long" />
+		<field name="talukaName_en" type="String" />
+		<field name="talukaName_hi" type="String" />
+		<field name="talukaName_mr" type="String" />
+		<field name="isActive" type="boolean" />
+		<field name="districtId" type="long" />
+		<field name="divisionId" type="long" />
+	</model>
+	<model name="com.mhdsys.schema.model.TrainingCentre">
+		<field name="trainingCentreId" type="long" />
+		<field name="division" type="String" />
+		<field name="district" type="String" />
+		<field name="centreType" type="String" />
+		<field name="sportsType" type="String" />
+		<field name="geoTag" type="String" />
+		<field name="latitude" type="String" />
+		<field name="longitude" type="String" />
+		<field name="gisMap" type="String" />
+		<field name="dprDocPath" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="formstatus" type="String" />
+		<field name="userid" type="long" />
+		<field name="divdepDirUserid" type="long" />
+		<field name="divdepDirDecision" type="boolean" />
+		<field name="divdepDirRemarks" type="String" />
+		<field name="hoDirUserid" type="long" />
+		<field name="hoDecision" type="boolean" />
+		<field name="hoRemarks" type="String" />
+		<field name="status" type="String" />
+	</model>
+	<model name="com.mhdsys.schema.model.TrainingCentreFinancialDetail">
+		<field name="financialDetailId" type="long" />
+		<field name="trainingCentreId" type="long" />
+		<field name="description" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="grAmount" type="double" />
+		<field name="requestedAmount" type="double" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="formStatus" type="String" />
+	</model>
+	<model name="com.mhdsys.schema.model.TrainingCentreReport">
+		<field name="reportId" type="long" />
+		<field name="trainingCentreId" type="long" />
+		<field name="description" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="remarks" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="attachmentPath" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="formStatus" type="String" />
+	</model>
+	<model name="com.mhdsys.schema.model.TrainingDetails">
+		<field name="trainingDetailsId" type="long" />
+		<field name="establishmentDetailId" type="long" />
+		<field name="numberOfTrainings" type="String" />
+		<field name="trainingName" type="String" />
+		<field name="trainingStartDate" type="Date" />
+		<field name="trainingEndDate" type="Date" />
+		<field name="trainingCertificate" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="typeOfRecord" type="String" />
+	</model>
+	<model name="com.mhdsys.schema.model.TransferApplication">
+		<field name="transferApplicationId" type="long" />
+		<field name="grievanceId" type="long" />
+		<field name="solutionByHo" type="String">
+			<hint name="max-length">250</hint>
+		</field>
+		<field name="reviewByHo" type="String">
+			<hint name="max-length">250</hint>
+		</field>
+		<field name="solutionByDSO" type="String">
+			<hint name="max-length">250</hint>
+		</field>
+		<field name="reviewByDSO" type="String">
+			<hint name="max-length">250</hint>
+		</field>
+		<field name="solutionByTSO" type="String">
+			<hint name="max-length">250</hint>
+		</field>
+		<field name="reviewByTSO" type="String">
+			<hint name="max-length">250</hint>
+		</field>
+		<field name="transferTo" type="long" />
+		<field name="transfer" type="String" />
+		<field name="transferApplication" type="long" />
+		<field name="taluka" type="long" />
+		<field name="district" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+	<model name="com.mhdsys.schema.model.UnitRegistration">
+		<field name="unitRegistrationId" type="long" />
+		<field name="unitType" type="String" />
+		<field name="unitName" type="String" />
+		<field name="unitCharterNumber" type="int" />
+		<field name="year" type="String" />
+		<field name="udis" type="String" />
+		<field name="schoolName" type="String" />
+		<field name="address" type="String" />
+		<field name="pincode" type="String" />
+		<field name="schoolEmail" type="String" />
+		<field name="schoolContact" type="String" />
+		<field name="principalMobile" type="String" />
+		<field name="selfDeclaration" type="boolean" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+	</model>
+</model-hints>
